@@ -1,3 +1,400 @@
+:root {
+    --header-color: #8d1a26; /* Color principal del encabezado */
+    --main-color: #f9f5f0; /* Color de fondo main */
+    --hover-color: #e6a756; /* Color de fondo al pasar el mouse */
+    --text-color: #fff; /* Color del texto */
+    --button-color: #555; /* Color del botón */
+    --button-hover-color: #333; /* Color del botón al pasar el mouse */
+    --font-family-main: 'Lora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-family-header: Arial, sans-serif; /* Fuente header */
+
+}
+
+* {
+    margin: 0; /* Elimina el margen por defecto de todos los elementos */
+    padding: 0; /* Elimina el padding por defecto de todos los elementos */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    list-style: none; /* Elimina los puntos de las listas */
+    font-size: 20px; /* Tamaño de fuente por defecto */
+}
+
+/* Estilos para el header */
+.cabezado {
+    position: relative; /* Posicionamiento relativo para elementos hijos */
+    width: 100%; /* Ancho completo */
+    font-family: var(--font-family-header);
+}
+
+.header-image {
+    position: relative; /* Posicionamiento relativo para elementos hijos */
+    width: 100%; /* Ancho completo */
+    height: 250px; /* Ajusta la altura según tus necesidades */
+    overflow: hidden; /* Oculta el desbordamiento de contenido */
+}
+
+.header-image img {
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: 100%; /* La imagen ocupa el 100% de la altura del contenedor */
+    object-fit: cover; /* Mantiene la relación de aspecto de la imagen */
+}
+
+.logo-overlay {
+    position: absolute; /* Posicionamiento absoluto para centrar el logo */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el centro del logo */
+    width: 200px; /* Ajusta el tamaño del logo según tus necesidades */
+    height: 200px; /* Ajusta el tamaño del logo según tus necesidades */
+    border-radius: 50%; /* Hace que el logo sea redondo */
+    overflow: hidden; /* Oculta el contenido que desborda */
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    display: flex; /* Usamos flexbox para centrar el logo */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.logo-overlay img {
+    width: 80%; /* Ancho del logo dentro del contenedor */
+    height: 80%; /* Alto del logo dentro del contenedor */
+    border-radius: 50%; /* Hace que el logo sea redondo */
+    transition: transform 1s; /* Transición suave para la rotación */
+}
+
+.logo-overlay:hover img {
+    transform: rotateY(180deg); /* Rota el logo al pasar el ratón */
+}
+
+.menu {
+    background: var(--header-color); /* Color de fondo del menú */
+    padding: 20px 20px; /* Espaciado interno del menú */
+    text-align: center; /* Centra el contenido del menú */
+}
+
+.menu ul {
+    display: flex; /* Usamos flexbox para organizar los enlaces horizontalmente */
+    justify-content: center; /* Centra los enlaces */
+}
+
+.menu ul li {
+    margin: 0 10px; /* Margen de 10px entre los enlaces */
+}
+
+.menu ul li a {
+    color: var(--text-color); /* Color del texto de los enlaces */
+    font-size: 18px; /* Tamaño de fuente de los enlaces */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    padding: 0 10px; /* Añadimos un poco de padding para mejorar la apariencia */
+}
+
+.menu ul li a:hover {
+    color: var(--hover-color); /* Cambia el color al pasar el ratón */
+}
+
+.language-selector {
+    position: absolute; /* Posicionamiento absoluto para colocar el selector de idioma */
+    top: 22px; /* Espacio desde la parte superior */
+    right: 15px; /* Espacio desde la derecha */
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+    display: flex; /* Usamos flexbox para organizar el selector */
+    align-items: center; /* Centra verticalmente los elementos dentro del selector */
+}
+
+.current-language {
+    display: flex; /* Usamos flexbox para organizar el idioma actual */
+    align-items: center; /* Centra verticalmente el idioma actual */
+    cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el idioma */
+    padding: 5px; /* Espaciado interno alrededor del idioma actual */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background 0.3s ease; /* Transición suave para el cambio de fondo */
+    color: white; /* Color del texto del idioma actual */
+}
+
+.current-language:hover {
+    background: var(--button-hover-color); /* Cambia el fondo al pasar el ratón */
+}
+
+.language-icon {
+    margin-right: 5px; /* Espacio a la derecha del ícono del idioma */
+    font-size: 20px; /* Tamaño del ícono del idioma */
+    color: var(--text-color); /* Color del ícono del idioma */
+}
+
+.language-options {
+    display: none; /* Oculta las opciones de idioma por defecto */
+    position: absolute; /* Posicionamiento absoluto para colocar las opciones */
+    top: 100%; /* Coloca las opciones debajo del selector */
+    right: 0; /* Alinea las opciones a la derecha */
+    background: var(--header-color); /* Color de fondo de las opciones */
+    padding: 10px; /* Espaciado interno de las opciones */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+.language-options a {
+    display: block; /* Hace que cada opción ocupe toda la línea */
+    color: var(--text-color); /* Color del texto de las opciones */
+    text-decoration: none; /* Elimina el subrayado de las opciones */
+    padding: 5px 10px; /* Espaciado interno de las opciones */
+    transition: background 0.3s ease; /* Transición suave para el cambio de fondo */
+}
+
+.language-options a:hover {
+    background: var(--button-hover-color); /* Cambia el fondo al pasar el ratón */
+}
+
+.language-selector:hover .language-options {
+    display: block; /* Muestra las opciones al pasar el ratón sobre el selector */
+}
+
+/* PREGUNTAR XAVIER DONDE ESTÁ EL SECTION */ 
+/*****************************************/
+section {
+    display: none; /* Oculta todas las secciones por defecto */
+}
+
+section.active {
+    display: block; /* Muestra la sección activa */
+}
+/*****************************************/
+
+/* Estilos para el titulo */
+
+.titulo {
+    background-color: #f9f5f0;
+}
+
+.titulo h1 {
+    font-size: 36px; /* Tamaño de fuente del encabezado */
+    color: var(--header-color); /* Color del texto del encabezado */
+    text-align: center; /* Centra el texto del encabezado */
+    padding-top: 30px; /* Margen superior del titulo */
+}
+
+/* Estilos para el artículo del main de inicio*/
+
+main {
+    background-color: #f9f5f0; /* Color de fondo suave y neutro */
+    padding: 20px; /* Espaciado interno para el contenido */
+    font-family: var(--font-family-main);
+}
+
+article {
+    max-width: 1000px; /* Ancho máximo del artículo */
+    max-height: 500px; /* Altura máxima del artículo */
+    margin: auto; /* Centra el artículo horizontalmente */
+    display: flex; /* Usamos flexbox para organizar los elementos dentro del artículo */
+    padding: 20px; /* Agrega un padding interno alrededor del artículo */
+    margin: 20px auto; /* Margen superior e inferior del artículo */
+}
+
+.content {
+    flex: 1; /* Permite que este div ocupe el espacio disponible */
+    max-width: 500px; /* Ancho máximo del contenido */
+    max-height: 500px; /* Altura máxima del contenido */
+    background-color: #f6e1c5; /* Color de fondo del contenido */
+    padding: 20px; /* Espaciado interno para el contenido */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+    display: flex; /* Usamos flexbox para organizar el contenido dentro de este div */
+    flex-direction: column; /* Organiza el contenido en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+.image {
+    flex: 1; /* Permite que este div ocupe el espacio disponible */
+    max-width: 500px; /* Ancho máximo de la imagen */
+    max-height: 500px; /* Altura máxima de la imagen */
+    display: flex; /* Usamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    background-color: #f6e1c5; /* Mismo color de fondo para mantener la uniformidad */
+}
+
+.image img {
+    width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    max-height: 90%; /* Limita la altura máxima de la imagen al 90% de su contenedor */
+    max-width: 90%; /* Limita el ancho máximo de la imagen al 90% de su contenedor */
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+}
+
+.parafo-articulo h2 {
+    font-family: 'Lora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-size: 24px; /* Tamaño de fuente para el subtítulo */
+    margin-top: 10px; /* Espacio entre el subtítulo y el título */
+    text-align: center; /* Centra el texto del subtítulo */
+}
+
+.parafo-articulo h1 {
+    font-size: 36px; /* Tamaño de fuente para el título */
+    color: var(--header-color); /* Color del texto del encabezado */
+    text-align: center; /* Centra el texto del encabezado */
+    padding: 0 0 20px 0; /* Margen superior y inferior del titulo */
+}
+
+.parafo-articulo p {
+    font-size: 18px; /* Tamaño de la fuente del párrafo */
+    padding: 5px; /* Espacio interno alrededor del texto */
+    text-align: center; /* Centra el texto del párrafo */
+}
+
+.boton-articulo {
+    display: flex; /* Usamos flexbox para centrar el botón */
+    justify-content: center; /* Centra el botón horizontalmente */
+    margin-top: 20px; /* Espacio superior para separar el botón del párrafo */
+}
+
+.boton-articulo button a {
+    color: inherit; /* Hereda el color del texto del botón */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.content button {
+    background: var(--hover-color); /* Color de fondo del botón */
+    color: black; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el botón */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el cambio de fondo, transformación y sombra */
+    width: fit-content; /* Ajusta el ancho del botón al contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+}
+
+.content button:hover {
+    background: var(--hover-color); /* Cambia el color de fondo al pasar el ratón */
+    transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.content button:active {
+    transform: translateY(1px); /* Hace que el botón se hunda ligeramente al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra menos pronunciada al hacer clic */
+}
+
+/* Estilos para las empresas que confían en nosotros del main de inicio */
+.empresas-confian {
+    text-align: center; /* Centra el texto */
+    margin: 80px 40px 0 40px; /* Margen superior e inferior */
+    font-family: var(--font-family-header);
+    background-color: #ebc595;
+    padding: 20px; /* Espaciado interno */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de fondo */
+}
+
+.empresas-confian h2 {
+    font-size: 24px; /* Tamaño de fuente para el título */
+    margin-bottom: 20px; /* Margen inferior del título */
+    color: var(--header-color); /* Color del texto del título */
+}
+
+.logos-empresas {
+    display: flex; /* Usamos flexbox para organizar los logos */
+    justify-content: center; /* Centra los logos horizontalmente */
+    gap: 20px; /* Espacio entre los logos */
+    flex-wrap: wrap; /* Permite que los logos se envuelvan en varias líneas si no caben en una sola */
+}
+
+.logos-empresas img {
+    max-width: 150px; /* Ancho máximo de los logos */
+    height: auto; /* Altura automática para mantener la proporción */
+    opacity: 0.8; /* Opacidad de los logos */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves para la opacidad y el zoom */
+}
+
+.logos-empresas img:hover {
+    opacity: 1; /* Opacidad completa al pasar el ratón */
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Estilos para la sección de portfolio */
+.portfolio {
+    padding: 40px 20px; /* Espaciado interno */
+    background-color: var(--main-color); /* Color de fondo */
+    font-family: var(--font-family-main);
+}
+
+.filtros {
+    display: flex; /* Usamos flexbox para organizar los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.filtro {
+    background-color: var(--hover-color); /* Color de fondo del botón */
+    color: black; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para el cambio de fondo y el zoom */
+}
+
+.filtro:hover {
+    background-color: var(--button-hover-color); /* Cambia el color de fondo al pasar el ratón */
+    transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
+}
+
+.mosaico {
+    display: grid; /* Usamos grid para organizar las imágenes */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas automáticas con un ancho mínimo de 200px */
+    gap: 20px; /* Espacio entre las imágenes */
+}
+
+.item img {
+    width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    border-radius: 5px; /* Bordes redondeados de las imágenes */
+    transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+.item img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Pie de página */
+footer {
+    background: var(--header-color); /* Color de fondo del pie de página */
+    text-align: center; /* Centra el contenido del pie de página */
+    font-family: var(--font-family-header);
+}
+
+.footer {
+    display: flex; /* Usamos flexbox para organizar el contenido del pie de página */
+    flex-direction: column; /* Organiza el contenido en columna */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+.share {
+    display: flex; /* Usamos flexbox para organizar los íconos de compartir */
+    justify-content: center; /* Centra los íconos horizontalmente */
+    padding-top: 10px; /* Espacio superior para los íconos de compartir */
+    gap: 1rem; /* Espacio entre los íconos de compartir */
+}
+
+.share a {
+    height: 4rem; /* Altura de los íconos de compartir */
+    width: 4rem; /* Ancho de los íconos de compartir */
+    line-height: 4rem; /* Centra verticalmente el texto dentro del ícono */
+    font-size: 2rem; /* Tamaño de fuente de los íconos de compartir */
+    color: var(--hover-color); /* Color de los íconos de compartir */
+    border-radius: 50%; /* Hace que los íconos sean redondos */
+    transition: background 0.3s ease, color 0.3s ease; /* Transiciones suaves para el cambio de fondo y color */
+}
+
+.share a:hover {
+    background: var(--hover-color); /* Cambia el fondo al pasar el ratón */
+    color: var(--header-color); /* Cambia el color del texto al pasar el ratón */
+}
+
+.credit {
+    font-size: 1.2rem; /* Tamaño de fuente para el crédito */
+    color: var(--text-color); /* Color del texto del crédito */
+    font-weight: lighter; /* Peso de fuente más ligero para el crédito */
+    padding: 1rem 0; /* Espacio superior e inferior para el crédito */
+}
+/*=======
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -44,3 +441,5 @@ body {
   section.active {
     display: block;
   }
+>>>>>>> aee92059731b0057bd9dddaa9b528bc716e73469
+*/
