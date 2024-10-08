@@ -1,0 +1,14 @@
+{
+    "inicio": {
+      "title": "Bienvenido a la Página de Inicio",
+      "content": "Esta es la sección de inicio de nuestra SPA."
+    },
+    "descripcion": {
+      "title": "Descripción",
+      "content": "Esta es la sección de descripción de nuestra SPA."
+    },
+    "acerca": {
+      "title": "Acerca de Nosotros",
+      "content": "Esta es la sección de acerca de nuestra SPA."
+    }
+  }

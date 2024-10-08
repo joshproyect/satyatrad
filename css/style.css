@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
     --header-color: #8d1a26; /* Color principal del encabezado */
     --main-color: #f9f5f0; /* Color de fondo main */
@@ -394,3 +395,51 @@ footer {
     font-weight: lighter; /* Peso de fuente más ligero para el crédito */
     padding: 1rem 0; /* Espacio superior e inferior para el crédito */
 }
+=======
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .language-selector {
+    margin-right: 20px;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    display: none;
+  }
+  
+  section.active {
+    display: block;
+  }
+>>>>>>> aee92059731b0057bd9dddaa9b528bc716e73469
