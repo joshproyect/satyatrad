@@ -307,6 +307,52 @@ article {
     transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
 }
 
+/* Estilos para la sección de portfolio */
+.portfolio {
+    padding: 40px 20px; /* Espaciado interno */
+    background-color: var(--main-color); /* Color de fondo */
+    font-family: var(--font-family-main);
+}
+
+.filtros {
+    display: flex; /* Usamos flexbox para organizar los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.filtro {
+    background-color: var(--hover-color); /* Color de fondo del botón */
+    color: black; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para el cambio de fondo y el zoom */
+}
+
+.filtro:hover {
+    background-color: var(--button-hover-color); /* Cambia el color de fondo al pasar el ratón */
+    transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
+}
+
+.mosaico {
+    display: grid; /* Usamos grid para organizar las imágenes */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas automáticas con un ancho mínimo de 200px */
+    gap: 20px; /* Espacio entre las imágenes */
+}
+
+.item img {
+    width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    border-radius: 5px; /* Bordes redondeados de las imágenes */
+    transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+.item img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
 /* Pie de página */
 footer {
     background: var(--header-color); /* Color de fondo del pie de página */
