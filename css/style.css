@@ -163,3 +163,12 @@ body {
 .language-selector:hover .language-options {
     display: block;
 }
+
+/* PREGUNTAR XAVIER DONDE ESTÁ EL SECTION*/ 
+section {
+    display: none;
+  }
+
+section.active {
+    display: block;
+  }
