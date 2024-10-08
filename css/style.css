@@ -1,94 +1,75 @@
 :root {
-    --header-color: #8d1a26;
-    --hover-color: #e6a756;
-    --text-color: #fff;
-    --button-color: #555;
-    --button-hover-color: #333;
+    --header-color: #8d1a26; /* Color principal del encabezado */
+    --hover-color: #e6a756; /* Color de fondo al pasar el mouse */
+    --text-color: #fff; /* Color del texto */
+    --button-color: #555; /* Color del botón */
+    --button-hover-color: #333; /* Color del botón al pasar el mouse */
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    font-size: 20px;
-    font-family: Arial, sans-serif;
+    margin: 0; /* Elimina el margen por defecto de todos los elementos */
+    padding: 0; /* Elimina el padding por defecto de todos los elementos */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    list-style: none; /* Elimina los puntos de las listas */
+    font-size: 20px; /* Tamaño de fuente por defecto */
+    font-family: Arial, sans-serif; /* Fuente por defecto */
 }
 
+/* Estilos para el header */
 .cabezado {
-    position: relative;
-    width: 100%;
+    position: relative; /* Posicionamiento relativo para elementos hijos */
+    width: 100%; /* Ancho completo */
 }
 
 .header-image {
-    position: relative;
-    width: 100%;
+    position: relative; /* Posicionamiento relativo para elementos hijos */
+    width: 100%; /* Ancho completo */
     height: 250px; /* Ajusta la altura según tus necesidades */
-    overflow: hidden;
+    overflow: hidden; /* Oculta el desbordamiento de contenido */
 }
 
 .header-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: 100%; /* La imagen ocupa el 100% de la altura del contenedor */
+    object-fit: cover; /* Mantiene la relación de aspecto de la imagen */
 }
 
 .logo-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute; /* Posicionamiento absoluto para centrar el logo */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el centro del logo */
     width: 200px; /* Ajusta el tamaño del logo según tus necesidades */
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
+    height: 200px; /* Ajusta el tamaño del logo según tus necesidades */
+    border-radius: 50%; /* Hace que el logo sea redondo */
+    overflow: hidden; /* Oculta el contenido que desborda */
     background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Usamos flexbox para centrar el logo */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
 }
 
 .logo-overlay img {
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
-    transition: transform 1s;
+    width: 80%; /* Ancho del logo dentro del contenedor */
+    height: 80%; /* Alto del logo dentro del contenedor */
+    border-radius: 50%; /* Hace que el logo sea redondo */
+    transition: transform 1s; /* Transición suave para la rotación */
 }
 
 .logo-overlay:hover img {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Rota el logo al pasar el ratón */
 }
-
-/* DE MOMENTO NO LO NECESITO ESTE CODIGO:
-.overlay-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-    color: black;
-    font-size: 16px;
-    text-align: center;
-    padding: 10px;
-}
-*/
 
 .menu {
-    background: var(--header-color);
-    padding: 20px 20px;
-    text-align: center;
+    background: var(--header-color); /* Color de fondo del menú */
+    padding: 20px 20px; /* Espaciado interno del menú */
+    text-align: center; /* Centra el contenido del menú */
 }
 
 .menu ul {
-    display: flex;
-    justify-content: center; /* Centrar los enlaces */
+    display: flex; /* Usamos flexbox para organizar los enlaces horizontalmente */
+    justify-content: center; /* Centra los enlaces */
 }
 
 .menu ul li {
@@ -96,126 +77,214 @@
 }
 
 .menu ul li a {
-    color: var(--text-color);
-    font-size: 18px;
-    transition: color 0.3s ease;
+    color: var(--text-color); /* Color del texto de los enlaces */
+    font-size: 18px; /* Tamaño de fuente de los enlaces */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
     padding: 0 10px; /* Añadimos un poco de padding para mejorar la apariencia */
 }
 
 .menu ul li a:hover {
-    color: var(--hover-color);
+    color: var(--hover-color); /* Cambia el color al pasar el ratón */
 }
 
 .language-selector {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
+    position: absolute; /* Posicionamiento absoluto para colocar el selector de idioma */
+    top: 10px; /* Espacio desde la parte superior */
+    right: 10px; /* Espacio desde la derecha */
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+    display: flex; /* Usamos flexbox para organizar el selector */
+    align-items: center; /* Centra verticalmente los elementos dentro del selector */
 }
 
 .current-language {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-    color: white;
+    display: flex; /* Usamos flexbox para organizar el idioma actual */
+    align-items: center; /* Centra verticalmente el idioma actual */
+    cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el idioma */
+    padding: 5px; /* Espaciado interno alrededor del idioma actual */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background 0.3s ease; /* Transición suave para el cambio de fondo */
+    color: white; /* Color del texto del idioma actual */
 }
 
 .current-language:hover {
-    background: var(--button-hover-color);
+    background: var(--button-hover-color); /* Cambia el fondo al pasar el ratón */
 }
 
 .language-icon {
-    margin-right: 5px;
-    font-size: 20px;
-    color: var(--text-color);
+    margin-right: 5px; /* Espacio a la derecha del ícono del idioma */
+    font-size: 20px; /* Tamaño del ícono del idioma */
+    color: var(--text-color); /* Color del ícono del idioma */
 }
 
 .language-options {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: var(--header-color);
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none; /* Oculta las opciones de idioma por defecto */
+    position: absolute; /* Posicionamiento absoluto para colocar las opciones */
+    top: 100%; /* Coloca las opciones debajo del selector */
+    right: 0; /* Alinea las opciones a la derecha */
+    background: var(--header-color); /* Color de fondo de las opciones */
+    padding: 10px; /* Espaciado interno de las opciones */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
 }
 
 .language-options a {
-    display: block;
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 5px 10px;
-    transition: background 0.3s ease;
+    display: block; /* Hace que cada opción ocupe toda la línea */
+    color: var(--text-color); /* Color del texto de las opciones */
+    text-decoration: none; /* Elimina el subrayado de las opciones */
+    padding: 5px 10px; /* Espaciado interno de las opciones */
+    transition: background 0.3s ease; /* Transición suave para el cambio de fondo */
 }
 
 .language-options a:hover {
-    background: var(--button-hover-color);
+    background: var(--button-hover-color); /* Cambia el fondo al pasar el ratón */
 }
 
 .language-selector:hover .language-options {
-    display: block;
+    display: block; /* Muestra las opciones al pasar el ratón sobre el selector */
 }
 
-/* PREGUNTAR XAVIER DONDE ESTÁ EL SECTION*/ 
+/* PREGUNTAR XAVIER DONDE ESTÁ EL SECTION */ 
+/*****************************************/
 section {
-    display: none;
-  }
+    display: none; /* Oculta todas las secciones por defecto */
+}
 
 section.active {
-    display: block;
-  }
+    display: block; /* Muestra la sección activa */
+}
+/*****************************************/
 
 h1 {
-    font-size: 36px; /* Tamaño de fuente */
-    color: var(--header-color); /* Color del texto */
-    text-align: center; /* Centrar el texto */
-    margin-top: 20px; /* Margen superior */
-    margin-bottom: 20px; /* Margen inferior */
+    font-size: 36px; /* Tamaño de fuente del encabezado */
+    color: var(--header-color); /* Color del texto del encabezado */
+    text-align: center; /* Centra el texto del encabezado */
+    margin-top: 20px; /* Margen superior del encabezado */
+    margin-bottom: 20px; /* Margen inferior del encabezado */
+}
+
+/* Estilos para el artículo */
+article {
+    max-width: 1000px; /* Ancho máximo del artículo */
+    max-height: 500px; /* Altura máxima del artículo */
+    margin: auto; /* Centra el artículo horizontalmente */
+    display: flex; /* Usamos flexbox para organizar los elementos dentro del artículo */
+    padding: 20px; /* Agrega un padding interno alrededor del artículo */
+    margin: 20px auto; /* Margen superior e inferior del artículo */
+}
+
+.content {
+    flex: 1; /* Permite que este div ocupe el espacio disponible */
+    max-width: 500px; /* Ancho máximo del contenido */
+    max-height: 500px; /* Altura máxima del contenido */
+    background-color: #f6e1c5; /* Color de fondo del contenido */
+    padding: 20px; /* Espaciado interno para el contenido */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+    display: flex; /* Usamos flexbox para organizar el contenido dentro de este div */
+    flex-direction: column; /* Organiza el contenido en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+.image {
+    flex: 1; /* Permite que este div ocupe el espacio disponible */
+    max-width: 500px; /* Ancho máximo de la imagen */
+    max-height: 500px; /* Altura máxima de la imagen */
+    display: flex; /* Usamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    background-color: #f6e1c5; /* Mismo color de fondo para mantener la uniformidad */
+}
+
+.image img {
+    width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    max-height: 90%; /* Limita la altura máxima de la imagen al 90% de su contenedor */
+    max-width: 90%; /* Limita el ancho máximo de la imagen al 90% de su contenedor */
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+}
+
+.parafo-articulo h2 {
+    font-size: 24px; /* Tamaño de fuente para el subtítulo */
+    margin-bottom: 10px; /* Espacio entre el subtítulo y el título */
+    text-align: center; /* Centra el texto del subtítulo */
+}
+
+.parafo-articulo h1 {
+    font-size: 36px; /* Tamaño de fuente para el título */
+    margin-bottom: 20px; /* Espacio entre el título y el párrafo */
+}
+
+.parafo-articulo p {
+    font-size: 18px; /* Tamaño de la fuente del párrafo */
+    padding: 5px; /* Espacio interno alrededor del texto */
+    text-align: center; /* Centra el texto del párrafo */
+}
+
+.boton-articulo {
+    display: flex; /* Usamos flexbox para centrar el botón */
+    justify-content: center; /* Centra el botón horizontalmente */
+    margin-top: 20px; /* Espacio superior para separar el botón del párrafo */
+}
+
+.content button {
+    background: var(--hover-color); /* Color de fondo del botón */
+    color: black; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el botón */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el cambio de fondo, transformación y sombra */
+    width: fit-content; /* Ajusta el ancho del botón al contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+}
+
+.content button:hover {
+    background: var(--hover-color); /* Cambia el color de fondo al pasar el ratón */
+    transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.content button:active {
+    transform: translateY(1px); /* Hace que el botón se hunda ligeramente al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra menos pronunciada al hacer clic */
 }
 
 /* Pie de página */
 footer {
-    background: var(--header-color);
-    text-align: center;
+    background: var(--header-color); /* Color de fondo del pie de página */
+    text-align: center; /* Centra el contenido del pie de página */
 }
 
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* Usamos flexbox para organizar el contenido del pie de página */
+    flex-direction: column; /* Organiza el contenido en columna */
+    align-items: center; /* Centra el contenido horizontalmente */
 }
 
 .share {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    gap: 1rem;
+    display: flex; /* Usamos flexbox para organizar los íconos de compartir */
+    justify-content: center; /* Centra los íconos horizontalmente */
+    padding-top: 10px; /* Espacio superior para los íconos de compartir */
+    gap: 1rem; /* Espacio entre los íconos de compartir */
 }
 
 .share a {
-    height: 4rem;
-    width: 4rem;
-    line-height: 4rem;
-    font-size: 2rem;
-    color: var(--hover-color);
-    border-radius: 50%;
-    transition: background 0.3s ease, color 0.3s ease;
+    height: 4rem; /* Altura de los íconos de compartir */
+    width: 4rem; /* Ancho de los íconos de compartir */
+    line-height: 4rem; /* Centra verticalmente el texto dentro del ícono */
+    font-size: 2rem; /* Tamaño de fuente de los íconos de compartir */
+    color: var(--hover-color); /* Color de los íconos de compartir */
+    border-radius: 50%; /* Hace que los íconos sean redondos */
+    transition: background 0.3s ease, color 0.3s ease; /* Transiciones suaves para el cambio de fondo y color */
 }
 
 .share a:hover {
-    background: var(--hover-color);
-    color: var(--header-color);
+    background: var(--hover-color); /* Cambia el fondo al pasar el ratón */
+    color: var(--header-color); /* Cambia el color del texto al pasar el ratón */
 }
 
 .credit {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    font-weight: lighter;
-    padding: 1rem 0;
+    font-size: 1.2rem; /* Tamaño de fuente para el crédito */
+    color: var(--text-color); /* Color del texto del crédito */
+    font-weight: lighter; /* Peso de fuente más ligero para el crédito */
+    padding: 1rem 0; /* Espacio superior e inferior para el crédito */
 }
