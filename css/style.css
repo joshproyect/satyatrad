@@ -1,6 +1,6 @@
 :root {
     --header-color: #8d1a26; /* Color principal del encabezado */
-    --main-color: #f7dee3; /* Color de fondo main */
+    --main-color: #f9f5f0; /* Color de fondo main */
     --hover-color: #e6a756; /* Color de fondo al pasar el mouse */
     --text-color: #fff; /* Color del texto */
     --button-color: #333; /* Color del botón */
@@ -89,6 +89,11 @@
 
 .menu ul li a:hover {
     color: var(--hover-color); /* Cambia el color al pasar el ratón */
+    transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
+}
+
+.menu ul li a:active {
+    transform: translateY(1px); /* Hace que el botón se hunda ligeramente al hacer clic */
 }
 
 .language-selector {
@@ -361,7 +366,8 @@ article:hover {
 
 .item img {
     width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
-    height: auto; /* Altura automática para mantener la proporción */
+    height: 300px; /* Alto fijo para todas las imágenes */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionarla */
     border-radius: 5px; /* Bordes redondeados de las imágenes */
     transition: transform 0.3s ease; /* Transición suave para el zoom */
 }
@@ -377,27 +383,42 @@ article:hover {
     align-items: center;
     padding: 20px;
     background-color: var(--main-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e6a756; /* Borde sólido de color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     margin: 20px auto;
     max-width: 1000px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
+}
+
+#quiensoy:hover {
+    transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
 }
 
 #quiensoy .content {
     flex: 1;
     padding-right: 20px;
+    background-color: #f6e1c5; /* Color de fondo del contenido */
+    padding: 20px; /* Espaciado interno para el contenido */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+    display: flex; /* Usamos flexbox para organizar el contenido dentro de este div */
+    flex-direction: column; /* Organiza el contenido en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
 }
 
 #quiensoy .content h2 {
     font-size: 28px;
     color: var(--header-color);
     margin-bottom: 10px;
+    text-align: center;
 }
 
-#quiensoy .content h3 {
-    font-size: 24px;
-    color: var(--hover-color);
+#quiensoy .content h1 {
+    font-size: 36px;
+    color: var(--header-color);
     margin-bottom: 20px;
+    text-align: center;
 }
 
 #quiensoy .content p {
@@ -411,27 +432,36 @@ article:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f6e1c5; /* Mismo color de fondo para mantener la uniformidad */
 }
 
 #quiensoy .image img {
     max-width: 100%;
-    border-radius: 10px;
+    max-height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
 }
 
 /* Estilos para el artículo de Educación */
 #educacion {
     padding: 20px;
     background-color: var(--main-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e6a756; /* Borde sólido de color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     margin: 20px auto;
     max-width: 1000px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
+}
+
+#educacion:hover {
+    transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
 }
 
 #educacion h2 {
     font-size: 28px;
     color: var(--header-color);
     margin-bottom: 20px;
+    text-align: center;
 }
 
 #educacion ul {
