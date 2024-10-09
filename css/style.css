@@ -1,10 +1,10 @@
 :root {
     --header-color: #8d1a26; /* Color principal del encabezado */
-    --main-color: #f9f5f0; /* Color de fondo main */
+    --main-color: #f7dee3; /* Color de fondo main */
     --hover-color: #e6a756; /* Color de fondo al pasar el mouse */
     --text-color: #fff; /* Color del texto */
-    --button-color: #555; /* Color del botón */
-    --button-hover-color: #333; /* Color del botón al pasar el mouse */
+    --button-color: #333; /* Color del botón */
+    --button-hover-color: #ecbd7f; /* Color del botón al pasar el mouse */
     --font-family-main: 'Lora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-family-header: Arial, sans-serif; /* Fuente header */
 
@@ -98,6 +98,8 @@
     z-index: 10; /* Asegura que esté por encima de otros elementos */
     display: flex; /* Usamos flexbox para organizar el selector */
     align-items: center; /* Centra verticalmente los elementos dentro del selector */
+    background-color: var(--button-color);
+    border-radius: 5px; /* Bordes redondeados */
 }
 
 .current-language {
@@ -105,14 +107,19 @@
     align-items: center; /* Centra verticalmente el idioma actual */
     cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el idioma */
     padding: 5px; /* Espaciado interno alrededor del idioma actual */
-    border-radius: 5px; /* Bordes redondeados */
     transition: background 0.3s ease; /* Transición suave para el cambio de fondo */
     color: white; /* Color del texto del idioma actual */
 }
 
+/********ESTO NO FUNCIONA********/
 .current-language:hover {
-    background: var(--button-hover-color); /* Cambia el fondo al pasar el ratón */
+    background: transparent; /* Cambia el fondo a transparente al pasar el ratón */
 }
+
+.current-language.hover-active {
+    background: transparent; /* Mantiene el fondo transparente mientras el menú está activo */
+}
+/********************************/
 
 .language-icon {
     margin-right: 5px; /* Espacio a la derecha del ícono del idioma */
@@ -147,21 +154,10 @@
     display: block; /* Muestra las opciones al pasar el ratón sobre el selector */
 }
 
-/* PREGUNTAR XAVIER DONDE ESTÁ EL SECTION */ 
-/*****************************************/
-section {
-    display: none; /* Oculta todas las secciones por defecto */
-}
-
-section.active {
-    display: block; /* Muestra la sección activa */
-}
-/*****************************************/
-
 /* Estilos para el titulo */
 
 .titulo {
-    background-color: #f9f5f0;
+    background-color: var(--main-color);
 }
 
 .titulo h1 {
@@ -174,9 +170,8 @@ section.active {
 /* Estilos para el artículo del main de inicio*/
 
 main {
-    background-color: #f9f5f0; /* Color de fondo suave y neutro */
+    background-color: var(--main-color); /* Color de fondo suave y neutro */
     padding: 20px; /* Espaciado interno para el contenido */
-    font-family: var(--font-family-main);
 }
 
 article {
@@ -184,11 +179,19 @@ article {
     max-height: 500px; /* Altura máxima del artículo */
     margin: auto; /* Centra el artículo horizontalmente */
     display: flex; /* Usamos flexbox para organizar los elementos dentro del artículo */
-    padding: 20px; /* Agrega un padding interno alrededor del artículo */
     margin: 20px auto; /* Margen superior e inferior del artículo */
+    border: 2px solid #e6a756; /* Borde sólido de color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
+}
+
+article:hover {
+    transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
 }
 
 .content {
+    font-family: var(--font-family-main);
     flex: 1; /* Permite que este div ocupe el espacio disponible */
     max-width: 500px; /* Ancho máximo del contenido */
     max-height: 500px; /* Altura máxima del contenido */
@@ -219,7 +222,6 @@ article {
 }
 
 .parafo-articulo h2 {
-    font-family: 'Lora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     font-size: 24px; /* Tamaño de fuente para el subtítulo */
     margin-top: 10px; /* Espacio entre el subtítulo y el título */
     text-align: center; /* Centra el texto del subtítulo */
@@ -250,10 +252,11 @@ article {
 }
 
 .content button {
+    font-family: var(--font-family-header) !important; /* Asegurarse de que los botones hereden la fuente */
     background: var(--hover-color); /* Color de fondo del botón */
     color: black; /* Color del texto del botón */
     padding: 10px 20px; /* Espaciado interno del botón */
-    border: none; /* Sin borde */
+    border: 2px solid #e6a756; /* Borde sólido de color */
     border-radius: 5px; /* Bordes redondeados del botón */
     cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el botón */
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el cambio de fondo, transformación y sombra */
@@ -262,7 +265,7 @@ article {
 }
 
 .content button:hover {
-    background: var(--hover-color); /* Cambia el color de fondo al pasar el ratón */
+    background: var(--button-hover-color); /* Cambia el color de fondo al pasar el ratón */
     transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
 }
@@ -273,13 +276,19 @@ article {
 }
 
 /* Estilos para las empresas que confían en nosotros del main de inicio */
+.empresas-confian-container {
+    display: flex; /* Usamos flexbox para centrar el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    width: 100%; /* Asegura que el contenedor padre ocupe todo el ancho */
+}
 .empresas-confian {
     text-align: center; /* Centra el texto */
-    margin: 80px 40px 0 40px; /* Margen superior e inferior */
+    margin-top: 80px; /* Margen superior*/
     font-family: var(--font-family-header);
     background-color: #ebc595;
     padding: 20px; /* Espaciado interno */
     transition: background-color 0.3s ease; /* Transición suave para el cambio de fondo */
+    width: fit-content;
 }
 
 .empresas-confian h2 {
@@ -297,7 +306,7 @@ article {
 
 .logos-empresas img {
     max-width: 150px; /* Ancho máximo de los logos */
-    height: auto; /* Altura automática para mantener la proporción */
+    height: 150px; /* Altura máxima de los logos */
     opacity: 0.8; /* Opacidad de los logos */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves para la opacidad y el zoom */
 }
@@ -311,14 +320,15 @@ article {
 .portfolio {
     padding: 40px 20px; /* Espaciado interno */
     background-color: var(--main-color); /* Color de fondo */
-    font-family: var(--font-family-main);
 }
 
 .filtros {
-    display: flex; /* Usamos flexbox para organizar los botones */
+    /*Por lguna razón no se aplica la font-family*/
+    font-family: var(--font-family-header) !important; /* Asegurarse de que los botones hereden la fuente */    display: flex; /* Usamos flexbox para organizar los botones */
     justify-content: center; /* Centra los botones horizontalmente */
     gap: 10px; /* Espacio entre los botones */
     margin-bottom: 20px; /* Margen inferior */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en varias líneas si es necesario */
 }
 
 .filtro {
@@ -329,11 +339,18 @@ article {
     border-radius: 5px; /* Bordes redondeados del botón */
     cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el botón */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para el cambio de fondo y el zoom */
+    font-size: 16px; /* Tamaño de fuente base */
 }
 
 .filtro:hover {
-    background-color: var(--button-hover-color); /* Cambia el color de fondo al pasar el ratón */
+    background-color:#ecbd7f; /* Cambia el color de fondo al pasar el ratón */
     transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.filtro:active {
+    transform: translateY(1px); /* Hace que el botón se hunda ligeramente al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra menos pronunciada al hacer clic */
 }
 
 .mosaico {
@@ -351,6 +368,80 @@ article {
 
 .item img:hover {
     transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Estilos para el artículo QUI SUIS-JE? */
+#quiensoy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+#quiensoy .content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+#quiensoy .content h2 {
+    font-size: 28px;
+    color: var(--header-color);
+    margin-bottom: 10px;
+}
+
+#quiensoy .content h3 {
+    font-size: 24px;
+    color: var(--hover-color);
+    margin-bottom: 20px;
+}
+
+#quiensoy .content p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+#quiensoy .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#quiensoy .image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Estilos para el artículo de Educación */
+#educacion {
+    padding: 20px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+#educacion h2 {
+    font-size: 28px;
+    color: var(--header-color);
+    margin-bottom: 20px;
+}
+
+#educacion ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+#educacion li {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 /* Pie de página */
@@ -394,52 +485,240 @@ footer {
     font-weight: lighter; /* Peso de fuente más ligero para el crédito */
     padding: 1rem 0; /* Espacio superior e inferior para el crédito */
 }
-/*=======
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .language-selector {
-    margin-right: 20px;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  section {
-    display: none;
-  }
-  
-  section.active {
-    display: block;
-  }
->>>>>>> aee92059731b0057bd9dddaa9b528bc716e73469
-*/
+
+
+
+
+
+
+
+
+
+
+
+/* Media queries para pantallas más pequeñas */
+
+@media (max-width: 970px) {
+    .header-image {
+        height: 180px; /* Reducir la altura de la imagen de encabezado */
+    }
+
+    .logo-overlay {
+        width: 120px; /* Reducir el tamaño del logo */
+        height: 120px;
+    }
+
+    .menu ul li a {
+        font-size: 15px; /* Reducir el tamaño de fuente de los enlaces del menú */
+    }
+
+    .titulo h1 {
+        font-size: 28px; /* Reducir el tamaño de fuente del título */
+    }
+
+    .content {
+        max-width: 350px; /* Reducir el ancho máximo del contenido */
+        max-height: 350px; /* Reducir la altura máxima del contenido */
+    }
+
+    .image {
+        max-width: 350px; /* Reducir el ancho máximo de la imagen */
+        max-height: 350px; /* Reducir la altura máxima de la imagen */
+    }
+
+    .parafo-articulo h2 {
+        font-size: 18px; /* Reducir el tamaño de fuente del subtítulo */
+    }
+
+    .parafo-articulo h1 {
+        font-size: 24px; /* Reducir el tamaño de fuente del título */
+    }
+
+    .parafo-articulo p {
+        font-size: 14px; /* Reducir el tamaño de fuente del párrafo */
+    }
+
+    .content button {
+        padding: 8px 16px; /* Reducir el espaciado interno del botón */
+        font-size: 14px; /* Reducir el tamaño de fuente del botón */
+    }
+
+    .empresas-confian h2 {
+        font-size: 18px; /* Reducir el tamaño de fuente del título de las empresas */
+    }
+
+    .logos-empresas img {
+        max-width: 90px; /* Reducir el ancho máximo de los logos */
+        height: 90px; /* Reducir la altura máxima de los logos */
+    }
+
+    .share a {
+        height: 3.5rem; /* Reducir el tamaño de los íconos de compartir */
+        width: 3.5rem;
+        line-height: 3.5rem;
+        font-size: 1.8rem;
+    }
+
+    .credit {
+        font-size: 1rem; /* Reducir el tamaño de fuente del crédito */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header-image {
+        height: 150px; /* Reducir aún más la altura de la imagen de encabezado */
+    }
+
+    .logo-overlay {
+        width: 100px; /* Reducir aún más el tamaño del logo */
+        height: 100px;
+    }
+
+    .menu ul li a {
+        font-size: 14px; /* Reducir aún más el tamaño de fuente de los enlaces del menú */
+    }
+
+    .titulo h1 {
+        font-size: 24px; /* Reducir aún más el tamaño de fuente del título */
+    }
+
+    .content {
+        max-width: 300px; /* Reducir aún más el ancho máximo del contenido */
+        max-height: 300px; /* Reducir aún más la altura máxima del contenido */
+    }
+
+    .image {
+        max-width: 300px; /* Reducir aún más el ancho máximo de la imagen */
+        max-height: 300px; /* Reducir aún más la altura máxima de la imagen */
+    }
+
+    .parafo-articulo {
+        padding: 10px; /* Reducir el espaciado interno del texto */
+    }
+
+    .parafo-articulo h2 {
+        font-size: 16px; /* Reducir aún más el tamaño de fuente del subtítulo */
+    }
+
+    .parafo-articulo h1 {
+        font-size: 20px; /* Reducir aún más el tamaño de fuente del título */
+    }
+
+    .parafo-articulo p {
+        font-size: 12px; /* Reducir aún más el tamaño de fuente del párrafo */
+    }
+
+    .content button {
+        padding: 6px 12px; /* Reducir aún más el espaciado interno del botón */
+        font-size: 12px; /* Reducir aún más el tamaño de fuente del botón */
+    }
+
+    .empresas-confian h2 {
+        font-size: 16px; /* Reducir aún más el tamaño de fuente del título de las empresas */
+    }
+
+    .logos-empresas img {
+        max-width: 80px; /* Reducir aún más el ancho máximo de los logos */
+        height: 80px; /* Reducir aún más la altura máxima de los logos */
+    }
+
+    .filtro {
+        padding: 8px 16px; /* Reducir el espaciado interno en pantallas más pequeñas */
+        font-size: 14px; /* Reducir el tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .filtros {
+        gap: 8px; /* Reducir el espacio entre los botones en pantallas más pequeñas */
+    }
+
+    .share a {
+        height: 3rem; /* Reducir aún más el tamaño de los íconos de compartir */
+        width: 3rem;
+        line-height: 3rem;
+        font-size: 1.6rem;
+    }
+
+    .credit {
+        font-size: 0.9rem; /* Reducir aún más el tamaño de fuente del crédito */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-image {
+        height: 120px; /* Reducir aún más la altura de la imagen de encabezado */
+    }
+
+    .logo-overlay {
+        width: 80px; /* Reducir aún más el tamaño del logo */
+        height: 80px;
+    }
+
+    .menu ul li a {
+        font-size: 12px; /* Reducir aún más el tamaño de fuente de los enlaces del menú */
+    }
+
+    .titulo h1 {
+        font-size: 20px; /* Reducir aún más el tamaño de fuente del título */
+    }
+
+    .content {
+        max-width: 250px; /* Reducir aún más el ancho máximo del contenido */
+        max-height: 250px; /* Reducir aún más la altura máxima del contenido */
+    }
+
+    .image {
+        max-width: 250px; /* Reducir aún más el ancho máximo de la imagen */
+        max-height: 250px; /* Reducir aún más la altura máxima de la imagen */
+    }
+
+    .parafo-articulo {
+        padding: 5px; /* Reducir aún más el espaciado interno del texto */
+    }
+
+    .parafo-articulo h2 {
+        font-size: 14px; /* Reducir aún más el tamaño de fuente del subtítulo */
+    }
+
+    .parafo-articulo h1 {
+        font-size: 18px; /* Reducir aún más el tamaño de fuente del título */
+    }
+
+    .parafo-articulo p {
+        font-size: 10px; /* Reducir aún más el tamaño de fuente del párrafo */
+    }
+
+    .content button {
+        padding: 4px 8px; /* Reducir aún más el espaciado interno del botón */
+        font-size: 10px; /* Reducir aún más el tamaño de fuente del botón */
+    }
+
+    .empresas-confian h2 {
+        font-size: 14px; /* Reducir aún más el tamaño de fuente del título de las empresas */
+    }
+
+    .logos-empresas img {
+        max-width: 60px; /* Reducir aún más el ancho máximo de los logos */
+        height: 60px; /* Reducir aún más la altura máxima de los logos */
+    }
+
+    .filtro {
+        padding: 6px 12px; /* Reducir aún más el espaciado interno en pantallas muy pequeñas */
+        font-size: 12px; /* Reducir aún más el tamaño de fuente en pantallas muy pequeñas */
+    }
+
+    .filtros {
+        gap: 6px; /* Reducir aún más el espacio entre los botones en pantallas muy pequeñas */
+    }
+
+    .share a {
+        height: 2.5rem; /* Reducir aún más el tamaño de los íconos de compartir */
+        width: 2.5rem;
+        line-height: 2.5rem;
+        font-size: 1.4rem;
+    }
+
+    .credit {
+        font-size: 0.8rem; /* Reducir aún más el tamaño de fuente del crédito */
+    }
+}

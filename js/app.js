@@ -59,3 +59,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mostrar la sección correspondiente al cargar la página
     handleRouteChange();
   });
+
+
+/*ESTO NO FUNCIONA*/
+/*Para añadir la clase hover-active cuando el menú esté activo en el botón de idiomas*/
+document.addEventListener('DOMContentLoaded', function() {
+  const languageSelector = document.querySelector('.language-selector');
+  const currentLanguage = document.querySelector('.current-language');
+
+  languageSelector.addEventListener('mouseenter', function() {
+      currentLanguage.classList.add('hover-active');
+  });
+
+  languageSelector.addEventListener('mouseleave', function() {
+      currentLanguage.classList.remove('hover-active');
+  });
+});
