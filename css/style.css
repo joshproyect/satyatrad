@@ -1,6 +1,7 @@
 :root {
     --header-color: #8d1a26; /* Color principal del encabezado */
     --main-color: #f9f5f0; /* Color de fondo main */
+    --contenedor-color: #f6e1c5; /* Color de fondo del contenido */
     --hover-color: #e6a756; /* Color de fondo al pasar el mouse */
     --text-color: #fff; /* Color del texto */
     --button-color: #333; /* Color del botón */
@@ -201,7 +202,7 @@ main {
     flex: 1; /* Permite que este div ocupe el espacio disponible */
     max-width: 500px; /* Ancho máximo del contenido */
     max-height: 500px; /* Altura máxima del contenido */
-    background-color: #f6e1c5; /* Color de fondo del contenido */
+    background-color: var(--contenedor-color); /* Color de fondo del contenido */
     padding: 20px; /* Espaciado interno para el contenido */
     box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
     display: flex; /* Usamos flexbox para organizar el contenido dentro de este div */
@@ -329,12 +330,12 @@ main {
 }
 
 .filtros {
-    /*Por lguna razón no se aplica la font-family*/
-    font-family: var(--font-family-header) !important; /* Asegurarse de que los botones hereden la fuente */    display: flex; /* Usamos flexbox para organizar los botones */
     justify-content: center; /* Centra los botones horizontalmente */
     gap: 10px; /* Espacio entre los botones */
     margin-bottom: 20px; /* Margen inferior */
     flex-wrap: wrap; /* Permite que los botones se envuelvan en varias líneas si es necesario */
+    /*Por alguna razón no se aplica la font-family*/
+    font-family: var(--font-family-header) !important; /* Asegurarse de que los botones hereden la fuente */    display: flex; /* Usamos flexbox para organizar los botones */
 }
 
 .filtro {
@@ -388,18 +389,16 @@ main {
     border: 2px solid #e6a756; /* Borde sólido de color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
+    background-color: var(--contenedor-color);
+    font-family: var(--font-family-main);
+    flex-direction: column; /* Organiza el contenido en columna */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 20px; /* Espaciado interno */
 }
 
 #quiensoy:hover {
     transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
-}
-
-/* Estilos para el artículo "quiensoy" */
-#quiensoy {
-    flex-direction: column; /* Organiza el contenido en columna */
-    align-items: center; /* Centra verticalmente los elementos */
-    padding: 20px; /* Espaciado interno */
 }
 
 /* Estilos para los encabezados del artículo "quiensoy" */
@@ -420,6 +419,7 @@ main {
 
 #quiensoy h2 {
     font-size: 24px; /* Tamaño de fuente del h2 */
+    color: black;
 }
 
 /* Estilos para el contenido del artículo "quiensoy" */
@@ -433,7 +433,7 @@ main {
 /* Estilos para los párrafos del artículo "quiensoy" */
 #quiensoy .quiensoy-p {
     flex: 1; /* Hace que los párrafos ocupen el espacio restante */
-    font-family: var(--font-family-text); /* Fuente del texto */
+    font-family: var(--font-family-main); /* Fuente del texto */
     font-size: 18px; /* Tamaño de fuente */
     line-height: 1.6; /* Altura de línea */
     color: black; /* Color del texto */
@@ -453,32 +453,9 @@ main {
 #quiensoy .image-quiensoy img {
     width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
     height: auto; /* Altura automática para mantener la proporción */
-    border-radius: 5px; /* Bordes redondeados de la imagen */
+    border-radius: 50%; /* Bordes redondeados de la imagen */
 }
 
-/* Estilos para el artículo "educacion" */
-#educacion {
-    padding: 20px; /* Espaciado interno */
-    margin: 0 auto; /* Centrar el contenido */
-    max-width: 1200px; /* Ancho máximo del contenido */
-    border: 2px solid #e6a756; /* Borde sólido de color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
-}
-
-#educacion:hover {
-    transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
-}
-
-/* Estilos para el encabezado del artículo "educacion" */
-#educacion h2 {
-    font-family: var(--font-family-header); /* Fuente del encabezado */
-    font-size: 24px; /* Tamaño de fuente del encabezado */
-    color: var(--header-color); /* Color del encabezado */
-    margin-bottom: 20px; /* Margen inferior del encabezado */
-    text-align: center; /* Centra el texto */
-}
 
 /* Estilos para el artículo "educacion" */
 #educacion {
@@ -491,7 +468,18 @@ main {
     border: 2px solid #e6a756; /* Borde sólido de color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
+    background-color: var(--contenedor-color); /* Color de fondo del contenido */
+    font-family: var(--font-family-main);
 }
+/* Estilos para el encabezado del artículo "educacion" */
+#educacion h2 {
+    font-family: var(--font-family-header); /* Fuente del encabezado */
+    font-size: 24px; /* Tamaño de fuente del encabezado */
+    color: var(--header-color); /* Color del encabezado */
+    margin-bottom: 20px; /* Margen inferior del encabezado */
+    text-align: center; /* Centra el texto */
+}
+
 
 #educacion:hover {
     transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
@@ -640,6 +628,7 @@ main {
     display: flex;
     justify-content: space-between; /* Distribuye el espacio entre los colaboradores */
     width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    font-family: var(--font-family-header);
 }
 
 .colaborador {
@@ -653,6 +642,11 @@ main {
     border-radius: 10px; /* Borde redondeado */
     box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el ancho */
     min-width: calc(25% - 20px); /* Asegura que cada colaborador tenga al menos un cuarto del ancho */
+    transition: transform 0.3s ease;
+}
+
+.colaborador:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
 }
 
 .colaborador h3 {
@@ -675,79 +669,6 @@ main {
     color: var(--button-hover-color);
 }
 
-/* Media queries para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .div-colaboradores {
-        flex-wrap: wrap; /* Permite que los colaboradores se ajusten en varias líneas */
-    }
-
-    .colaborador {
-        flex: 1 1 calc(50% - 20px); /* Distribuye el espacio entre 2 divs por fila */
-        min-width: calc(50% - 20px); /* Asegura que cada colaborador tenga al menos la mitad del ancho */
-    }
-}
-
-@media (max-width: 480px) {
-    .colaborador {
-        flex: 1 1 100%; /* Un div por fila */
-        min-width: 100%; /* Asegura que cada colaborador ocupe todo el ancho */
-    }
-
-    .colaborador a {
-        font-size: 18px; /* Reduce el tamaño de fuente de los enlaces */
-    }
-}
-
-/* Media queries para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .contacto {
-        max-width: 90%; /* Reducir el ancho máximo del contenido */
-    }
-
-    .contacto-info h2 {
-        font-size: 20px; /* Reducir el tamaño de fuente del título */
-    }
-    
-    .contacto-info li {
-        font-size: 16px; /* Reducir el tamaño de fuente para los elementos de la lista */
-        flex-direction: column; /* Cambia la dirección del flexbox a columna */
-        align-items: flex-start; /* Alinea los elementos a la izquierda */
-    }
-
-    .contacto-info li strong {
-        margin-bottom: 5px; /* Espacio entre el <strong> y el <span> */
-    }
-    
-    .contacto-info li span {
-        text-align: left; /* Alinea el texto a la izquierda */
-    }
-}
-
-
-@media (max-width: 480px) {
-    .contacto-info h2 {
-        font-size: 18px; /* Reducir aún más el tamaño de fuente del título */
-    }
-
-    .contacto-info li {
-        font-size: 14px; /* Reducir aún más el tamaño de fuente para los elementos de la lista */
-        flex-direction: column; /* Cambia la dirección del flexbox a columna */
-        align-items: flex-start; /* Alinea los elementos a la izquierda */
-    }
-
-    .contacto-info li strong {
-        margin-bottom: 5px; /* Espacio entre el <strong> y el <span> */
-    }
-
-    .contacto-info li span {
-        text-align: left; /* Alinea el texto a la izquierda */
-        white-space: normal; /* Permite que el texto se ajuste al ancho del contenedor */
-    }
-
-    .contacto-info li a {
-        word-break: break-all; /* Permite que las palabras largas se dividan y se ajusten al ancho del contenedor */
-    }
-}
 /* Pie de página */
 footer {
     background: var(--header-color); /* Color de fondo del pie de página */
@@ -791,9 +712,18 @@ footer {
 }
 
 
+/* Media queries para pantallas más pequeñas que 1500px */
+@media (max-width: 1500px) {
+    .div-colaboradores {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas adicionales */
+        width: 65%; /* Asegura que el contenedor ocupe todo el ancho */
+    }
 
-
-
+    .colaborador {
+        flex: 1 1 calc(50% - 20px); /* Cada colaborador ocupa el 50% del ancho del contenedor */
+        margin: 10px;
+    }
+}
 
 /* Media queries para pantallas más pequeñas que 1200px */
 @media (max-width: 1200px) {
@@ -813,6 +743,10 @@ footer {
         margin-bottom: 20px; /* Añadir margen inferior para separar la imagen del contenido */
     }
 
+    #quiensoy .image-quiensoy img {
+        width: 60%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    }
+
     #quiensoy .quiensoy-p {
         text-align: center; /* Centra el texto */
     }
@@ -826,6 +760,10 @@ footer {
     #educacion .formation, #educacion .servicios {
         max-width: 100%; /* Ancho máximo de las secciones */
         margin-bottom: 20px; /* Añadir margen inferior para separar las secciones */
+    }
+
+    .div-colaboradores {
+        width: 80%; /* Asegura que el contenedor ocupe todo el ancho */
     }
 }
 
@@ -882,6 +820,14 @@ footer {
     .logos-empresas img {
         max-width: 90px; /* Reducir el ancho máximo de los logos */
         height: 90px; /* Reducir la altura máxima de los logos */
+    }
+
+    .div-colaboradores {
+        width: 90%; /* Asegura que el contenedor ocupe todo el ancho */
+    }
+
+    .colaborador a {
+        font-size: 17px;
     }
 
     .share a {
@@ -964,6 +910,37 @@ footer {
         height: 80px; /* Reducir aún más la altura máxima de los logos */
     }
 
+    .contacto {
+        max-width: 90%; /* Reducir el ancho máximo del contenido */
+    }
+
+    .contacto-info h2 {
+        font-size: 20px; /* Reducir el tamaño de fuente del título */
+    }
+    
+    .contacto-info li {
+        font-size: 16px; /* Reducir el tamaño de fuente para los elementos de la lista */
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+
+    .contacto-info li strong {
+        margin-bottom: 5px; /* Espacio entre el <strong> y el <span> */
+    }
+    
+    .contacto-info li span {
+        text-align: left; /* Alinea el texto a la izquierda */
+    }
+
+    .colaborador {
+        flex: 1 1 100%; /* Un div por fila */
+        min-width: 100%; /* Asegura que cada colaborador ocupe todo el ancho */
+    }
+
+    .colaborador a {
+        font-size: 18px; /* Reduce el tamaño de fuente de los enlaces */
+    }
+
     .share a {
         height: 3rem; /* Reducir aún más el tamaño de los íconos de compartir */
         width: 3rem;
@@ -978,6 +955,10 @@ footer {
 
 /* Media queries para pantallas de 480px */
 @media (max-width: 480px) {
+    .menu ul li a {
+        font-size: 10px; /* Reducir el tamaño de fuente de los enlaces del menú */
+    }
+
     /* Estilos para el artículo "inicio" */
     #inicio {
         max-width: 100%; /* Ancho máximo del artículo */
@@ -1031,6 +1012,29 @@ footer {
         height: 60px; /* Reducir aún más la altura máxima de los logos */
     }
 
+    .contacto-info h2 {
+        font-size: 18px; /* Reducir aún más el tamaño de fuente del título */
+    }
+
+    .contacto-info li {
+        font-size: 14px; /* Reducir aún más el tamaño de fuente para los elementos de la lista */
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+
+    .contacto-info li strong {
+        margin-bottom: 5px; /* Espacio entre el <strong> y el <span> */
+    }
+
+    .contacto-info li span {
+        text-align: left; /* Alinea el texto a la izquierda */
+        white-space: normal; /* Permite que el texto se ajuste al ancho del contenedor */
+    }
+
+    .contacto-info li a {
+        word-break: break-all; /* Permite que las palabras largas se dividan y se ajusten al ancho del contenedor */
+    }
+
     .share a {
         height: 2.5rem; /* Reducir aún más el tamaño de los íconos de compartir */
         width: 2.5rem;
@@ -1040,6 +1044,12 @@ footer {
 
     .credit {
         font-size: 0.8rem; /* Reducir aún más el tamaño de fuente del crédito */
+    }
+}
+
+@media (max-width: 420px){
+    .colaborador a {
+        font-size: 14px; /* Reduce el tamaño de fuente de los enlaces */
     }
 }
 
