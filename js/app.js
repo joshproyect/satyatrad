@@ -75,3 +75,35 @@ document.addEventListener('DOMContentLoaded', function() {
       currentLanguage.classList.remove('hover-active');
   });
 });
+
+/*PORTFOLIO: Manejar los eventos de clic en los botones y mostrar/ocultar los elementos .item según el filtro seleccionado. */
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.item');
+
+  // Mostrar todos los cómics al cargar la página
+  items.forEach(item => {
+      item.style.display = 'block';
+  });
+
+  const filtros = document.querySelectorAll('.filtro');
+
+  filtros.forEach(filtro => {
+      filtro.addEventListener('click', function() {
+          const filtroSeleccionado = this.getAttribute('data-filtro');
+
+          items.forEach(item => {
+              const itemFiltros = item.getAttribute('data-filtro').split(' ');
+
+              if (filtroSeleccionado === 'tout') {
+                  item.style.display = 'block'; // Mostrar todos los items
+              } else {
+                  if (itemFiltros.includes(filtroSeleccionado)) {
+                      item.style.display = 'block'; // Mostrar el item si coincide con el filtro
+                  } else {
+                      item.style.display = 'none'; // Ocultar el item si no coincide con el filtro
+                  }
+              }
+          });
+      });
+  });
+});
