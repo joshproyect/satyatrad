@@ -656,17 +656,16 @@ main {
 
 .colaborador p {
     font-size: 14px;
-    margin-bottom: 10px;
 }
 
 .colaborador a {
-    color: var(--hover-color);
+    color: black;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .colaborador a:hover {
-    color: var(--button-hover-color);
+    color: var(--header-color);
 }
 
 /* Pie de página */
@@ -826,10 +825,6 @@ footer {
         width: 90%; /* Asegura que el contenedor ocupe todo el ancho */
     }
 
-    .colaborador a {
-        font-size: 17px;
-    }
-
     .share a {
         height: 3.5rem; /* Reducir el tamaño de los íconos de compartir */
         width: 3.5rem;
@@ -937,10 +932,6 @@ footer {
         min-width: 100%; /* Asegura que cada colaborador ocupe todo el ancho */
     }
 
-    .colaborador a {
-        font-size: 18px; /* Reduce el tamaño de fuente de los enlaces */
-    }
-
     .share a {
         height: 3rem; /* Reducir aún más el tamaño de los íconos de compartir */
         width: 3rem;
@@ -1044,12 +1035,6 @@ footer {
 
     .credit {
         font-size: 0.8rem; /* Reducir aún más el tamaño de fuente del crédito */
-    }
-}
-
-@media (max-width: 420px){
-    .colaborador a {
-        font-size: 14px; /* Reduce el tamaño de fuente de los enlaces */
     }
 }
 
