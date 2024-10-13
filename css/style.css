@@ -1,10 +1,11 @@
 :root {
     --header-color: #8d1a26; /* Color principal del encabezado */
     --main-color: #f9f5f0; /* Color de fondo main */
+    --contenedor-color: #f6e1c5; /* Color de fondo del contenido */
     --hover-color: #e6a756; /* Color de fondo al pasar el mouse */
     --text-color: #fff; /* Color del texto */
-    --button-color: #555; /* Color del botón */
-    --button-hover-color: #333; /* Color del botón al pasar el mouse */
+    --button-color: #333; /* Color del botón */
+    --button-hover-color: #ecbd7f; /* Color del botón al pasar el mouse */
     --font-family-main: 'Lora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-family-header: Arial, sans-serif; /* Fuente header */
 
@@ -89,6 +90,11 @@
 
 .menu ul li a:hover {
     color: var(--hover-color); /* Cambia el color al pasar el ratón */
+    transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
+}
+
+.menu ul li a:active {
+    transform: translateY(1px); /* Hace que el botón se hunda ligeramente al hacer clic */
 }
 
 .language-selector {
@@ -98,6 +104,8 @@
     z-index: 10; /* Asegura que esté por encima de otros elementos */
     display: flex; /* Usamos flexbox para organizar el selector */
     align-items: center; /* Centra verticalmente los elementos dentro del selector */
+    background-color: var(--button-color);
+    border-radius: 5px; /* Bordes redondeados */
 }
 
 .current-language {
@@ -105,14 +113,19 @@
     align-items: center; /* Centra verticalmente el idioma actual */
     cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el idioma */
     padding: 5px; /* Espaciado interno alrededor del idioma actual */
-    border-radius: 5px; /* Bordes redondeados */
     transition: background 0.3s ease; /* Transición suave para el cambio de fondo */
     color: white; /* Color del texto del idioma actual */
 }
 
+/********ESTO NO FUNCIONA********/
 .current-language:hover {
-    background: var(--button-hover-color); /* Cambia el fondo al pasar el ratón */
+    background: transparent; /* Cambia el fondo a transparente al pasar el ratón */
 }
+
+.current-language.hover-active {
+    background: transparent; /* Mantiene el fondo transparente mientras el menú está activo */
+}
+/********************************/
 
 .language-icon {
     margin-right: 5px; /* Espacio a la derecha del ícono del idioma */
@@ -147,21 +160,10 @@
     display: block; /* Muestra las opciones al pasar el ratón sobre el selector */
 }
 
-/* PREGUNTAR XAVIER DONDE ESTÁ EL SECTION */ 
-/*****************************************/
-section {
-    display: none; /* Oculta todas las secciones por defecto */
-}
-
-section.active {
-    display: block; /* Muestra la sección activa */
-}
-/*****************************************/
-
 /* Estilos para el titulo */
 
 .titulo {
-    background-color: #f9f5f0;
+    background-color: var(--main-color);
 }
 
 .titulo h1 {
@@ -171,28 +173,36 @@ section.active {
     padding-top: 30px; /* Margen superior del titulo */
 }
 
-/* Estilos para el artículo del main de inicio*/
-
+/* Estilos generales para el main */
 main {
-    background-color: #f9f5f0; /* Color de fondo suave y neutro */
-    padding: 20px; /* Espaciado interno para el contenido */
-    font-family: var(--font-family-main);
+    background-color: var(--main-color); /* Color de fondo suave y neutro */
+    padding: 40px; /* Espaciado interno para el contenido */
+    margin: 0 auto; /* Centrar el contenido */
 }
 
-article {
+/* Estilos article inicio */
+#inicio {
     max-width: 1000px; /* Ancho máximo del artículo */
     max-height: 500px; /* Altura máxima del artículo */
     margin: auto; /* Centra el artículo horizontalmente */
     display: flex; /* Usamos flexbox para organizar los elementos dentro del artículo */
-    padding: 20px; /* Agrega un padding interno alrededor del artículo */
     margin: 20px auto; /* Margen superior e inferior del artículo */
+    border: 2px solid #e6a756; /* Borde sólido de color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
 }
 
-.content {
+#inicio:hover {
+    transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+#inicio .content {
+    font-family: var(--font-family-main);
     flex: 1; /* Permite que este div ocupe el espacio disponible */
     max-width: 500px; /* Ancho máximo del contenido */
     max-height: 500px; /* Altura máxima del contenido */
-    background-color: #f6e1c5; /* Color de fondo del contenido */
+    background-color: var(--contenedor-color); /* Color de fondo del contenido */
     padding: 20px; /* Espaciado interno para el contenido */
     box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
     display: flex; /* Usamos flexbox para organizar el contenido dentro de este div */
@@ -201,7 +211,7 @@ article {
     align-items: center; /* Centra el contenido horizontalmente */
 }
 
-.image {
+#inicio .image {
     flex: 1; /* Permite que este div ocupe el espacio disponible */
     max-width: 500px; /* Ancho máximo de la imagen */
     max-height: 500px; /* Altura máxima de la imagen */
@@ -211,49 +221,49 @@ article {
     background-color: #f6e1c5; /* Mismo color de fondo para mantener la uniformidad */
 }
 
-.image img {
+#inicio .image img {
     width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
     max-height: 90%; /* Limita la altura máxima de la imagen al 90% de su contenedor */
     max-width: 90%; /* Limita el ancho máximo de la imagen al 90% de su contenedor */
     border-radius: 50%; /* Hace que la imagen sea redonda */
 }
 
-.parafo-articulo h2 {
-    font-family: 'Lora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+#inicio .parafo-articulo h2 {
     font-size: 24px; /* Tamaño de fuente para el subtítulo */
     margin-top: 10px; /* Espacio entre el subtítulo y el título */
     text-align: center; /* Centra el texto del subtítulo */
 }
 
-.parafo-articulo h1 {
+#inicio .parafo-articulo h1 {
     font-size: 36px; /* Tamaño de fuente para el título */
     color: var(--header-color); /* Color del texto del encabezado */
     text-align: center; /* Centra el texto del encabezado */
     padding: 0 0 20px 0; /* Margen superior y inferior del titulo */
 }
 
-.parafo-articulo p {
+#inicio .parafo-articulo p {
     font-size: 18px; /* Tamaño de la fuente del párrafo */
     padding: 5px; /* Espacio interno alrededor del texto */
     text-align: center; /* Centra el texto del párrafo */
 }
 
-.boton-articulo {
+#inicio .boton-articulo {
     display: flex; /* Usamos flexbox para centrar el botón */
     justify-content: center; /* Centra el botón horizontalmente */
     margin-top: 20px; /* Espacio superior para separar el botón del párrafo */
 }
 
-.boton-articulo button a {
+#inicio .boton-articulo button a {
     color: inherit; /* Hereda el color del texto del botón */
     text-decoration: none; /* Elimina el subrayado del enlace */
 }
 
-.content button {
+#inicio .content button {
+    font-family: var(--font-family-header) !important; /* Asegurarse de que los botones hereden la fuente */
     background: var(--hover-color); /* Color de fondo del botón */
     color: black; /* Color del texto del botón */
     padding: 10px 20px; /* Espaciado interno del botón */
-    border: none; /* Sin borde */
+    border: 2px solid #e6a756; /* Borde sólido de color */
     border-radius: 5px; /* Bordes redondeados del botón */
     cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el botón */
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el cambio de fondo, transformación y sombra */
@@ -261,25 +271,31 @@ article {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
 }
 
-.content button:hover {
-    background: var(--hover-color); /* Cambia el color de fondo al pasar el ratón */
+#inicio .content button:hover {
+    background: var(--button-hover-color); /* Cambia el color de fondo al pasar el ratón */
     transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
 }
 
-.content button:active {
+#inicio .content button:active {
     transform: translateY(1px); /* Hace que el botón se hunda ligeramente al hacer clic */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra menos pronunciada al hacer clic */
 }
 
 /* Estilos para las empresas que confían en nosotros del main de inicio */
+.empresas-confian-container {
+    display: flex; /* Usamos flexbox para centrar el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    width: 100%; /* Asegura que el contenedor padre ocupe todo el ancho */
+}
 .empresas-confian {
     text-align: center; /* Centra el texto */
-    margin: 80px 40px 0 40px; /* Margen superior e inferior */
+    margin-top: 80px; /* Margen superior*/
     font-family: var(--font-family-header);
     background-color: #ebc595;
     padding: 20px; /* Espaciado interno */
     transition: background-color 0.3s ease; /* Transición suave para el cambio de fondo */
+    width: fit-content;
 }
 
 .empresas-confian h2 {
@@ -297,7 +313,7 @@ article {
 
 .logos-empresas img {
     max-width: 150px; /* Ancho máximo de los logos */
-    height: auto; /* Altura automática para mantener la proporción */
+    height: 150px; /* Altura máxima de los logos */
     opacity: 0.8; /* Opacidad de los logos */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves para la opacidad y el zoom */
 }
@@ -311,14 +327,15 @@ article {
 .portfolio {
     padding: 40px 20px; /* Espaciado interno */
     background-color: var(--main-color); /* Color de fondo */
-    font-family: var(--font-family-main);
 }
 
 .filtros {
-    display: flex; /* Usamos flexbox para organizar los botones */
     justify-content: center; /* Centra los botones horizontalmente */
     gap: 10px; /* Espacio entre los botones */
     margin-bottom: 20px; /* Margen inferior */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en varias líneas si es necesario */
+    /*Por alguna razón no se aplica la font-family*/
+    font-family: var(--font-family-header) !important; /* Asegurarse de que los botones hereden la fuente */    display: flex; /* Usamos flexbox para organizar los botones */
 }
 
 .filtro {
@@ -329,11 +346,18 @@ article {
     border-radius: 5px; /* Bordes redondeados del botón */
     cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el botón */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para el cambio de fondo y el zoom */
+    font-size: 16px; /* Tamaño de fuente base */
 }
 
 .filtro:hover {
-    background-color: var(--button-hover-color); /* Cambia el color de fondo al pasar el ratón */
+    background-color:#ecbd7f; /* Cambia el color de fondo al pasar el ratón */
     transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.filtro:active {
+    transform: translateY(1px); /* Hace que el botón se hunda ligeramente al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra menos pronunciada al hacer clic */
 }
 
 .mosaico {
@@ -344,13 +368,304 @@ article {
 
 .item img {
     width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
-    height: auto; /* Altura automática para mantener la proporción */
+    height: 300px; /* Alto fijo para todas las imágenes */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionarla */
     border-radius: 5px; /* Bordes redondeados de las imágenes */
     transition: transform 0.3s ease; /* Transición suave para el zoom */
 }
 
 .item img:hover {
     transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Estilos para el artículo "quiensoy" */
+#quiensoy {
+    margin: 0 auto; /* Centrar el contenido */
+    max-width: 1200px; /* Ancho máximo del contenido */
+    display: flex; /* Usamos flexbox para organizar el contenido */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+    gap: 20px; /* Espacio entre los elementos */
+    margin-bottom: 40px; /* Margen inferior entre artículos */
+    border: 2px solid #e6a756; /* Borde sólido de color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
+    background-color: var(--contenedor-color);
+    font-family: var(--font-family-main);
+    flex-direction: column; /* Organiza el contenido en columna */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 20px; /* Espaciado interno */
+}
+
+#quiensoy:hover {
+    transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+/* Estilos para los encabezados del artículo "quiensoy" */
+#quiensoy .quiensoy-h {
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Margen inferior para separar los encabezados del texto */
+}
+
+#quiensoy h1, #quiensoy h2 {
+    font-family: var(--font-family-header); /* Fuente de los encabezados */
+    color: var(--header-color); /* Color de los encabezados */
+    margin: 0; /* Elimina el margen para evitar que se salgan del contenedor */
+}
+
+#quiensoy h1 {
+    font-size: 36px; /* Tamaño de fuente del h1 */
+}
+
+#quiensoy h2 {
+    font-size: 24px; /* Tamaño de fuente del h2 */
+    color: black;
+}
+
+/* Estilos para el contenido del artículo "quiensoy" */
+#quiensoy .content-quiensoy {
+    display: flex; /* Usamos flexbox para organizar el contenido */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+    gap: 40px; /* Espacio entre los elementos */
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+}
+
+/* Estilos para los párrafos del artículo "quiensoy" */
+#quiensoy .quiensoy-p {
+    flex: 1; /* Hace que los párrafos ocupen el espacio restante */
+    font-family: var(--font-family-main); /* Fuente del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    line-height: 1.6; /* Altura de línea */
+    color: black; /* Color del texto */
+    margin: 0; /* Elimina el margen para evitar que se salgan del contenedor */
+    text-align: justify;
+}
+
+/* Estilos para la imagen del artículo "quiensoy" */
+#quiensoy .image-quiensoy {
+    flex: 1; /* Hace que la imagen ocupe el espacio restante */
+    max-width: 50%; /* Ancho máximo de la imagen */
+    display: flex; /* Usamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+#quiensoy .image-quiensoy img {
+    width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    border-radius: 50%; /* Bordes redondeados de la imagen */
+}
+
+
+/* Estilos para el artículo "educacion" */
+#educacion {
+    display: flex; /* Usamos flexbox para organizar el contenido */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+    gap: 40px; /* Espacio entre los elementos */
+    padding: 20px; /* Espaciado interno */
+    margin: 0 auto; /* Centrar el contenido */
+    max-width: 1200px; /* Ancho máximo del contenido */
+    border: 2px solid #e6a756; /* Borde sólido de color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
+    background-color: var(--contenedor-color); /* Color de fondo del contenido */
+    font-family: var(--font-family-main);
+}
+/* Estilos para el encabezado del artículo "educacion" */
+#educacion h2 {
+    font-family: var(--font-family-header); /* Fuente del encabezado */
+    font-size: 24px; /* Tamaño de fuente del encabezado */
+    color: var(--header-color); /* Color del encabezado */
+    margin-bottom: 20px; /* Margen inferior del encabezado */
+    text-align: center; /* Centra el texto */
+}
+
+
+#educacion:hover {
+    transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+/* Estilos para la sección "formation" */
+#educacion .formation {
+    flex: 1; /* Hace que la sección ocupe el espacio restante */
+    max-width: 50%; /* Ancho máximo de la sección */
+}
+
+#educacion .formation h2 {
+    font-family: var(--font-family-header); /* Fuente del encabezado */
+    font-size: 24px; /* Tamaño de fuente del encabezado */
+    color: var(--header-color); /* Color del encabezado */
+    margin-bottom: 20px; /* Margen inferior del encabezado */
+}
+
+#educacion .formation ul {
+    list-style-type: disc; /* Tipo de viñeta de la lista */
+    padding-left: 20px; /* Espaciado interno a la izquierda de la lista */
+    font-family: var(--font-family-text); /* Fuente del texto de la lista */
+    font-size: 18px; /* Tamaño de fuente de la lista */
+    line-height: 1.6; /* Altura de línea de la lista */
+    color: black; /* Color del texto de la lista */
+}
+
+#educacion .formation li {
+    margin-bottom: 10px; /* Margen inferior entre elementos de la lista */
+}
+
+/* Estilos para la sección "servicios" */
+#educacion .servicios {
+    flex: 1; /* Hace que la sección ocupe el espacio restante */
+    max-width: 50%; /* Ancho máximo de la sección */
+}
+
+#educacion .servicios h2 {
+    font-family: var(--font-family-header); /* Fuente del encabezado */
+    font-size: 24px; /* Tamaño de fuente del encabezado */
+    color: var(--header-color); /* Color del encabezado */
+    margin-bottom: 20px; /* Margen inferior del encabezado */
+}
+
+#educacion .servicios p {
+    font-family: var(--font-family-text); /* Fuente del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    line-height: 1.6; /* Altura de línea */
+    color: black; /* Color del texto */
+    margin-bottom: 10px; /* Margen inferior entre párrafos */
+}
+
+/* Estilos generales para la página de contacto */
+.main-contacto {
+    background-color: var(--main-color); /* Color de fondo suave y neutro */
+    padding: 40px; /* Espaciado interno para el contenido */
+    margin: 0 auto; /* Centrar el contenido */
+}
+
+.contacto {
+    max-width: 800px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenido */
+    padding: 20px; /* Espaciado interno */
+    background-color: #fff; /* Color de fondo blanco */
+    border: 2px solid #e6a756; /* Borde sólido de color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
+}
+
+.contacto:hover {
+    transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.contacto-info h2 {
+    font-size: 24px; /* Tamaño de fuente para el título */
+    color: var(--header-color); /* Color del texto del título */
+    margin-bottom: 20px; /* Margen inferior del título */
+    text-align: center; /* Centra el texto del título */
+}
+
+.contacto-info ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding por defecto de la lista */
+    border-top: 1px dotted #e6a756; /* Línea punteada superior */
+}
+
+.contacto-info li {
+    font-size: 18px; /* Tamaño de fuente para los elementos de la lista */
+    margin-bottom: 10px; /* Margen inferior entre elementos de la lista */
+    display: flex; /* Usamos flexbox para alinear el texto y los enlaces */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    border-bottom: 1px dotted #e6a756; /* Línea punteada inferior */
+    padding: 10px 0; /* Espaciado interno para separar las líneas punteadas */
+}
+
+.contacto-info li i {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    color: var(--header-color); /* Color del ícono */
+}
+
+.contacto-info li strong {
+    margin-right: 10px; /* Espacio entre el texto y los enlaces */
+    color: var(--header-color); /* Color del texto fuerte */
+    display: flex; /* Usamos flexbox para alinear el texto y los enlaces */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.contacto-info li span {
+    text-align: right; /* Alinea el texto a la derecha */
+    flex-grow: 1; /* Permite que el span ocupe el espacio restante */
+}
+
+.contacto-info li a {
+    color: var(--hover-color); /* Color de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.contacto-info li a:hover {
+    color: var(--button-hover-color); /* Cambia el color al pasar el ratón */
+}
+
+/* Estilos para la sección de colaboradores */
+.colaboradores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.enlaces h2 {
+    font-size: 24px; /* Tamaño de fuente */
+    color: var(--header-color); /* Color del texto */
+    margin-bottom: 20px; /* Margen inferior */
+    text-align: center; /* Centra el texto */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    border-bottom: 2px solid #e6a756; /* Línea inferior */
+    padding-bottom: 10px; /* Espacio entre el texto y la línea inferior */
+}
+
+.div-colaboradores {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los colaboradores */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    font-family: var(--font-family-header);
+}
+
+.colaborador {
+    flex: 1 1 calc(25% - 20px); /* Distribuye el espacio entre los 4 divs */
+    margin: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px; /* Borde redondeado */
+    box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el ancho */
+    min-width: calc(25% - 20px); /* Asegura que cada colaborador tenga al menos un cuarto del ancho */
+    transition: transform 0.3s ease;
+}
+
+.colaborador:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+.colaborador h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.colaborador p {
+    font-size: 14px;
+}
+
+.colaborador a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.colaborador a:hover {
+    color: var(--header-color);
 }
 
 /* Pie de página */
@@ -394,52 +709,398 @@ footer {
     font-weight: lighter; /* Peso de fuente más ligero para el crédito */
     padding: 1rem 0; /* Espacio superior e inferior para el crédito */
 }
-/*=======
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .language-selector {
-    margin-right: 20px;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  section {
-    display: none;
-  }
-  
-  section.active {
-    display: block;
-  }
->>>>>>> aee92059731b0057bd9dddaa9b528bc716e73469
-*/
+
+
+/* Media queries para pantallas más pequeñas que 1500px */
+@media (max-width: 1500px) {
+    .div-colaboradores {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas adicionales */
+        width: 65%; /* Asegura que el contenedor ocupe todo el ancho */
+    }
+
+    .colaborador {
+        flex: 1 1 calc(50% - 20px); /* Cada colaborador ocupa el 50% del ancho del contenedor */
+        margin: 10px;
+    }
+}
+
+/* Media queries para pantallas más pequeñas que 1200px */
+@media (max-width: 1200px) {
+    /* Estilos para el artículo "quiensoy" */
+    #quiensoy {
+        flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
+        align-items: center; /* Centra verticalmente los elementos */
+    }
+
+    #quiensoy .content-quiensoy {
+        flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
+        align-items: center; /* Centra verticalmente los elementos */
+    }
+
+    #quiensoy .image-quiensoy {
+        max-width: 100%; /* Ancho máximo de la imagen */
+        margin-bottom: 20px; /* Añadir margen inferior para separar la imagen del contenido */
+    }
+
+    #quiensoy .image-quiensoy img {
+        width: 60%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    }
+
+    #quiensoy .quiensoy-p {
+        text-align: center; /* Centra el texto */
+    }
+
+    /* Estilos para el artículo "educacion" */
+    #educacion {
+        flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
+        align-items: center; /* Centra verticalmente los elementos */
+    }
+
+    #educacion .formation, #educacion .servicios {
+        max-width: 100%; /* Ancho máximo de las secciones */
+        margin-bottom: 20px; /* Añadir margen inferior para separar las secciones */
+    }
+
+    .div-colaboradores {
+        width: 80%; /* Asegura que el contenedor ocupe todo el ancho */
+    }
+}
+
+/* Media queries para pantallas de 970px */
+@media (max-width: 970px) {
+    /* Estilos para el artículo "inicio" */
+    #inicio {
+        max-width: 800px; /* Reducir el ancho máximo del artículo */
+    }
+
+    #inicio .content, #inicio .image {
+        max-width: 400px; /* Reducir el ancho máximo del contenido y la imagen */
+    }
+
+    #inicio .parafo-articulo h2 {
+        font-size: 20px; /* Reducir el tamaño de fuente del subtítulo */
+    }
+
+    #inicio .parafo-articulo h1 {
+        font-size: 28px; /* Reducir el tamaño de fuente del título */
+    }
+
+    #inicio .parafo-articulo p {
+        font-size: 16px; /* Reducir el tamaño de fuente del párrafo */
+    }
+
+    #inicio .content button {
+        padding: 8px 16px; /* Reducir el espaciado interno del botón */
+        font-size: 14px; /* Reducir el tamaño de fuente del botón */
+    }
+
+    /* Estilos para el header */
+    .header-image {
+        height: 180px; /* Reducir la altura de la imagen de encabezado */
+    }
+
+    .logo-overlay {
+        width: 120px; /* Reducir el tamaño del logo */
+        height: 120px;
+    }
+
+    .menu ul li a {
+        font-size: 15px; /* Reducir el tamaño de fuente de los enlaces del menú */
+    }
+
+    .titulo h1 {
+        font-size: 28px; /* Reducir el tamaño de fuente del título */
+    }
+
+    .empresas-confian h2 {
+        font-size: 18px; /* Reducir el tamaño de fuente del título de las empresas */
+    }
+
+    .logos-empresas img {
+        max-width: 90px; /* Reducir el ancho máximo de los logos */
+        height: 90px; /* Reducir la altura máxima de los logos */
+    }
+
+    .div-colaboradores {
+        width: 90%; /* Asegura que el contenedor ocupe todo el ancho */
+    }
+
+    .share a {
+        height: 3.5rem; /* Reducir el tamaño de los íconos de compartir */
+        width: 3.5rem;
+        line-height: 3.5rem;
+        font-size: 1.8rem;
+    }
+
+    .credit {
+        font-size: 1rem; /* Reducir el tamaño de fuente del crédito */
+    }
+}
+
+/* Media queries para pantallas de 768px */
+@media (max-width: 768px) {
+    /* Estilos para el artículo "inicio" */
+    #inicio {
+        flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
+        max-width: 600px; /* Reducir el ancho máximo del artículo */
+        max-height: none; /* Eliminar la altura máxima para que se ajuste al contenido */
+    }
+
+    #inicio .content, #inicio .image {
+        max-width: 100%; /* Ancho máximo del contenido y la imagen */
+        padding-bottom: 20px;
+    }
+
+    #inicio .parafo-articulo h2 {
+        font-size: 18px; /* Reducir el tamaño de fuente del subtítulo */
+    }
+
+    #inicio .parafo-articulo h1 {
+        font-size: 24px; /* Reducir el tamaño de fuente del título */
+    }
+
+    #inicio .parafo-articulo p {
+        font-size: 14px; /* Reducir el tamaño de fuente del párrafo */
+    }
+
+    #inicio .content button {
+        padding: 6px 12px; /* Reducir el espaciado interno del botón */
+        font-size: 12px; /* Reducir el tamaño de fuente del botón */
+    }
+
+    /* Reducir el tamaño de la imagen en el div class="image" */
+    #inicio .image img {
+        max-width: 60%; /* Reducir el ancho máximo de la imagen */
+        max-height: 60%; /* Reducir la altura máxima de la imagen */
+    }
+
+    /* Estilos para el header */
+    .header-image {
+        height: 150px; /* Reducir aún más la altura de la imagen de encabezado */
+    }
+
+    .logo-overlay {
+        width: 100px; /* Reducir aún más el tamaño del logo */
+        height: 100px;
+    }
+
+    .menu ul li a {
+        font-size: 14px; /* Reducir aún más el tamaño de fuente de los enlaces del menú */
+    }
+
+    .titulo h1 {
+        font-size: 24px; /* Reducir aún más el tamaño de fuente del título */
+    }
+
+    .empresas-confian{
+        margin-top: 20px;
+    }
+
+    .empresas-confian h2 {
+        font-size: 16px; /* Reducir aún más el tamaño de fuente del título de las empresas */
+    }
+
+    .logos-empresas img {
+        max-width: 80px; /* Reducir aún más el ancho máximo de los logos */
+        height: 80px; /* Reducir aún más la altura máxima de los logos */
+    }
+
+    .contacto {
+        max-width: 90%; /* Reducir el ancho máximo del contenido */
+    }
+
+    .contacto-info h2 {
+        font-size: 20px; /* Reducir el tamaño de fuente del título */
+    }
+    
+    .contacto-info li {
+        font-size: 16px; /* Reducir el tamaño de fuente para los elementos de la lista */
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+
+    .contacto-info li strong {
+        margin-bottom: 5px; /* Espacio entre el <strong> y el <span> */
+    }
+    
+    .contacto-info li span {
+        text-align: left; /* Alinea el texto a la izquierda */
+    }
+
+    .colaborador {
+        flex: 1 1 100%; /* Un div por fila */
+        min-width: 100%; /* Asegura que cada colaborador ocupe todo el ancho */
+    }
+
+    .share a {
+        height: 3rem; /* Reducir aún más el tamaño de los íconos de compartir */
+        width: 3rem;
+        line-height: 3rem;
+        font-size: 1.6rem;
+    }
+
+    .credit {
+        font-size: 0.9rem; /* Reducir aún más el tamaño de fuente del crédito */
+    }
+}
+
+/* Media queries para pantallas de 480px */
+@media (max-width: 480px) {
+    .menu ul li a {
+        font-size: 10px; /* Reducir el tamaño de fuente de los enlaces del menú */
+    }
+
+    /* Estilos para el artículo "inicio" */
+    #inicio {
+        max-width: 100%; /* Ancho máximo del artículo */
+    }
+
+    #inicio .content, #inicio .image {
+        max-width: 100%; /* Ancho máximo del contenido y la imagen */
+    }
+
+    #inicio .parafo-articulo h2 {
+        font-size: 16px; /* Reducir el tamaño de fuente del subtítulo */
+    }
+
+    #inicio .parafo-articulo h1 {
+        font-size: 20px; /* Reducir el tamaño de fuente del título */
+    }
+
+    #inicio .parafo-articulo p {
+        font-size: 12px; /* Reducir el tamaño de fuente del párrafo */
+    }
+
+    #inicio .content button {
+        padding: 4px 8px; /* Reducir el espaciado interno del botón */
+        font-size: 10px; /* Reducir el tamaño de fuente del botón */
+    }
+
+    /* Estilos para el header */
+    .header-image {
+        height: 120px; /* Reducir aún más la altura de la imagen de encabezado */
+    }
+
+    .logo-overlay {
+        width: 80px; /* Reducir aún más el tamaño del logo */
+        height: 80px;
+    }
+
+    .menu ul li a {
+        font-size: 12px; /* Reducir aún más el tamaño de fuente de los enlaces del menú */
+    }
+
+    .titulo h1 {
+        font-size: 20px; /* Reducir aún más el tamaño de fuente del título */
+    }
+
+    .empresas-confian h2 {
+        font-size: 14px; /* Reducir aún más el tamaño de fuente del título de las empresas */
+    }
+
+    .logos-empresas img {
+        max-width: 60px; /* Reducir aún más el ancho máximo de los logos */
+        height: 60px; /* Reducir aún más la altura máxima de los logos */
+    }
+
+    .contacto-info h2 {
+        font-size: 18px; /* Reducir aún más el tamaño de fuente del título */
+    }
+
+    .contacto-info li {
+        font-size: 14px; /* Reducir aún más el tamaño de fuente para los elementos de la lista */
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+
+    .contacto-info li strong {
+        margin-bottom: 5px; /* Espacio entre el <strong> y el <span> */
+    }
+
+    .contacto-info li span {
+        text-align: left; /* Alinea el texto a la izquierda */
+        white-space: normal; /* Permite que el texto se ajuste al ancho del contenedor */
+    }
+
+    .contacto-info li a {
+        word-break: break-all; /* Permite que las palabras largas se dividan y se ajusten al ancho del contenedor */
+    }
+
+    .share a {
+        height: 2.5rem; /* Reducir aún más el tamaño de los íconos de compartir */
+        width: 2.5rem;
+        line-height: 2.5rem;
+        font-size: 1.4rem;
+    }
+
+    .credit {
+        font-size: 0.8rem; /* Reducir aún más el tamaño de fuente del crédito */
+    }
+}
+
+/* Media queries para pantallas de 360px */
+@media (max-width: 360px) {
+    /* Estilos para el artículo "inicio" */
+    #inicio {
+        max-width: 100%; /* Ancho máximo del artículo */
+    }
+
+    #inicio .content, #inicio .image {
+        max-width: 100%; /* Ancho máximo del contenido y la imagen */
+    }
+
+    #inicio .parafo-articulo h2 {
+        font-size: 14px; /* Reducir el tamaño de fuente del subtítulo */
+    }
+
+    #inicio .parafo-articulo h1 {
+        font-size: 18px; /* Reducir el tamaño de fuente del título */
+    }
+
+    #inicio .parafo-articulo p {
+        font-size: 10px; /* Reducir el tamaño de fuente del párrafo */
+    }
+
+    #inicio .content button {
+        padding: 3px 6px; /* Reducir el espaciado interno del botón */
+        font-size: 8px; /* Reducir el tamaño de fuente del botón */
+    }
+
+    /* Estilos para el header */
+    .header-image {
+        height: 100px; /* Reducir aún más la altura de la imagen de encabezado */
+    }
+
+    .logo-overlay {
+        width: 60px; /* Reducir aún más el tamaño del logo */
+        height: 60px;
+    }
+
+    .menu ul li a {
+        font-size: 10px; /* Reducir aún más el tamaño de fuente de los enlaces del menú */
+    }
+
+    .titulo h1 {
+        font-size: 18px; /* Reducir aún más el tamaño de fuente del título */
+    }
+
+    .empresas-confian h2 {
+        font-size: 12px; /* Reducir aún más el tamaño de fuente del título de las empresas */
+    }
+
+    .logos-empresas img {
+        max-width: 50px; /* Reducir aún más el ancho máximo de los logos */
+        height: 50px; /* Reducir aún más la altura máxima de los logos */
+    }
+
+    .share a {
+        height: 2rem; /* Reducir aún más el tamaño de los íconos de compartir */
+        width: 2rem;
+        line-height: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .credit {
+        font-size: 0.7rem; /* Reducir aún más el tamaño de fuente del crédito */
+    }
+}

@@ -1,55 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="traductor"/>
-    <meta name="author" content="Jose-Davide-Xavier" />
-    <meta name="keywords" content="traduccion, español, frances, ingles, comics, webtoon, novela grafica">
-    <title>Satya - Traductora Profesional - comics webtoon novela grafica</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/x-icon" href="../assets/img/Satya modifé coupé.jpg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="cabezado">
-
-        <div class="header-image">
-            <img src="../assets/img/NUEVA BANNER.jpeg" alt="Header Image">
-            <a href="../index.html" class="logo-overlay">
-                <img src="../assets/img/Satya modifé coupé.jpg" alt="Logo">
-            </a>
-            <div class="language-selector">
-                <div class="current-language">
-                    <i class="fas fa-globe language-icon"></i>
-                    <span id="current-language-text">FR</span>
-                </div>
-                <div class="language-options">
-                    <a href="#" onclick="changeLanguage('fr')">FR</a>
-                    <a href="#" onclick="changeLanguage('es')">ES</a>
-                    <a href="#" onclick="changeLanguage('en')">EN</a>
-                    <a href="#" onclick="changeLanguage('cat')">CAT</a>
-                </div>
-            </div>
-        </div>
-        <nav class="menu">
-            <ul>
-                <li><a href="../index.html">ACCUEIL</a></li>
-                <li><a href="./portfolio.html">PORTFOLIO</a></li>
-                <li><a href="./quiensoy.html">QUI SUIS-JE?</a></li>
-                <li><a href="./contacto.html">CONTACT</a></li>
-            </ul>
-        </nav>
-        <div class="titulo">
-            <h1>PORTFOLIO</h1>
-        </div>
-
-    </header>
-   
-    <main> <!-- Pagína Portfolio -->
+const portfolioContent = `
         <section id="portfolio" class="portfolio">
             <div class="filtros">
                 <button class="filtro" data-filtro="tout">Tout</button>
@@ -133,23 +82,33 @@
                 </div>
             </div>
         </section>
-    </main>
+`;
 
-    <footer>
+let dataJSON;
 
-        <section class="footer">
+export function cargarPortfolioContent () {
+    cargarJSON();
+    return portfolioContent;
+}
 
-            <div class="share">
-                <a href="https://www.linkedin.com/in/satya-daniel-traductrice-bd/" target="_blank" class="fab fa-linkedin"></a>
-                <a href="https://www.instagram.com/satyatrad/?hl=fr" target="_blank" class="fab fa-instagram"></a>
-                <a href="mailto:satya.daniel@yahoo.fr" target="_blank" class="fas fa-envelope"></a>
-            </div>
-            
-            <div class="credit">
-                Copyright © 2024. All right reserved | Satyatrad Website
-            </div>
-        </section>
+export function cargarJSON () {
+    // Ruta al archivo JSON
+    const filePath = './js/component/portfolio.json';
+    
+    fetch(filePath)
+        .then(response => response.json())
+        .then(data => {
+            dataJSON = data;
+        })
+        .catch(error => console.error('Error al cargar Portfolio:', error));    
+};
 
-    </footer>
-</body>
-</html>
+/* function filtrarPorCategoria(jsonData, categoria) {
+    // Extraer el array de portfolio del JSON
+    const portfolio = jsonData.portfolio;
+
+    // Filtrar los objetos cuya categoría coincida con la especificada
+    const resultado = portfolio.filter(item => item.cat.includes(categoria));
+
+    return resultado;
+} */

@@ -1,0 +1,121 @@
+{
+    "portfolio": [
+        {
+            "src": "../assets/img/portadas/Le Premier Dumas T.3.jpeg",
+            "href": "https://www.glenat.com/24x32-glenat-bd/le-premier-dumas-tome-03-9782344059975",
+            "alt": "Le Premier Dumas",
+            "cat": [
+                "bd"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/Marée Haute.jpg",
+            "href": "https://www.dupuis.com/seriebd/maree-haute/23981",
+            "alt": "Marée Haute",
+            "cat": [
+                "roman"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/MH_CHATS_RVB_56625_R400.jpg",
+            "href": "https://www.humano.com/album/37907",
+            "alt": "MH Chats RVB",
+            "cat": [
+                "bd"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/5 drapeaux.jpg",
+            "href": "https://editionspaquet.com/catalogue/876-les-cinq-drapeaux-t1-liberte-egalite-fraternite-9782889324576.html",
+            "alt": "5 Drapeaux",
+            "cat": [
+                "bd"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/molly-wind-bibliothecaire-du-far.jpg",
+            "href": "https://www.dupuis.com/molly-wind/bd/molly-wind-tome-1-bibliothecaire-du-far-west/122194",
+            "alt": "Molly Wind",
+            "cat": [
+                "bd"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/PilleurCimetiere_Couv_56426_R400.jpg",
+            "href": "https://www.humano.com/serie/540",
+            "alt": "Pilleur Cimetiere",
+            "cat": [
+                "roman"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/Premier Dumas T.2.jpeg",
+            "href": "https://www.glenat.com/24x32-glenat-bd/le-premier-dumas-tome-02-9782344054284",
+            "alt": "Le Premiere Dumas",
+            "cat": [
+                "bd"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/revolution nommée raspoutine.jpg",
+            "href": "https://www.glenat.com/24x32-glenat-bd/une-revolution-nommee-raspoutine-9782344050132",
+            "alt": "Revolution Nommée Raspoutine",
+            "cat": [
+                "bd"
+            ]
+        },
+        {
+            "src": "../assets/img/portadas/premier dumas T.1 couv.jpeg",
+            "href": "https://www.glenat.com/24x32-glenat-bd/le-premier-dumas-tome-01-9782344045251",
+            "alt": "Le Premier Dumas",
+            "cat": [
+                "bd"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/Destin doré au delà du temps.jpg",
+            "href": "https://www.pocketcomics.com/comic/9769",
+            "alt": "Destin doré au delà du temps",
+            "cat": [
+                "en-fr",
+                "webtoon"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/Mon destin était de te sauver.jpg",
+            "href": "https://www.pocketcomics.com/comic/8642",
+            "alt": "Mon destin était de te sauver",
+            "cat": [
+                "en-fr",
+                "webtoon"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/Ange à l_aura dorée.jpg",
+            "href": "https://www.pocketcomics.com/comic/9754",
+            "alt": "Ange à l_aura dorée",
+            "cat": [
+                "en-fr",
+                "webtoon"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/Monsieur, gardez vos distances.jpg",
+            "href": "https://www.pocketcomics.com/comic/8297",
+            "alt": "Monsieur, gardez vos distances",
+            "cat": [
+                "en-fr",
+                "webtoon"
+            ]	
+        },
+        {
+            "src": "../assets/img/portadas/i-want-to-escape-from-princess-lessons-193x278-1.jpg",
+            "href": "https://www.pocketcomics.com/comic/8055",
+            "alt": "i-want-to-escape-from-princess-lessons",
+            "cat": [
+                "en-fr",
+                "webtoon"
+            ]	
+        }
+    ]
+}
