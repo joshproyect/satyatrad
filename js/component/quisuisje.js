@@ -6,7 +6,7 @@ const quisuisjeContent = `
                 </div>
                 <div class="content-quiensoy">
                     <div class="image-quiensoy">
-                        <img src="../assets/img/retrato Mari Fouz.jpeg" alt="Mari Fouz">
+                        <img src="./assets/img/retrato Mari Fouz.jpeg" alt="Mari Fouz">
                     </div>
                     <div class="quiensoy-p">
                         <p>Née en 1985, j’ai un prénom indien, un père breton et une mère québécoise.</p>
