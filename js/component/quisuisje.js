@@ -6,7 +6,7 @@ const quisuisjeContent = `
                 </div>
                 <div class="content-quiensoy">
                     <div class="image-quiensoy">
-                        <img src="../assets/img/retrato Mari Fouz.jpeg" alt="Mari Fouz">
+                        <img src="./assets/img/retrato Mari Fouz.jpeg" alt="Mari Fouz">
                     </div>
                     <div class="quiensoy-p">
                         <p>Née en 1985, j’ai un prénom indien, un père breton et une mère québécoise.</p>
@@ -21,7 +21,7 @@ const quisuisjeContent = `
         
         <article id="educacion">
             <div class="formation">
-                <h2>FORMATION</h2>
+                <h2>Formations dans le domaine:</h2>
                 <ul>
                     <li>Ecole de Traduction littéraire (2025)</li>
                     <li>Atelier « Sortir de sa bulle : l’art de traduire la BD » – Centre de Traduction littéraire de Lausanne (2024)</li>
@@ -32,10 +32,12 @@ const quisuisjeContent = `
                 </ul>
             </div>
             <div class="servicios">
-                <h2>SERVICES</h2>
-                <p>Traduction de bandes dessinées en français depuis l’espagnol, le catalan et l’anglais</p>
-                <p>Apporteuse de projets BD</p>
-                <p>Fiches de lecture</p>
+                <h2>En complément:</h2>
+                <ul>
+                    <li>Traduction de bandes dessinées en français depuis l’espagnol, le catalan et l’anglais</li>
+                    <li>Apporteuse de projets BD</li>
+                    <li>Fiches de lecture</li>
+                </ul>
             </div>
         </article>
 `;
