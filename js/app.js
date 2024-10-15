@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     handleRouteChange();
   });
 
-  
+
 /* Desplazamiento horizontal del contenedor de logos: */
   document.addEventListener('DOMContentLoaded', function() {
     const logosContainer = document.getElementById('logosContainer');
@@ -79,4 +79,27 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
+});
+
+
+
+
+/* Manejar el comportamiento del encabezado al hacer scroll: */
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.cabezado');
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+          // Scrolling down
+          header.style.transform = 'translateY(-100%)';
+      } else {
+          // Scrolling up
+          header.style.transform = 'translateY(0)';
+      }
+
+      lastScrollTop = scrollTop;
+  });
 });
