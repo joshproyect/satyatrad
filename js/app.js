@@ -56,3 +56,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mostrar la sección correspondiente al cargar la página
     handleRouteChange();
   });
+
+  
+/* Desplazamiento horizontal del contenedor de logos: */
+  document.addEventListener('DOMContentLoaded', function() {
+    const logosContainer = document.getElementById('logosContainer');
+    const leftArrow = document.getElementById('leftArrow');
+    const rightArrow = document.getElementById('rightArrow');
+
+    // Función para desplazar a la izquierda
+    leftArrow.addEventListener('click', function() {
+        logosContainer.scrollBy({
+            left: -300, // Ajusta este valor según el ancho de los logos
+            behavior: 'smooth'
+        });
+    });
+
+    // Función para desplazar a la derecha
+    rightArrow.addEventListener('click', function() {
+        logosContainer.scrollBy({
+            left: 300, // Ajusta este valor según el ancho de los logos
+            behavior: 'smooth'
+        });
+    });
+});

@@ -319,6 +319,7 @@ main {
     overflow-x: auto; /* Permite el desplazamiento horizontal */
     scroll-behavior: smooth; /* Desplazamiento suave */
     padding: 0 20px; /* Espacio para las flechas */
+    scrollbar-width: none; /* Oculta las barras de desplazamiento en navegadores que lo soporten */
 }
 
 .logos-empresas img {
@@ -341,6 +342,7 @@ main {
     font-size: 24px;
     color: var(--header-color);
     z-index: 1;
+    transition: transform 0.3s ease; /* Transición suave para el zoom */
 }
 
 .scroll-arrow i {
@@ -348,11 +350,17 @@ main {
 }
 
 .left-arrow {
+    position: absolute;
     left: 10px;
 }
 
 .right-arrow {
+    position: absolute;
     right: 10px;
+}
+
+.scroll-arrow:hover {
+    transform: translateY(-50%) scale(1.2); /* Efecto de zoom al pasar el ratón */
 }
 
 /* Estilos para la sección de portfolio */
@@ -962,6 +970,10 @@ footer {
     .logos-empresas img {
         max-width: 80px; /* Reducir aún más el ancho máximo de los logos */
         height: 80px; /* Reducir aún más la altura máxima de los logos */
+    }
+
+    .scroll-arrow i {
+        font-size: 35px;
     }
 
     #quiensoy .image-quiensoy img {
