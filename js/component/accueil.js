@@ -1,36 +1,31 @@
 const accueilContent = `
         <article id="inicio" class="active">
-            <div class="content">
-                <div class="parafo-articulo">
-                    <h2>
-                        TRADUCTRICE SPÉCIALISÉE BD
-                    </h2>
-                    <h1>
-                        SATYA DANIEL
-                    </h1>
-                    <p>
-                        Vous éditez des bandes dessinées, des romans graphiques, des
-                        mangas ou des webtoons ? 
-                    </p>
-                    <p>
-                        Vous recherchez une traductrice littéraire de l’espagnol, du 
-                        catalan ou de l’anglais vers le français maîtrisant les codes 
-                        de la BD ? Et en particulier les codes culturels de l’Espagne, 
-                        de la Catalogne, du Canada, du Québec et de l’Écosse ?
-                    </p>
-                    <p>                       
-                        N’hésitez pas à me contacter pour échanger et discuter ensemble 
-                        de vos projets !
-                    </p>
-                </div>
-                <div class="boton-articulo">
-                    <button>
-                        <a href="./src/contacto.html"> ME CONTACTER</a>
-                    </button>
-                </div>
+            <div class="parafo-articulo">
+                <h2>
+                    TRADUCTRICE SPÉCIALISÉE BD
+                </h2>
+                <h1>
+                    SATYA DANIEL
+                </h1>
+                <p>
+                    Vous éditez des bandes dessinées, des romans graphiques, des
+                    mangas ou des webtoons ? 
+                </p>
+                <p>
+                    Vous recherchez une traductrice littéraire de l’espagnol, du 
+                    catalan ou de l’anglais vers le français maîtrisant les codes 
+                    de la BD ? Et en particulier les codes culturels de l’Espagne, 
+                    de la Catalogne, du Canada, du Québec et de l’Écosse ?
+                </p>
+                <p>                       
+                    N’hésitez pas à me contacter pour échanger et discuter ensemble 
+                    de vos projets !
+                </p>
             </div>
-            <div class="image">
-                <img src="./assets/img/Satya modifé coupé.jpg" alt="Logo">  
+            <div class="boton-articulo">
+                <button>
+                    <a href="./src/contacto.html"> ME CONTACTER</a>
+                </button>
             </div>
         </article>
 
