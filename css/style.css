@@ -298,7 +298,7 @@ main {
 .scroll-container {
     display: grid;
     align-items: center;
-    overflow: hidden;
+    overflow: visible; /* Cambia a visible para permitir el desplazamiento horizontal */
     position: relative;
 }
 
