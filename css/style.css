@@ -378,6 +378,7 @@ main {
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para el cambio de fondo y el zoom */
     font-size: 16px; /* Tamaño de fuente base */
     margin: 5px; /* Añade un margen entre los botones */
+    font-family: var(--font-family-header_footer);/* Añade tipografia en los botones*/
 }
 
 .filtro:hover {
