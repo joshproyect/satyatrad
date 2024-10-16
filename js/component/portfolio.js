@@ -103,6 +103,25 @@ export function cargarJSON () {
         .catch(error => console.error('Error al cargar Portfolio:', error));    
 };
 
+export function cargarEventClickButtonsPortfolio () {
+    const filtros = document.querySelectorAll('.filtro');
+    const items = document.querySelectorAll('.item');
+
+    filtros.forEach(filtro => {
+        filtro.addEventListener('click', function() {
+            const filtroSeleccionado = this.getAttribute('data-filtro');
+
+            items.forEach(item => {
+                if (filtroSeleccionado === 'tout' || item.getAttribute('data-filtro').includes(filtroSeleccionado)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+};
+
 /* function filtrarPorCategoria(jsonData, categoria) {
     // Extraer el array de portfolio del JSON
     const portfolio = jsonData.portfolio;

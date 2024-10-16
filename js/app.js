@@ -1,5 +1,6 @@
 import { cargarAccueilContent } from "./component/accueil.js";
 import { cargarPortfolioContent } from "./component/portfolio.js";
+import { cargarEventClickButtonsPortfolio } from "./component/portfolio.js"
 import { cargarQuisuisjeContent } from "./component/quisuisje.js";
 import { cargarContactoContent } from "./component/contacto.js";
 
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
               break;
         case "portfolio":
               mainContent.innerHTML = cargarPortfolioContent();
+              cargarEventClickButtonsPortfolio();
               break;
         case "quisuisje":
             mainContent.innerHTML = cargarQuisuisjeContent();
