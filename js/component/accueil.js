@@ -1,31 +1,27 @@
-const accueilContent = `
+export function cargarAccueilContent (traducc) {
+    const accueilContent = `
         <article id="inicio" class="active">
             <div class="content">
                 <div class="parafo-articulo">
                     <h2>
-                        TRADUCTRICE SPÉCIALISÉE BD
+                        ${traducc.accueil.titulo}
                     </h2>
                     <h1>
                         SATYA DANIEL
                     </h1>
                     <p>
-                        Vous éditez des bandes dessinées, des romans graphiques, des
-                        mangas ou des webtoons ? 
+                        ${traducc.accueil.p1}
                     </p>
                     <p>
-                        Vous recherchez une traductrice littéraire de l’espagnol, du 
-                        catalan ou de l’anglais vers le français maîtrisant les codes 
-                        de la BD ? Et en particulier les codes culturels de l’Espagne, 
-                        de la Catalogne, du Canada, du Québec et de l’Écosse ?
+                        ${traducc.accueil.p2}
                     </p>
                     <p>                       
-                        N’hésitez pas à me contacter pour échanger et discuter ensemble 
-                        de vos projets !
+                        ${traducc.accueil.p3}
                     </p>
                 </div>
                 <div class="boton-articulo">
                     <button>
-                        <a href="./src/contacto.html"> ME CONTACTER</a>
+                        <a href="./src/contacto.html"> ${traducc.accueil.boton}</a>
                     </button>
                 </div>
             </div>
@@ -36,7 +32,7 @@ const accueilContent = `
 
         <div class="empresas-confian-container">
             <div class="empresas-confian">
-                <h2>Ils nous font déjà confiance</h2>
+                <h2>${traducc.accueil.tituloEnlace}</h2>
                 <div class="logos-empresas">
                     <img src="./assets/img/logos/Dynamite-logo1648922779596.png" alt="Logo Empresa 1">
                     <img src="./assets/img/logos/glénat.png" alt="Logo Empresa 2">
@@ -50,7 +46,5 @@ const accueilContent = `
             </div>
         </div>
 `;
-
-export function cargarAccueilContent () {
     return accueilContent;
 }
