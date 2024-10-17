@@ -24,7 +24,7 @@ const accueilContent = `
             </div>
             <div class="boton-articulo">
                 <button>
-                    <a href="./src/contacto.html"> ME CONTACTER</a>
+                    <a href="#contacto"> ME CONTACTER</a>
                 </button>
             </div>
         </article>

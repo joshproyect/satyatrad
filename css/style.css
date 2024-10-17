@@ -71,31 +71,50 @@
     text-align: center; /* Centra el contenido del menú */
 }
 
-.menu ul {
+.menu-list {
     list-style: none; /* Elimina los puntos de las listas */
     display: flex; /* Usamos flexbox para organizar los enlaces horizontalmente */
     justify-content: center; /* Centra los enlaces */
 }
 
-.menu ul li {
+.menu-list li {
     margin: 0 10px; /* Margen de 10px entre los enlaces */
 }
 
-.menu ul li a {
+.menu-list li a {
     color: var(--text-color); /* Color del texto de los enlaces */
     font-size: 18px; /* Tamaño de fuente de los enlaces */
     transition: color 0.3s ease; /* Transición suave para el cambio de color */
     padding: 0 10px; /* Añadimos un poco de padding para mejorar la apariencia */
 }
 
-.menu ul li a:hover {
+.menu-list li a:hover {
     color: var(--hover-color); /* Cambia el color al pasar el ratón */
     transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
 }
 
-.menu ul li a:active {
+.menu-list li a:active {
     transform: translateY(1px); /* Hace que el botón se hunda ligeramente al hacer clic */
 }
+
+/************** Estilos para el menú hamburguesa ************/
+
+.hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 45px;
+    height: 5px;
+    background-color: var(--header-color);
+    border: 1px solid var(--main-color);
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/************************************************************/
 
 .language-selector {
     position: absolute; /* Posicionamiento absoluto para colocar el selector de idioma */
@@ -173,6 +192,9 @@
     padding-top: 30px; /* Margen superior del titulo */
 }
 
+.h1-oculto {
+    display: none;
+}
 /* Estilos generales para el main */
 main {
     background-color: var(--main-color); /* Color de fondo suave y neutro */
@@ -888,6 +910,7 @@ footer {
     #inicio {
         max-width: 600px; /* Reducir el ancho máximo del artículo */
         max-height: none; /* Eliminar la altura máxima para que se ajuste al contenido */
+        margin-top: 0;
     }
 
     #inicio .parafo-articulo h2 {
@@ -912,13 +935,52 @@ footer {
         height: 100px;
     }
 
-    .menu ul li a {
-        font-size: 14px; /* Reducir aún más el tamaño de fuente de los enlaces del menú */
+    .logos-empresas {
+        margin: 0 73px;
+    }
+
+    /************** Estilos para el menú hamburguesa ************/
+    nav {
+        justify-content: space-between;
+    }
+
+    .menu-list{
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--header-color);
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-list li {
+        margin: 15px 0;
+    }
+    
+    .hamburguer {
+        display: flex;
+        position: absolute;
+        left: 45px;
+        top: 50px;
+    }
+    
+    .menu-list.show {
+        display: flex;
+    }
+
+    .h1-oculto {
+        display: grid;
+        text-align: center;
+        color: var(--text-color);
     }
 
     .titulo h1 {
-        font-size: 24px; /* Reducir aún más el tamaño de fuente del título */
+        display: none;
     }
+
+    /************************************************************/
 
     .empresas-confian{
         margin-top: 20px;
@@ -937,12 +999,21 @@ footer {
         font-size: 35px;
     }
 
+    .portfolio {
+        padding-top: 0;
+    }
+
+    #quiensoy {
+        margin-top: 0;
+    }
+
     #quiensoy .image-quiensoy img {
         width: 75%; 
     }
 
     .contacto {
         max-width: 90%; /* Reducir el ancho máximo del contenido */
+        margin-top: 0;
     }
 
     .contacto-info h2 {
@@ -983,10 +1054,6 @@ footer {
 /* Media queries para pantallas de 480px */
 @media (max-width: 480px) {
 
-    .menu ul li a {
-        font-size: 10px; /* Reducir el tamaño de fuente de los enlaces del menú */
-    }
-
     /* Estilos para el artículo "inicio" */
     #inicio .parafo-articulo h2 {
         font-size: 16px; /* Reducir el tamaño de fuente del subtítulo */
@@ -1018,12 +1085,12 @@ footer {
         height: 80px;
     }
 
-    .menu ul li a {
-        font-size: 12px; /* Reducir aún más el tamaño de fuente de los enlaces del menú */
+    .hamburguer {
+        top: 43px;
     }
 
-    .titulo h1 {
-        font-size: 20px; /* Reducir aún más el tamaño de fuente del título */
+    .menu-list li a {
+        font-size: 12px; /* Reducir aún más el tamaño de fuente de los enlaces del menú */
     }
 
     .empresas-confian h2 {
@@ -1033,6 +1100,10 @@ footer {
     .logos-empresas img {
         max-width: 60px; /* Reducir aún más el ancho máximo de los logos */
         height: 60px; /* Reducir aún más la altura máxima de los logos */
+    }
+
+    .logos-empresas {
+        margin: 0 52px;
     }
 
     .contacto-info h2 {
@@ -1100,12 +1171,9 @@ footer {
         height: 60px;
     }
 
-    .menu ul li a {
-        font-size: 10px; /* Reducir aún más el tamaño de fuente de los enlaces del menú */
-    }
-
-    .titulo h1 {
-        font-size: 18px; /* Reducir aún más el tamaño de fuente del título */
+    .hamburguer {
+        left: 23px;
+        top: 32px;
     }
 
     .empresas-confian h2 {
