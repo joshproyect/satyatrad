@@ -37,29 +37,29 @@ const accueilContent = `
                         <i class="fa-solid fa-chevron-left"></i>
                     </div>
                         <div class="logos-empresas" id="logosContainer">
-                            <a href="" target="_blank">
-                                <img src="./assets/img/logos/Dynamite-logo1648922779596.png" alt="Logo Empresa 1">
+                            <a href="https://www.dupuis.com/" target="_blank">
+                                <img src="./assets/img/logos/Dupuis fondo blanco.png" alt="Logo 1">
                             </a>
-                            <a href="" target="_blank">
-                                <img src="./assets/img/logos/glénat.png" alt="Logo Empresa 2">
+                            <a href="https://www.lamusardine.com/content/15-editions-la-musardine" target="_blank">
+                                <img src="./assets/img/logos/Dynamite-logo1648922779596.png" alt="Logo 2">
                             </a>
-                            <a href="" target="_blank">
-                                <img src="./assets/img/logos/logo humanos.jpg" alt="Logo Empresa 3">
+                            <a href="https://www.glenat.com/" target="_blank">
+                                <img src="./assets/img/logos/Glénat fondo blanco.jpg" alt="Logo 3">
                             </a>
-                            <a href="" target="_blank">
-                                <img src="./assets/img/logos/logo Jungle.jpg" alt="Logo Empresa 4">
+                            <a href="https://www.humano.com/" target="_blank">
+                                <img src="./assets/img/logos/Humanoïdes Associés cuadrado.png" alt="Logo 4">
                             </a>
-                            <a href="" target="_blank">
-                                <img src="./assets/img/logos/logo metal hurlant.jpg" alt="Logo Empresa 5">
+                            <a href="https://editions-jungle.com/" target="_blank">
+                                <img src="./assets/img/logos/Jungle cuadrado.png" alt="Logo 5">
                             </a>
-                            <a href="" target="_blank">
-                                <img src="./assets/img/logos/logo paquet.jpg" alt="Logo Empresa 6">
+                            <a href="https://www.humano.com/metal-hurlant" target="_blank">
+                                <img src="./assets/img/logos/Metal Hurlant cuadrado.png" alt="Logo 6">
                             </a>
-                            <a href="" target="_blank">
-                                <img src="./assets/img/logos/logo_dupuis_rouge3.png" alt="Logo Empresa 7">
+                            <a href="https://editionspaquet.com/" target="_blank">
+                                <img src="./assets/img/logos/logo paquet.jpg" alt="Logo 7">
                             </a>
-                            <a href="" target="_blank">
-                                <img src="./assets/img/logos/NHN_Corp_Logo.svg.png" alt="Logo Empresa 8">
+                            <a href="https://www.pocketcomics.com/?languageCode=fr" target="_blank">
+                                <img src="./assets/img/logos/NHN fondo blanco.png" alt="Logo 8">
                             </a>
                         </div>
                     <div class="scroll-arrow right-arrow" id="rightArrow">
