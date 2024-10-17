@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /* Desplazamiento horizontal del contenedor de logos: */
+
   document.addEventListener('DOMContentLoaded', function() {
     const logosContainer = document.getElementById('logosContainer');
     const leftArrow = document.getElementById('leftArrow');
@@ -82,3 +83,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+

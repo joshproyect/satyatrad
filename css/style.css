@@ -197,7 +197,7 @@ main {
     border-radius: 15px; /* Añade bordes redondeados */
     padding: 40px; /* Espaciado interno para el contenido */
     box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 #inicio:hover {
@@ -310,6 +310,7 @@ main {
     scroll-behavior: smooth; /* Desplazamiento suave */
     padding: 0 20px; /* Espacio para las flechas */
     scrollbar-width: none; /* Oculta las barras de desplazamiento en navegadores que lo soporten */
+    margin: 0 95px;
 }
 
 .logos-empresas img {
@@ -364,7 +365,6 @@ main {
     justify-content: center; /* Centra los botones horizontalmente */
     margin-bottom: 40px; /* Margen inferior */
     flex-wrap: wrap; /* Permite que los botones se envuelvan en varias líneas si es necesario */
-    /*Por alguna razón no se aplica la font-family*/
     font-family: var(--font-family-header_footer);
 }
 
@@ -379,6 +379,7 @@ main {
     font-size: 16px; /* Tamaño de fuente base */
     margin: 5px; /* Añade un margen entre los botones */
     font-family: var(--font-family-header_footer);/* Añade tipografia en los botones*/
+    font-weight: bold;
 }
 
 .filtro:hover {
@@ -404,7 +405,6 @@ main {
     object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionarla */
     border-radius: 5px; /* Bordes redondeados de las imágenes */
     transition: transform 0.3s ease; /* Transición suave para el zoom */
-    border: 2px solid var(--header-color);
 }
 
 .item img:hover {
@@ -428,7 +428,7 @@ main {
     align-items: center; /* Centra verticalmente los elementos */
     padding: 20px; /* Espaciado interno */
     border-radius: 15px; /* Añade bordes redondeados */
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 #quiensoy:hover {
@@ -593,7 +593,7 @@ main {
     border: 2px solid #e6a756; /* Borde sólido de color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .contacto:hover {
