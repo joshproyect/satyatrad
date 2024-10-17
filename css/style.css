@@ -7,7 +7,7 @@
     --button-color: #333; /* Color del botón */
     --button-hover-color: #ecbd7f; /* Color del botón al pasar el mouse */
     --font-family-main: 'Lora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-family-header: Arial, sans-serif; /* Fuente header */
+    --font-family-header_footer: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* Fuente header */
 
 }
 
@@ -16,7 +16,6 @@
     padding: 0; /* Elimina el padding por defecto de todos los elementos */
     box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
     text-decoration: none; /* Elimina el subrayado de los enlaces */
-    list-style: none; /* Elimina los puntos de las listas */
     font-size: 20px; /* Tamaño de fuente por defecto */
 }
 
@@ -24,7 +23,7 @@
 .cabezado {
     position: relative; /* Posicionamiento relativo para elementos hijos */
     width: 100%; /* Ancho completo */
-    font-family: var(--font-family-header);
+    font-family: var(--font-family-header_footer);
 }
 
 .header-image {
@@ -73,6 +72,7 @@
 }
 
 .menu ul {
+    list-style: none; /* Elimina los puntos de las listas */
     display: flex; /* Usamos flexbox para organizar los enlaces horizontalmente */
     justify-content: center; /* Centra los enlaces */
 }
@@ -182,14 +182,22 @@ main {
 
 /* Estilos article inicio */
 #inicio {
-    max-width: 1000px; /* Ancho máximo del artículo */
+    max-width: 800px; /* Ancho máximo del artículo */
     max-height: 500px; /* Altura máxima del artículo */
     margin: auto; /* Centra el artículo horizontalmente */
     display: flex; /* Usamos flexbox para organizar los elementos dentro del artículo */
-    margin: 20px auto; /* Margen superior e inferior del artículo */
+    flex-direction: column; /* Organiza los elementos en columna */
     border: 2px solid #e6a756; /* Borde sólido de color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
+    background: url(../assets/img/Satya\ modifé\ coupé.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: var(--font-family-main);
+    border-radius: 15px; /* Añade bordes redondeados */
+    padding: 40px; /* Espaciado interno para el contenido */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+    margin-top: 30px;
 }
 
 #inicio:hover {
@@ -197,41 +205,18 @@ main {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
 }
 
-#inicio .content {
-    font-family: var(--font-family-main);
-    flex: 1; /* Permite que este div ocupe el espacio disponible */
-    max-width: 500px; /* Ancho máximo del contenido */
-    max-height: 500px; /* Altura máxima del contenido */
-    background-color: var(--contenedor-color); /* Color de fondo del contenido */
-    padding: 20px; /* Espaciado interno para el contenido */
-    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+#inicio .parafo-articulo {
     display: flex; /* Usamos flexbox para organizar el contenido dentro de este div */
     flex-direction: column; /* Organiza el contenido en columna */
-    justify-content: center; /* Centra el contenido verticalmente */
     align-items: center; /* Centra el contenido horizontalmente */
-}
-
-#inicio .image {
-    flex: 1; /* Permite que este div ocupe el espacio disponible */
-    max-width: 500px; /* Ancho máximo de la imagen */
-    max-height: 500px; /* Altura máxima de la imagen */
-    display: flex; /* Usamos flexbox para centrar la imagen */
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
-    background-color: #f6e1c5; /* Mismo color de fondo para mantener la uniformidad */
-}
-
-#inicio .image img {
-    width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
-    max-height: 90%; /* Limita la altura máxima de la imagen al 90% de su contenedor */
-    max-width: 90%; /* Limita el ancho máximo de la imagen al 90% de su contenedor */
-    border-radius: 50%; /* Hace que la imagen sea redonda */
+    text-align: center; /* Centra el texto */
 }
 
 #inicio .parafo-articulo h2 {
     font-size: 24px; /* Tamaño de fuente para el subtítulo */
-    margin-top: 10px; /* Espacio entre el subtítulo y el título */
     text-align: center; /* Centra el texto del subtítulo */
+    color: black; /* Color del texto */
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; /* Sombra para simular contorno */
 }
 
 #inicio .parafo-articulo h1 {
@@ -239,12 +224,16 @@ main {
     color: var(--header-color); /* Color del texto del encabezado */
     text-align: center; /* Centra el texto del encabezado */
     padding: 0 0 20px 0; /* Margen superior y inferior del titulo */
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; /* Sombra para simular contorno */
 }
 
 #inicio .parafo-articulo p {
     font-size: 18px; /* Tamaño de la fuente del párrafo */
-    padding: 5px; /* Espacio interno alrededor del texto */
+    padding: 15px; /* Espacio interno alrededor del texto */
     text-align: center; /* Centra el texto del párrafo */
+    color: white;
+    text-shadow: -1px -1px 0 var(--header-color), 1px -1px 0 var(--header-color), -1px 1px 0 var(--header-color), 1px 1px 0 var(--header-color); /* Sombra para simular contorno */
+
 }
 
 #inicio .boton-articulo {
@@ -258,8 +247,8 @@ main {
     text-decoration: none; /* Elimina el subrayado del enlace */
 }
 
-#inicio .content button {
-    font-family: var(--font-family-header) !important; /* Asegurarse de que los botones hereden la fuente */
+#inicio .boton-articulo button {
+    font-family: var(--font-family-header_footer) !important; /* Asegurarse de que los botones hereden la fuente */
     background: var(--hover-color); /* Color de fondo del botón */
     color: black; /* Color del texto del botón */
     padding: 10px 20px; /* Espaciado interno del botón */
@@ -271,13 +260,13 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
 }
 
-#inicio .content button:hover {
+#inicio .boton-articulo button:hover {
     background: var(--button-hover-color); /* Cambia el color de fondo al pasar el ratón */
     transform: translateY(-3px); /* Eleva el botón ligeramente al pasar el ratón */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
 }
 
-#inicio .content button:active {
+#inicio .boton-articulo button:active {
     transform: translateY(1px); /* Hace que el botón se hunda ligeramente al hacer clic */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra menos pronunciada al hacer clic */
 }
@@ -291,8 +280,8 @@ main {
 .empresas-confian {
     text-align: center; /* Centra el texto */
     margin-top: 80px; /* Margen superior*/
-    font-family: var(--font-family-header);
-    background-color: #ebc595;
+    font-family: var(--font-family-header_footer);
+    background-color: var(--main-color);
     padding: 20px; /* Espaciado interno */
     transition: background-color 0.3s ease; /* Transición suave para el cambio de fondo */
     width: fit-content;
@@ -302,13 +291,26 @@ main {
     font-size: 24px; /* Tamaño de fuente para el título */
     margin-bottom: 20px; /* Margen inferior del título */
     color: var(--header-color); /* Color del texto del título */
+    text-align: end;
+    padding-right: 50px;
+}
+
+.scroll-container {
+    display: grid;
+    align-items: center;
+    overflow: visible; /* Cambia a visible para permitir el desplazamiento horizontal */
+    position: relative;
 }
 
 .logos-empresas {
     display: flex; /* Usamos flexbox para organizar los logos */
-    justify-content: center; /* Centra los logos horizontalmente */
     gap: 20px; /* Espacio entre los logos */
-    flex-wrap: wrap; /* Permite que los logos se envuelvan en varias líneas si no caben en una sola */
+    flex-wrap: nowrap; /* Evita que los logos se envuelvan */
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+    padding: 0 20px; /* Espacio para las flechas */
+    scrollbar-width: none; /* Oculta las barras de desplazamiento en navegadores que lo soporten */
+    margin: 0 95px;
 }
 
 .logos-empresas img {
@@ -323,6 +325,35 @@ main {
     transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
 }
 
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--header-color);
+    z-index: 1;
+    transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+.scroll-arrow i {
+    font-size: 70px; /* Tamaño flechas */
+}
+
+.left-arrow {
+    position: absolute;
+    left: 10px;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 10px;
+}
+
+.scroll-arrow:hover {
+    transform: translateY(-50%) scale(1.2); /* Efecto de zoom al pasar el ratón */
+}
+
 /* Estilos para la sección de portfolio */
 .portfolio {
     padding: 40px 20px; /* Espaciado interno */
@@ -330,12 +361,11 @@ main {
 }
 
 .filtros {
+    display: flex; /* Añade display flex para centrar los botones */
     justify-content: center; /* Centra los botones horizontalmente */
-    gap: 10px; /* Espacio entre los botones */
-    margin-bottom: 20px; /* Margen inferior */
+    margin-bottom: 40px; /* Margen inferior */
     flex-wrap: wrap; /* Permite que los botones se envuelvan en varias líneas si es necesario */
-    /*Por alguna razón no se aplica la font-family*/
-    font-family: var(--font-family-header) !important; /* Asegurarse de que los botones hereden la fuente */    display: flex; /* Usamos flexbox para organizar los botones */
+    font-family: var(--font-family-header_footer);
 }
 
 .filtro {
@@ -347,6 +377,9 @@ main {
     cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el botón */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para el cambio de fondo y el zoom */
     font-size: 16px; /* Tamaño de fuente base */
+    margin: 5px; /* Añade un margen entre los botones */
+    font-family: var(--font-family-header_footer);/* Añade tipografia en los botones*/
+    font-weight: bold;
 }
 
 .filtro:hover {
@@ -385,7 +418,7 @@ main {
     display: flex; /* Usamos flexbox para organizar el contenido */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
     gap: 20px; /* Espacio entre los elementos */
-    margin-bottom: 40px; /* Margen inferior entre artículos */
+    margin-bottom: 80px; /* Margen inferior entre artículos */
     border: 2px solid #e6a756; /* Borde sólido de color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
@@ -394,6 +427,8 @@ main {
     flex-direction: column; /* Organiza el contenido en columna */
     align-items: center; /* Centra verticalmente los elementos */
     padding: 20px; /* Espaciado interno */
+    border-radius: 15px; /* Añade bordes redondeados */
+    margin-top: 30px;
 }
 
 #quiensoy:hover {
@@ -408,7 +443,7 @@ main {
 }
 
 #quiensoy h1, #quiensoy h2 {
-    font-family: var(--font-family-header); /* Fuente de los encabezados */
+    font-family: var(--font-family-header_footer); /* Fuente de los encabezados */
     color: var(--header-color); /* Color de los encabezados */
     margin: 0; /* Elimina el margen para evitar que se salgan del contenedor */
 }
@@ -426,7 +461,6 @@ main {
 #quiensoy .content-quiensoy {
     display: flex; /* Usamos flexbox para organizar el contenido */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
-    gap: 40px; /* Espacio entre los elementos */
     width: 100%; /* Ocupa el 100% del ancho del contenedor */
 }
 
@@ -441,6 +475,10 @@ main {
     text-align: justify;
 }
 
+#quiensoy .quiensoy-p p {
+    padding-bottom: 20px;
+}
+
 /* Estilos para la imagen del artículo "quiensoy" */
 #quiensoy .image-quiensoy {
     flex: 1; /* Hace que la imagen ocupe el espacio restante */
@@ -451,7 +489,7 @@ main {
 }
 
 #quiensoy .image-quiensoy img {
-    width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    width: 80%; /* La imagen ocupa el 100% del ancho de su contenedor */
     height: auto; /* Altura automática para mantener la proporción */
     border-radius: 50%; /* Bordes redondeados de la imagen */
 }
@@ -470,16 +508,18 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
     background-color: var(--contenedor-color); /* Color de fondo del contenido */
     font-family: var(--font-family-main);
+    margin-bottom: 40px;
+    border-radius: 15px; /* Añade bordes redondeados */
 }
+
 /* Estilos para el encabezado del artículo "educacion" */
 #educacion h2 {
-    font-family: var(--font-family-header); /* Fuente del encabezado */
+    font-family: var(--font-family-header_footer); /* Fuente del encabezado */
     font-size: 24px; /* Tamaño de fuente del encabezado */
     color: var(--header-color); /* Color del encabezado */
     margin-bottom: 20px; /* Margen inferior del encabezado */
     text-align: center; /* Centra el texto */
 }
-
 
 #educacion:hover {
     transform: translateY(-5px); /* Eleva el artículo ligeramente al pasar el ratón */
@@ -493,7 +533,7 @@ main {
 }
 
 #educacion .formation h2 {
-    font-family: var(--font-family-header); /* Fuente del encabezado */
+    font-family: var(--font-family-header_footer); /* Fuente del encabezado */
     font-size: 24px; /* Tamaño de fuente del encabezado */
     color: var(--header-color); /* Color del encabezado */
     margin-bottom: 20px; /* Margen inferior del encabezado */
@@ -501,7 +541,7 @@ main {
 
 #educacion .formation ul {
     list-style-type: disc; /* Tipo de viñeta de la lista */
-    padding-left: 20px; /* Espaciado interno a la izquierda de la lista */
+    padding-left: 40px; /* Espaciado interno a la izquierda de la lista */
     font-family: var(--font-family-text); /* Fuente del texto de la lista */
     font-size: 18px; /* Tamaño de fuente de la lista */
     line-height: 1.6; /* Altura de línea de la lista */
@@ -519,18 +559,23 @@ main {
 }
 
 #educacion .servicios h2 {
-    font-family: var(--font-family-header); /* Fuente del encabezado */
+    font-family: var(--font-family-header_footer); /* Fuente del encabezado */
     font-size: 24px; /* Tamaño de fuente del encabezado */
     color: var(--header-color); /* Color del encabezado */
     margin-bottom: 20px; /* Margen inferior del encabezado */
 }
 
-#educacion .servicios p {
-    font-family: var(--font-family-text); /* Fuente del texto */
-    font-size: 18px; /* Tamaño de fuente */
-    line-height: 1.6; /* Altura de línea */
-    color: black; /* Color del texto */
-    margin-bottom: 10px; /* Margen inferior entre párrafos */
+#educacion .servicios ul {
+    list-style-type: disc; /* Tipo de viñeta de la lista */
+    padding-left: 40px; /* Espaciado interno a la izquierda de la lista */
+    font-family: var(--font-family-text); /* Fuente del texto de la lista */
+    font-size: 18px; /* Tamaño de fuente de la lista */
+    line-height: 1.6; /* Altura de línea de la lista */
+    color: black; /* Color del texto de la lista */
+}
+
+#educacion .servicios li {
+    margin-bottom: 10px; /* Margen inferior entre elementos de la lista */
 }
 
 /* Estilos generales para la página de contacto */
@@ -548,6 +593,7 @@ main {
     border: 2px solid #e6a756; /* Borde sólido de color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
+    margin-top: 30px;
 }
 
 .contacto:hover {
@@ -614,7 +660,9 @@ main {
 }
 
 .enlaces h2 {
+    margin-top: 60px;
     font-size: 24px; /* Tamaño de fuente */
+    font-family: var(--font-family-header_footer);
     color: var(--header-color); /* Color del texto */
     margin-bottom: 20px; /* Margen inferior */
     text-align: center; /* Centra el texto */
@@ -628,7 +676,7 @@ main {
     display: flex;
     justify-content: space-between; /* Distribuye el espacio entre los colaboradores */
     width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-    font-family: var(--font-family-header);
+    font-family: var(--font-family-header_footer);
 }
 
 .colaborador {
@@ -672,7 +720,7 @@ main {
 footer {
     background: var(--header-color); /* Color de fondo del pie de página */
     text-align: center; /* Centra el contenido del pie de página */
-    font-family: var(--font-family-header);
+    font-family: var(--font-family-header_footer);
 }
 
 .footer {
@@ -713,6 +761,11 @@ footer {
 
 /* Media queries para pantallas más pequeñas que 1500px */
 @media (max-width: 1500px) {
+
+    .titulo h1 {
+        font-size: 30px;
+    }
+
     .div-colaboradores {
         flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas adicionales */
         width: 65%; /* Asegura que el contenedor ocupe todo el ancho */
@@ -726,6 +779,7 @@ footer {
 
 /* Media queries para pantallas más pequeñas que 1200px */
 @media (max-width: 1200px) {
+    
     /* Estilos para el artículo "quiensoy" */
     #quiensoy {
         flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
@@ -738,12 +792,12 @@ footer {
     }
 
     #quiensoy .image-quiensoy {
-        max-width: 100%; /* Ancho máximo de la imagen */
+        max-width: 60%; /* Ancho máximo de la imagen */
         margin-bottom: 20px; /* Añadir margen inferior para separar la imagen del contenido */
     }
 
     #quiensoy .image-quiensoy img {
-        width: 60%; /* La imagen ocupa el 100% del ancho de su contenedor */
+        width: 50%; 
     }
 
     #quiensoy .quiensoy-p {
@@ -770,11 +824,7 @@ footer {
 @media (max-width: 970px) {
     /* Estilos para el artículo "inicio" */
     #inicio {
-        max-width: 800px; /* Reducir el ancho máximo del artículo */
-    }
-
-    #inicio .content, #inicio .image {
-        max-width: 400px; /* Reducir el ancho máximo del contenido y la imagen */
+        max-height: none; /* Elimina la altura máxima */
     }
 
     #inicio .parafo-articulo h2 {
@@ -787,11 +837,6 @@ footer {
 
     #inicio .parafo-articulo p {
         font-size: 16px; /* Reducir el tamaño de fuente del párrafo */
-    }
-
-    #inicio .content button {
-        padding: 8px 16px; /* Reducir el espaciado interno del botón */
-        font-size: 14px; /* Reducir el tamaño de fuente del botón */
     }
 
     /* Estilos para el header */
@@ -809,7 +854,7 @@ footer {
     }
 
     .titulo h1 {
-        font-size: 28px; /* Reducir el tamaño de fuente del título */
+        font-size: 22px; /* Reducir el tamaño de fuente del título */
     }
 
     .empresas-confian h2 {
@@ -841,14 +886,8 @@ footer {
 @media (max-width: 768px) {
     /* Estilos para el artículo "inicio" */
     #inicio {
-        flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
         max-width: 600px; /* Reducir el ancho máximo del artículo */
         max-height: none; /* Eliminar la altura máxima para que se ajuste al contenido */
-    }
-
-    #inicio .content, #inicio .image {
-        max-width: 100%; /* Ancho máximo del contenido y la imagen */
-        padding-bottom: 20px;
     }
 
     #inicio .parafo-articulo h2 {
@@ -861,17 +900,6 @@ footer {
 
     #inicio .parafo-articulo p {
         font-size: 14px; /* Reducir el tamaño de fuente del párrafo */
-    }
-
-    #inicio .content button {
-        padding: 6px 12px; /* Reducir el espaciado interno del botón */
-        font-size: 12px; /* Reducir el tamaño de fuente del botón */
-    }
-
-    /* Reducir el tamaño de la imagen en el div class="image" */
-    #inicio .image img {
-        max-width: 60%; /* Reducir el ancho máximo de la imagen */
-        max-height: 60%; /* Reducir la altura máxima de la imagen */
     }
 
     /* Estilos para el header */
@@ -903,6 +931,14 @@ footer {
     .logos-empresas img {
         max-width: 80px; /* Reducir aún más el ancho máximo de los logos */
         height: 80px; /* Reducir aún más la altura máxima de los logos */
+    }
+
+    .scroll-arrow i {
+        font-size: 35px;
+    }
+
+    #quiensoy .image-quiensoy img {
+        width: 75%; 
     }
 
     .contacto {
@@ -946,19 +982,12 @@ footer {
 
 /* Media queries para pantallas de 480px */
 @media (max-width: 480px) {
+
     .menu ul li a {
         font-size: 10px; /* Reducir el tamaño de fuente de los enlaces del menú */
     }
 
     /* Estilos para el artículo "inicio" */
-    #inicio {
-        max-width: 100%; /* Ancho máximo del artículo */
-    }
-
-    #inicio .content, #inicio .image {
-        max-width: 100%; /* Ancho máximo del contenido y la imagen */
-    }
-
     #inicio .parafo-articulo h2 {
         font-size: 16px; /* Reducir el tamaño de fuente del subtítulo */
     }
@@ -971,9 +1000,12 @@ footer {
         font-size: 12px; /* Reducir el tamaño de fuente del párrafo */
     }
 
-    #inicio .content button {
-        padding: 4px 8px; /* Reducir el espaciado interno del botón */
-        font-size: 10px; /* Reducir el tamaño de fuente del botón */
+    #inicio .boton-articulo button a{
+        font-size: 15px; /* Reducir el tamaño de fuente del botón */
+    }
+
+    #quiensoy .image-quiensoy img {
+        width: 130%; 
     }
 
     /* Estilos para el header */
@@ -1040,15 +1072,8 @@ footer {
 
 /* Media queries para pantallas de 360px */
 @media (max-width: 360px) {
+
     /* Estilos para el artículo "inicio" */
-    #inicio {
-        max-width: 100%; /* Ancho máximo del artículo */
-    }
-
-    #inicio .content, #inicio .image {
-        max-width: 100%; /* Ancho máximo del contenido y la imagen */
-    }
-
     #inicio .parafo-articulo h2 {
         font-size: 14px; /* Reducir el tamaño de fuente del subtítulo */
     }
@@ -1061,9 +1086,8 @@ footer {
         font-size: 10px; /* Reducir el tamaño de fuente del párrafo */
     }
 
-    #inicio .content button {
-        padding: 3px 6px; /* Reducir el espaciado interno del botón */
-        font-size: 8px; /* Reducir el tamaño de fuente del botón */
+    #inicio .boton-articulo button a{
+        font-size: 13px; /* Reducir el tamaño de fuente del botón */
     }
 
     /* Estilos para el header */

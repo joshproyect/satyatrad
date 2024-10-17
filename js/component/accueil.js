@@ -24,9 +24,12 @@ export function cargarAccueilContent (traducc) {
                         <a href="./src/contacto.html"> ${traducc.accueil.boton}</a>
                     </button>
                 </div>
+
             </div>
-            <div class="image">
-                <img src="./assets/img/Satya modifé coupé.jpg" alt="Logo">  
+            <div class="boton-articulo">
+                <button>
+                    <a href="./src/contacto.html"> ME CONTACTER</a>
+                </button>
             </div>
         </article>
 
@@ -42,6 +45,7 @@ export function cargarAccueilContent (traducc) {
                     <img src="./assets/img/logos/logo paquet.jpg" alt="Logo Empresa 6">
                     <img src="./assets/img/logos/logo_dupuis_rouge3.png" alt="Logo Empresa 7">
                     <img src="./assets/img/logos/NHN_Corp_Logo.svg.png" alt="Logo Empresa 8">
+
                 </div>
             </div>
         </div>

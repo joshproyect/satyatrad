@@ -23,6 +23,7 @@ export function cargarQuisuisjeContent (traducc) {
         <article id="educacion">
             <div class="formation">
                 <h2>${traducc.quisuisje.titulo3}</h2>
+
                 <ul>
                     <li>${traducc.quisuisje.li1}</li>
                     <li>${traducc.quisuisje.li2}</li>
@@ -37,6 +38,7 @@ export function cargarQuisuisjeContent (traducc) {
                 <p>${traducc.quisuisje.p7}</p>
                 <p>${traducc.quisuisje.p8}</p>
                 <p>${traducc.quisuisje.p9}</p>
+
             </div>
         </article>
     `;
