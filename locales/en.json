@@ -1,57 +1,14 @@
 {
-    "idioma": "en",
-    "headerMenu": {
-        "accueil": "HOME",
-        "portfolio": "PORTFOLIO",
-        "quisuisje": "ABOUT ME",
-        "contacto": "CONTACT"
+    "inicio": {
+      "title": "Welcome to the Home Page",
+      "content": "This is the home section of our SPA."
     },
-    "headerTitulo": {
-        "titulo": "SATYA TRAD - LITERARY TRANSLATOR SPECIALIZED IN COMICS"
+    "descripcion": {
+      "title": "Description",
+      "content": "This is the description section of our SPA."
     },
-    "accueil": {
-        "titulo": "TRANSLATOR SPECIALIZED IN GRAFIC NOVELS",
-        "p1": "You are a graphic novel author, and you want to send your project to French publishers? You need help to find the francophone publisher who would be perfect for your project ?",
-        "p2": "You work in the book industry, and you are looking for a translator who knows perfectly the terminology of comics and publishing to translate your professional documents, website, or catalogues?",
-        "p3": "Don't hesitate to contact me to exchange and talk about your projects!",
-        "boton": "Contact me",
-        "tituloEnlace": "They already trust us"
-    },
-    "portfolio": {
-        "btn1": "All",
-        "btn2": "Comics",
-        "btn3": "Graphic novel"
-    },
-    "quisuisje": {
-        "titulo1": "Translator ES/CAT/EN>FR",
-        "titulo2": "Specialized in grafic novels",
-        "p1": "I was born in 1985 in France, I have an Indian name, my father is from Brittany and my mother from Quebec.",
-        "p2": "As I grew up without television, I was naturally attracted to drawing and reading. That’s it, my work will be related to graphic novels, as it unites my two passions!",
-        "p3": "During twelve years, I have been a bookseller specialized in comics in Paris and further in the south of France.",
-        "p4": "I felt in love with Spain and Catalonia and move there in 2020 at Olesa de Montserrat, a small town around Barcelona. I become a graphic novel translator from Spanish, Catalan and English into French.",
-        "p5": "I work for many francophones publishing houses and love to explore genders: children’s literature, historical, romance, fantasy, science-fiction, slice of life…",
-        "p6": "In 2022, I take a new step in my life co-writing a graphic novel with the drawer Manolo Carot.",
-        "titulo3": "EDUCATION",
-        "li1": "School of Literary Translation of Paris (ETL, 2025)",
-        "li2": "TWorkshop “Going out of the bubbles: the art of translating comics” – Center of Literary Translation of Lausanne (2024)",
-        "li3": "Workshop ViceVersa Catalan/French – International College of Literary Translators of Arles – Atlas (2023)",
-        "li4": "Master degree of Translation from Spanish into French - (Edvenn)",
-        "li5": "Licence in Publishing Professions (Paris V, one semestre in Newcastle)",
-        "li6": "DUT Book Professions, Bookshop specialization  (Nancy-Charlemagne)",
-        "titulo4": "SERVICES",
-        "p7": "Comics tranlsation into French from spanish, catalan and english",
-        "p8": "for authors: translation in French of graphic novels project",
-        "p9": "for publishers: translation in French of professionnal documents, website, catalogues"
-    },
-    "contacto": {
-        "strong1": "E-mail:",
-        "strong2": "Tel (FR):",
-        "strong3": "Tel (ES):",
-        "span1": "Olesa de Montserrat, Barcelona",
-        "titulo1": "ENLACES",
-        "p1": "Portrait (illustration)",
-        "p2": "Portrait (photograph)",
-        "p3": "Website programmation",
-        "p4": "Website design"
+    "acerca": {
+      "title": "About Us",
+      "content": "This is the about section of our SPA."
     }
-}
+  }
