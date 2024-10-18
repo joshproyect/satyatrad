@@ -11,8 +11,8 @@ export function cargarMenuContent (traducc) {
 }
 
 // Cerrar menu hamburguesa
-export function cargarEventClickLinks (traducc) {
-    document.querySelectorAll('#manu-list > a').forEach(a => {
+export function cargarEventClickLinks () {
+    document.querySelectorAll('#menu-list > li > a').forEach(a => {
         a.addEventListener('click', function() {
             document.querySelector('#menu-list').classList.remove('show');
         });
