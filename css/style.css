@@ -990,13 +990,17 @@ footer {
         font-size: 16px; /* Reducir aún más el tamaño de fuente del título de las empresas */
     }
 
+    .logos-empresas {
+        padding: 0;
+    }
+
     .logos-empresas img {
         max-width: 80px; /* Reducir aún más el ancho máximo de los logos */
         height: 80px; /* Reducir aún más la altura máxima de los logos */
     }
 
     .scroll-arrow i {
-        font-size: 35px;
+        font-size: 20px;
     }
 
     .portfolio {
