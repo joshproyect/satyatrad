@@ -1,37 +1,23 @@
-const accueilContent = `
+export function cargarAccueilContent (traducc) {
+    const accueilContent = `
         <article id="inicio" class="active">
             <div class="parafo-articulo">
-                <h2>
-                    TRADUCTRICE SPÉCIALISÉE BD
-                </h2>
-                <h1>
-                    SATYA DANIEL
-                </h1>
-                <p>
-                    Vous éditez des bandes dessinées, des romans graphiques, des
-                    mangas ou des webtoons ? 
-                </p>
-                <p>
-                    Vous recherchez une traductrice littéraire de l’espagnol, du 
-                    catalan ou de l’anglais vers le français maîtrisant les codes 
-                    de la BD ? Et en particulier les codes culturels de l’Espagne, 
-                    de la Catalogne, du Canada, du Québec et de l’Écosse ?
-                </p>
-                <p>                       
-                    N’hésitez pas à me contacter pour échanger et discuter ensemble 
-                    de vos projets !
-                </p>
+                <h2>${traducc.accueil.titulo}</h2>
+                <h1>SATYA DANIEL</h1>
+                <p>${traducc.accueil.p1}</p>
+                <p>${traducc.accueil.p2}</p>
+                <p>${traducc.accueil.p3}</p>
             </div>
             <div class="boton-articulo">
                 <button>
-                    <a href="#contacto"> ME CONTACTER</a>
+                    <a href="#contacto">${traducc.accueil.boton}</a>
                 </button>
             </div>
         </article>
 
         <div class="empresas-confian-container">
             <div class="empresas-confian">
-                <h2>Ils m’ont fait confiance</h2>
+                <h2>${traducc.accueil.tituloEnlace}</h2>
                 <div class="scroll-container">
                     <div class="scroll-arrow left-arrow" id="leftArrow">
                         <i class="fa-solid fa-chevron-left"></i>
@@ -69,7 +55,5 @@ const accueilContent = `
             </div>
         </div>
 `;
-
-export function cargarAccueilContent () {
     return accueilContent;
 }
