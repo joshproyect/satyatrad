@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
       switch (sectionId) {
         case "accueil":
               mainContent.innerHTML = cargarAccueilContent();
+         
+              setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
               break;
         case "portfolio":
               mainContent.innerHTML = cargarPortfolioContent();
@@ -54,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   
-
   
     // Mostrar la sección correspondiente al cargar la página
     handleRouteChange();
@@ -62,11 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /* Desplazamiento horizontal del contenedor de logos: */
-  document.addEventListener('DOMContentLoaded', function() {
+ // document.addEventListener('DOMContentLoaded', function() {
+function setUpArrowEvents() {       // Función para configurar los eventos de las flechas
+
     const logosContainer = document.getElementById('logosContainer');
     const leftArrow = document.getElementById('leftArrow');
     const rightArrow = document.getElementById('rightArrow');
 
+   if (leftArrow && rightArrow && logosContainer) {//if para prevenir errores si no existen los elementos en el dom
     // Función para desplazar a la izquierda
     leftArrow.addEventListener('click', function() {
         logosContainer.scrollBy({
@@ -82,7 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
-});
+   }
+}
+   //}); //estos venian del DomContentLoaded
 
 /* Apertura y cierre del menú hamburguesa */
 document.addEventListener('DOMContentLoaded', function() {
