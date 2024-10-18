@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleRouteChange() {
       const hash = window.location.hash.substring(1);
       showSection(hash);
+      closeNav(); // Cierra el menú al cambiar de página
     }
     
     // Función para mostrar la sección correspondiente
@@ -61,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /* Desplazamiento horizontal del contenedor de logos: */
-
   document.addEventListener('DOMContentLoaded', function() {
     const logosContainer = document.getElementById('logosContainer');
     const leftArrow = document.getElementById('leftArrow');
@@ -84,3 +84,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+/* Apertura y cierre del menú hamburguesa */
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburguesa = document.querySelector('.hamburguer');
+    const enlaces = document.querySelector('#menu-list');
+
+    // Función para alternar la clase 'show' en el menú
+    function toggleMenu() {
+      enlaces.classList.toggle('show');
+  }
+
+    // Función para cerrar el menú
+    window.closeNav = function() {
+      enlaces.classList.remove('show');
+  }
+
+  // Event listener para el menú hamburguesa
+  hamburguesa.addEventListener('click', toggleMenu);
+
+});

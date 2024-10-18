@@ -25,6 +25,13 @@
             <a href="./index.html" class="logo-overlay">
                 <img src="./assets/img/Satya modifé coupé.jpg" alt="Logo">
             </a>
+            <!---------------------------- Menu hamburguesa ---------------------------->
+            <div class="hamburguer" id="hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!---------------------------- Menu hamburguesa ---------------------------->
             <div class="language-selector">
                 <div class="current-language">
                     <i class="fas fa-globe language-icon"></i>
@@ -39,11 +46,14 @@
             </div>
         </div>
         <nav class="menu">
-            <ul>
-                <li><a href="#accueil">ACCUEIL</a></li>
-                <li><a href="#portfolio">PORTFOLIO</a></li>
-                <li><a href="#quisuisje">QUI SUIS-JE?</a></li>
-                <li><a href="#contacto">CONTACT</a></li>
+            <!-- h1 oculto en pantallas superiores a 768px -->
+                <h1 class="h1-oculto">SATYA TRAD - TRADUCTRICE LITTÉRAIRE - SPÉCIALISÉE BD</h1>
+            <!-- h1 oculto en pantallas superiores a 768px -->
+            <ul class="menu-list" id="menu-list">
+                <li><a href="#accueil" onclick="closeNav()">ACCUEIL</a></li>
+                <li><a href="#portfolio" onclick="closeNav()">PORTFOLIO</a></li>
+                <li><a href="#quisuisje" onclick="closeNav()">QUI SUIS-JE?</a></li>
+                <li><a href="#contacto" onclick="closeNav()">CONTACT</a></li>
             </ul>
         </nav>
         <div class="titulo">
