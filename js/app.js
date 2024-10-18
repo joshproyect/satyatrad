@@ -11,7 +11,12 @@ import { cargarContactoContent } from "./component/contacto.js";
 export let traducc;
 
 document.addEventListener('DOMContentLoaded', function() {
-  
+    
+    // Función para alternar la clase 'show' en el menú hamburguesa
+    document.querySelector('.hamburguer').addEventListener('click', function() {
+        document.querySelector('#menu-list').classList.toggle('show');
+    });
+    
     // Se añade evento sobre el cambio de idioma
     document.getElementById('language').addEventListener('change', function() {    
         cargarTraducciones(document.getElementById('language').value)
@@ -43,7 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     default:
                         document.getElementById('main-content').innerHTML = 'Error al cargar sección';
                 }
-                closeNav(); // Cierra el menú al cambiar de página
+                // Cierra el menú al cambiar de página
+                document.querySelector('#menu-list').classList.remove('show');
             })
             .catch(error => {
                 console.error('Error en la carga de traducciones:', error);
@@ -76,7 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         default:
                             document.getElementById('main-content').innerHTML = 'Error al cargar sección';
                     }
-                    closeNav(); // Cierra el menú al cambiar de página
+                    // Cierra el menú al cambiar de página
+                    document.querySelector('#menu-list').classList.remove('show');
                 })
                 .catch(error => {
                     console.error('Error en la carga de traducciones:', error);
@@ -100,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 default:
                     document.getElementById('main-content').innerHTML = 'Error al cargar sección';
             }
-            closeNav(); // Cierra el menú al cambiar de página
+            // Cierra el menú al cambiar de página
+            document.querySelector('#menu-list').classList.remove('show');
         }
     });
 
@@ -134,7 +142,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 default:
                     document.getElementById('main-content').innerHTML = 'Error al cargar sección';
             }
-            closeNav(); // Cierra el menú al cambiar de página
+            // Cierra el menú al cambiar de página
+            document.querySelector('#menu-list').classList.remove('show');
         })
         .catch(error => {
             console.error('Error en la carga de traducciones:', error);
@@ -168,24 +177,3 @@ function setUpArrowEvents() {       // Función para configurar los eventos de l
     });
    }
 }
-   //}); //estos venian del DomContentLoaded
-
-/* Apertura y cierre del menú hamburguesa */
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburguesa = document.querySelector('.hamburguer');
-    const enlaces = document.querySelector('#menu-list');
-
-    // Función para alternar la clase 'show' en el menú
-    function toggleMenu() {
-        enlaces.classList.toggle('show');
-    }
-
-    // Función para cerrar el menú
-    window.closeNav = function() {
-        enlaces.classList.remove('show');
-    }
-
-    // Event listener para el menú hamburguesa
-    hamburguesa.addEventListener('click', toggleMenu);
-
-});
