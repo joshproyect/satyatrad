@@ -1,6 +1,7 @@
 import { cargarTraducciones } from "./component/traducciones.js";
 import { cargarTitulo768Content } from "./component/titulo768.js";
 import { cargarMenuContent } from "./component/menu.js";
+import { cargarEventClickLinks } from "./component/menu.js"
 import { cargarTituloContent } from "./component/titulo.js";
 import { cargarAccueilContent } from "./component/accueil.js";
 import { cargarPortfolioContent } from "./component/portfolio.js";
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('titulo768').innerHTML = cargarTitulo768Content(traducc);
                 // Menu
                 document.getElementById('menu').innerHTML = cargarMenuContent(traducc);
+                cargarEventClickLinks();
                 // Titulo
                 document.getElementById('titulo').innerHTML = cargarTituloContent(traducc);
                 // Seccion-Pagina
@@ -121,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('titulo768').innerHTML = cargarTitulo768Content(traducc);
             // Menu
             document.getElementById('menu').innerHTML = cargarMenuContent(traducc);
+            cargarEventClickLinks();
             // Titulo
             document.getElementById('titulo').innerHTML = cargarTituloContent(traducc);
             // Seccion-Pagina
