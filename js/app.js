@@ -4,6 +4,8 @@ import { cargarMenuContent } from "./component/menu.js";
 import { cargarEventClickLinks } from "./component/menu.js"
 import { cargarTituloContent } from "./component/titulo.js";
 import { cargarAccueilContent } from "./component/accueil.js";
+//import { setUpArrowEvents } from "./component/carrusel.js";
+import { carruselAutoInicio } from "./component/carrusel.js";
 import { cargarPortfolioContent } from "./component/portfolio.js";
 import { cargarEventClickButtonsPortfolio } from "./component/portfolio.js"
 import { cargarQuisuisjeContent } from "./component/quisuisje.js";
@@ -35,7 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 switch (sectionId) {
                     case "accueil":
                         document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
-                        setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
+                        //setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
+                        carruselAutoInicio();
                         break;
                     case "portfolio":
                         document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
@@ -69,7 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     switch (sectionId) {
                         case "accueil":
                             document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
-                            setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
+                            //setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
+                            carruselAutoInicio();
                             break;
                         case "portfolio":
                             document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
@@ -94,7 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
             switch (sectionId) {
                 case "accueil":
                     document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
-                    setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
+                    //setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
+                    carruselAutoInicio();
                     break;
                 case "portfolio":
                     document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
@@ -131,6 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
             switch (sectionId) {
                 case "accueil":
                     document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
+                    //setUpArrowEvents();
+                    carruselAutoInicio();
                     break;
                 case "portfolio":
                     document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
@@ -154,36 +161,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-/* Desplazamiento horizontal del contenedor de logos: */
- // document.addEventListener('DOMContentLoaded', function() {
-function setUpArrowEvents() {       // Función para configurar los eventos de las flechas
+/* 
 
-    const logosContainer = document.getElementById('logosContainer');
-    const leftArrow = document.getElementById('leftArrow');
-    const rightArrow = document.getElementById('rightArrow');
-
-   if (leftArrow && rightArrow && logosContainer) {//if para prevenir errores si no existen los elementos en el dom
-    // Función para desplazar a la izquierda
-    leftArrow.addEventListener('click', function() {
-        logosContainer.scrollBy({
-            left: -300, // Ajusta este valor según el ancho de los logos
-            behavior: 'smooth'
-        });
-    });
-
-    // Función para desplazar a la derecha
-    rightArrow.addEventListener('click', function() {
-        logosContainer.scrollBy({
-            left: 300, // Ajusta este valor según el ancho de los logos
-            behavior: 'smooth'
-        });
-    });
-   }
-
-}
-   //}); //estos venian del DomContentLoaded
-
-/* Apertura y cierre del menú hamburguesa */
+//Apertura y cierre del menú hamburguesa
 document.addEventListener('DOMContentLoaded', function() {
     const hamburguesa = document.querySelector('.hamburguer');
     const enlaces = document.querySelector('#menu-list');
@@ -205,22 +185,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
-
-// Scroll menu
-/*
-let ubicacionPrincipal = window.scrollY
-let $nav = document.querySelector('#nav')
-
-window.addEventListener('scroll', function() {
-  let ubicacionActual = window.scrollY
-
-  if( ubicacionPrincipal >= ubicacionActual ) {
-    $nav.style.top = "0px"
-  } else {
-    $nav.style.top = "-64px"
-  }
-
-  ubicacionPrincipal = ubicacionActual
-})
-*/
+ */
