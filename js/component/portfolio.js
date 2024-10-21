@@ -7,7 +7,7 @@ export function cargarPortfolioContent (traducc) {
                 <button class="filtro" data-filtro="roman-graphique">${traducc.portfolio.btn3}</button>
                 <button class="filtro" data-filtro="webtoon">Webtoon</button>
                 <button class="filtro" data-filtro="es-fr">ES>FR</button>
-                <button class="filtro" data-filtro="cat-fr">CAT>FR</button>
+                <button class="filtro cat_fr" data-filtro="cat-fr">CAT>FR</button>
                 <button class="filtro" data-filtro="en-fr">EN>FR</button>
             </div>
             <div class="mosaico">
@@ -51,7 +51,7 @@ export function cargarPortfolioContent (traducc) {
                         <img src="./assets/img/portadas/revolution nommée raspoutine.jpg" alt="Comic 8">
                     </a>
                 </div>
-                <div class="item" data-filtro="bd en-fr">
+                <div class="item" data-filtro="bd es-fr">
                     <a href="https://www.glenat.com/24x32-glenat-bd/le-premier-dumas-tome-01-9782344045251" target="_blank">
                         <img src="./assets/img/portadas/premier dumas T.1 couv.jpeg" alt="Comic 9">
                     </a>
@@ -78,7 +78,7 @@ export function cargarPortfolioContent (traducc) {
                 </div>
                 <div class="item" data-filtro="webtoon en-fr">
                     <a href="https://www.pocketcomics.com/comic/8055" target="_blank">
-                        <img src="./assets/img/portadas/i-want-to-escape-from-princess-lessons-193x278-1.jpg" alt="Comic 14">
+                        <img src="./assets/img/portadas/LA PRINCESSE FAIT ECOLE BUISSONNIERE HD.jpg" alt="Comic 14">
                     </a>
                 </div>
             </div>

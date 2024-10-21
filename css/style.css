@@ -16,7 +16,6 @@
     padding: 0; /* Elimina el padding por defecto de todos los elementos */
     box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
     text-decoration: none; /* Elimina el subrayado de los enlaces */
-    font-size: 20px; /* Tamaño de fuente por defecto */
 }
 
 /* Estilos para el header */
@@ -236,7 +235,7 @@ main {
     background: url(../assets/img/Satya\ modifé\ coupé.jpg) no-repeat;
     background-size: cover;
     background-position: center;
-    font-family: var(--font-family-main);
+    font-family: var(--font-family-header_footer);
     border-radius: 15px; /* Añade bordes redondeados */
     padding: 40px; /* Espaciado interno para el contenido */
     box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
@@ -345,6 +344,7 @@ main {
     position: relative;
 }
 
+/* Estilos para el contenedor de logos */
 .logos-empresas {
     display: flex; /* Usamos flexbox para organizar los logos */
     gap: 20px; /* Espacio entre los logos */
@@ -356,6 +356,26 @@ main {
     margin: 0 95px;
 }
 
+/*
+.logos-empresas {
+    scroll-behavior: smooth; // Desplazamiento suave 
+    animation: scrollLogos 20s linear infinite; // Animación de desplazamiento
+}
+*/
+
+/* Animación de desplazamiento de los logos */
+/*
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0); // Comienza en la posición inicial 
+    }
+    100% {
+        transform: translateX(-100%); // Desplaza los logos completamente fuera de la vista 
+    }
+}
+*/
+
+/* Estilos para los logos individuales */
 .logos-empresas img {
     max-width: 150px; /* Ancho máximo de los logos */
     height: 150px; /* Altura máxima de los logos */
@@ -434,6 +454,10 @@ main {
 .filtro:active {
     transform: translateY(1px); /* Hace que el botón se hunda ligeramente al hacer clic */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra menos pronunciada al hacer clic */
+}
+
+.cat_fr {
+    display: none;
 }
 
 .mosaico {
@@ -528,11 +552,11 @@ main {
     max-width: 50%; /* Ancho máximo de la imagen */
     display: flex; /* Usamos flexbox para centrar la imagen */
     justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
+    align-items: flex-start; /* Centra la imagen verticalmente */
 }
 
 #quiensoy .image-quiensoy img {
-    width: 80%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    width: 70%; /* La imagen ocupa el 100% del ancho de su contenedor */
     height: auto; /* Altura automática para mantener la proporción */
     border-radius: 50%; /* Bordes redondeados de la imagen */
 }
@@ -909,6 +933,18 @@ footer {
         height: 90px; /* Reducir la altura máxima de los logos */
     }
 
+    #quiensoy .quiensoy-p {
+        font-size: 15px; /* Tamaño de fuente */
+    }
+
+    #educacion .formation ul {
+        font-size: 15px; 
+    }
+    
+    #educacion .servicios ul {
+        font-size: 15px;
+    }
+
     .div-colaboradores {
         width: 90%; /* Asegura que el contenedor ocupe todo el ancho */
     }
@@ -1098,6 +1134,18 @@ footer {
 
     #quiensoy .image-quiensoy img {
         width: 130%; 
+    }
+
+    #quiensoy .quiensoy-p {
+        font-size: 13px; /* Tamaño de fuente */
+    }
+
+    #educacion .formation ul {
+        font-size: 13px; 
+    }
+    
+    #educacion .servicios ul {
+        font-size: 13px;
     }
 
     /* Estilos para el header */

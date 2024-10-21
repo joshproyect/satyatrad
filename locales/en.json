@@ -7,7 +7,7 @@
         "contacto": "CONTACT"
     },
     "headerTitulo": {
-        "titulo": "SATYA TRAD - LITERARY TRANSLATOR SPECIALIZED IN COMICS"
+        "titulo": "SATYA TRAD - LITERARY TRANSLATOR – SPECIALIZED IN COMICS"
     },
     "accueil": {
         "titulo": "TRANSLATOR SPECIALIZED IN GRAFIC NOVELS",
@@ -15,7 +15,7 @@
         "p2": "You work in the book industry, and you are looking for a translator who knows perfectly the terminology of comics and publishing to translate your professional documents, website, or catalogues?",
         "p3": "Don't hesitate to contact me to exchange and talk about your projects!",
         "boton": "Contact me",
-        "tituloEnlace": "They already trust us"
+        "tituloEnlace": "They already trust me"
     },
     "portfolio": {
         "btn1": "All",
@@ -44,12 +44,13 @@
         "p9": "for publishers: translation in French of professionnal documents, website, catalogues"
     },
     "contacto": {
-        "strong1": "E-mail:",
-        "strong2": "Tel (FR):",
-        "strong3": "Tel (ES):",
-        "strong4": "Address:",
+        "strong4": "Address :",
         "span1": "Olesa de Montserrat, Barcelona",
-        "titulo1": "ENLACES",
+        "strong1": "E-mail :",
+        "strong2": "Tel (FR) :",
+        "strong3": "Tel (ES) :",
+        "strong5": "LinkedIn :",
+        "titulo1": "CREDITS",
         "p1": "Portrait (illustration)",
         "p2": "Portrait (photograph)",
         "p3": "Website programmation",

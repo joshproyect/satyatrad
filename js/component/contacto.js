@@ -5,6 +5,10 @@ export function cargarContactoContent (traducc) {
                 <h2>SATYA DANIEL</h2>
                 <ul>
                     <li>
+                        <strong><i class="fas fa-map-marker-alt"></i>${traducc.contacto.strong4}</strong> 
+                        <span>${traducc.contacto.span1}</span>
+                    </li>
+                    <li>
                         <strong><i class="fas fa-envelope"></i>${traducc.contacto.strong1}</strong> 
                         <span><a href="mailto:satya.daniel@yahoo.fr">satya.daniel@yahoo.fr</a></span>
                     </li>
@@ -19,16 +23,12 @@ export function cargarContactoContent (traducc) {
                     </li>
                     -->
                     <li>
-                        <strong><i class="fab fa-linkedin"></i>LinkedIn:</strong> 
+                        <strong><i class="fab fa-linkedin"></i>${traducc.contacto.strong5}</strong> 
                         <span><a href="https://www.linkedin.com/in/satya-daniel-traductrice-bd" target="_blank">www.linkedin.com/in/satya-daniel-traductrice-bd</a></span>
                     </li>
                     <li>
-                        <strong><i class="fab fa-instagram"></i>Instagram:</strong> 
+                        <strong><i class="fab fa-instagram"></i>Instagram :</strong> 
                         <span><a href="https://www.instagram.com/satyatrad/?hl=fr" target="_blank">https://www.instagram.com/satyatrad/?hl=fr</a></span>
-                    </li>
-                    <li>
-                        <strong><i class="fas fa-map-marker-alt"></i>${traducc.contacto.strong4}</strong> 
-                        <span>${traducc.contacto.span1}</span>
                     </li>
                 </ul>
             </div>
