@@ -1,65 +1,157 @@
+import { cargarTraducciones } from "./component/traducciones.js";
+import { cargarTitulo768Content } from "./component/titulo768.js";
+import { cargarMenuContent } from "./component/menu.js";
+import { cargarEventClickLinks } from "./component/menu.js"
+import { cargarTituloContent } from "./component/titulo.js";
 import { cargarAccueilContent } from "./component/accueil.js";
 import { cargarPortfolioContent } from "./component/portfolio.js";
 import { cargarEventClickButtonsPortfolio } from "./component/portfolio.js"
 import { cargarQuisuisjeContent } from "./component/quisuisje.js";
 import { cargarContactoContent } from "./component/contacto.js";
 
+export let traducc;
+
 document.addEventListener('DOMContentLoaded', function() {
-  
-  const mainContent = document.getElementById('main-content');
-    let translations = {};
-
-    // Sección de inicio
-    window.location.hash = "accueil";
-
-    // Manejar el evento de cambio de hash en la URL
-    window.addEventListener('hashchange', handleRouteChange);
-
-    // Manejar el evento de clic en los enlaces del menú
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
-        const sectionId = this.getAttribute('href').substring(1);
-        window.location.hash = sectionId;
-        handleRouteChange();
-      });
+    
+    // Función para alternar la clase 'show' en el menú hamburguesa
+    document.querySelector('.hamburguer').addEventListener('click', function() {
+        document.querySelector('#menu-list').classList.toggle('show');
+    });
+    
+    // Se añade evento sobre el cambio de idioma
+    document.getElementById('language').addEventListener('change', function() {    
+        cargarTraducciones(document.getElementById('language').value)
+            .then(traducciones => {
+                traducc = traducciones;
+                // Titulo oculto en pantallas superiores a 768px
+                document.getElementById('titulo768').innerHTML = cargarTitulo768Content(traducc);
+                // Menu
+                document.getElementById('menu').innerHTML = cargarMenuContent(traducc);
+                cargarEventClickLinks();
+                // Titulo
+                document.getElementById('titulo').innerHTML = cargarTituloContent(traducc);
+                // Seccion-Pagina
+                let sectionId = window.location.hash.substring(1);
+                switch (sectionId) {
+                    case "accueil":
+                        document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
+                        setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
+                        break;
+                    case "portfolio":
+                        document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
+                        cargarEventClickButtonsPortfolio(traducc);
+                        break;
+                    case "quisuisje":
+                        document.getElementById('main-content').innerHTML = cargarQuisuisjeContent(traducc);
+                        break;
+                    case "contacto":
+                        document.getElementById('main-content').innerHTML = cargarContactoContent(traducc);
+                        break;
+                    default:
+                        document.getElementById('main-content').innerHTML = 'Error al cargar sección';
+                }
+                // Cierra el menú al cambiar de página
+                document.querySelector('#menu-list').classList.remove('show');
+            })
+            .catch(error => {
+                console.error('Error en la carga de traducciones:', error);
+            });
     });
 
-    // Función para manejar el cambio de ruta
-    function handleRouteChange() {
-      const hash = window.location.hash.substring(1);
-      showSection(hash);
-      closeNav(); // Cierra el menú al cambiar de página
-    }
-    
-    // Función para mostrar la sección correspondiente
-    function showSection(sectionId) {
-      //const section = translations[sectionId];
-      switch (sectionId) {
-        case "accueil":
-              mainContent.innerHTML = cargarAccueilContent();
-         
-              setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
-              break;
-        case "portfolio":
-              mainContent.innerHTML = cargarPortfolioContent();
-              cargarEventClickButtonsPortfolio();
-              break;
-        case "quisuisje":
-            mainContent.innerHTML = cargarQuisuisjeContent();
-            break;
-        case "contacto":
-              mainContent.innerHTML = cargarContactoContent();
-              break;
-        default:
-              mainContent.innerHTML = 'Error al cargar sección';
-      }
-    }
-  
-  
-    // Mostrar la sección correspondiente al cargar la página
-    handleRouteChange();
-  });
+    // Manejar el evento de cambio de hash en la URL
+    window.addEventListener('hashchange', function() {
+        // Seccion-Pagina
+        let sectionId = window.location.hash.substring(1);
+        if (typeof traducc === 'undefined') {
+            cargarTraducciones(document.getElementById('language').value)
+                .then(traducciones => {
+                    traducc = traducciones;
+                    switch (sectionId) {
+                        case "accueil":
+                            document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
+                            setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
+                            break;
+                        case "portfolio":
+                            document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
+                            cargarEventClickButtonsPortfolio(traducc);
+                            break;
+                        case "quisuisje":
+                            document.getElementById('main-content').innerHTML = cargarQuisuisjeContent(traducc);
+                            break;
+                        case "contacto":
+                            document.getElementById('main-content').innerHTML = cargarContactoContent(traducc);
+                            break;
+                        default:
+                            document.getElementById('main-content').innerHTML = 'Error al cargar sección';
+                    }
+                    // Cierra el menú al cambiar de página
+                    document.querySelector('#menu-list').classList.remove('show');
+                })
+                .catch(error => {
+                    console.error('Error en la carga de traducciones:', error);
+                });
+        } else {
+            switch (sectionId) {
+                case "accueil":
+                    document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
+                    setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
+                    break;
+                case "portfolio":
+                    document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
+                    cargarEventClickButtonsPortfolio(traducc);
+                    break;
+                case "quisuisje":
+                    document.getElementById('main-content').innerHTML = cargarQuisuisjeContent(traducc);
+                    break;
+                case "contacto":
+                    document.getElementById('main-content').innerHTML = cargarContactoContent(traducc);
+                    break;
+                default:
+                    document.getElementById('main-content').innerHTML = 'Error al cargar sección';
+            }
+            // Cierra el menú al cambiar de página
+            document.querySelector('#menu-list').classList.remove('show');
+        }
+    });
+
+    // Sección de inicio   
+    window.location.hash = "accueil";
+    cargarTraducciones(document.getElementById('language').value)
+        .then(traducciones => {
+            traducc = traducciones;
+            // Titulo oculto en pantallas superiores a 768px
+            document.getElementById('titulo768').innerHTML = cargarTitulo768Content(traducc);
+            // Menu
+            document.getElementById('menu').innerHTML = cargarMenuContent(traducc);
+            cargarEventClickLinks();
+            // Titulo
+            document.getElementById('titulo').innerHTML = cargarTituloContent(traducc);
+            // Seccion-Pagina
+            let sectionId = window.location.hash.substring(1);
+            switch (sectionId) {
+                case "accueil":
+                    document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
+                    break;
+                case "portfolio":
+                    document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
+                    cargarEventClickButtonsPortfolio(traducc);
+                    break;
+                case "quisuisje":
+                    document.getElementById('main-content').innerHTML = cargarQuisuisjeContent(traducc);
+                    break;
+                case "contacto":
+                    document.getElementById('main-content').innerHTML = cargarContactoContent(traducc);
+                    break;
+                default:
+                    document.getElementById('main-content').innerHTML = 'Error al cargar sección';
+            }
+            // Cierra el menú al cambiar de página
+            document.querySelector('#menu-list').classList.remove('show');
+        })
+        .catch(error => {
+            console.error('Error en la carga de traducciones:', error);
+        });
+});
 
 
 /* Desplazamiento horizontal del contenedor de logos: */
@@ -87,6 +179,7 @@ function setUpArrowEvents() {       // Función para configurar los eventos de l
         });
     });
    }
+
 }
    //}); //estos venian del DomContentLoaded
 

@@ -160,7 +160,8 @@
 /********************************/
 
 .language-icon {
-    margin-right: 5px; /* Espacio a la derecha del ícono del idioma */
+    margin-right: 10px; /* Espacio a la derecha del ícono del idioma */
+    margin-left: 10px; /* Espacio a la derecha del ícono del idioma */
     font-size: 20px; /* Tamaño del ícono del idioma */
     color: var(--text-color); /* Color del ícono del idioma */
 }
@@ -190,6 +191,13 @@
 
 .language-selector:hover .language-options {
     display: block; /* Muestra las opciones al pasar el ratón sobre el selector */
+}
+
+#language {
+  background-color: #8d1a26;
+  color: #ffffff;
+  border-radius: 5px; /* Bordes redondeados */
+  border-color: #8d1a26;
 }
 
 /* Estilos para el titulo */

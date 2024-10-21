@@ -1,9 +1,10 @@
-const portfolioContent = `
+export function cargarPortfolioContent (traducc) {
+    const portfolioContent = `
         <section id="portfolio" class="portfolio">
             <div class="filtros">
-                <button class="filtro" data-filtro="tout">Tout</button>
-                <button class="filtro" data-filtro="bd">BD</button>
-                <button class="filtro" data-filtro="roman-graphique">Roman Graphique</button>
+                <button class="filtro" data-filtro="tout">${traducc.portfolio.btn1}</button>
+                <button class="filtro" data-filtro="bd">${traducc.portfolio.btn2}</button>
+                <button class="filtro" data-filtro="roman-graphique">${traducc.portfolio.btn3}</button>
                 <button class="filtro" data-filtro="webtoon">Webtoon</button>
                 <button class="filtro" data-filtro="es-fr">ES>FR</button>
                 <button class="filtro" data-filtro="cat-fr">CAT>FR</button>
@@ -82,28 +83,11 @@ const portfolioContent = `
                 </div>
             </div>
         </section>
-`;
-
-let dataJSON;
-
-export function cargarPortfolioContent () {
-    cargarJSON();
+    `;
     return portfolioContent;
 }
 
-export function cargarJSON () {
-    // Ruta al archivo JSON
-    const filePath = './js/component/portfolio.json';
-    
-    fetch(filePath)
-        .then(response => response.json())
-        .then(data => {
-            dataJSON = data;
-        })
-        .catch(error => console.error('Error al cargar Portfolio:', error));    
-};
-
-export function cargarEventClickButtonsPortfolio () {
+export function cargarEventClickButtonsPortfolio (traducc) {
     const filtros = document.querySelectorAll('.filtro');
     const items = document.querySelectorAll('.item');
 
@@ -121,7 +105,7 @@ export function cargarEventClickButtonsPortfolio () {
         });
     });
 };
-
+    
 /* function filtrarPorCategoria(jsonData, categoria) {
     // Extraer el array de portfolio del JSON
     const portfolio = jsonData.portfolio;
