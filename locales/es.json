@@ -3,11 +3,11 @@
     "headerMenu": {
         "accueil": "INICIO",
         "portfolio": "PORTFOLIO",
-        "quisuisje": "QUIEN SOY?",
+        "quisuisje": "¿QUIEN SOY?",
         "contacto": "CONTACTO"
     },
     "headerTitulo": {
-        "titulo": "SATYA TRAD - TRADUCTORA LITERARIA DE CÓMICS"
+        "titulo": "SATYA TRAD - TRADUCTORA LITERARIA – DE CÓMICS"
     },
     "accueil": {
         "titulo": "TRADUCTORA ESPECIALIZADA EN CÓMICS",
@@ -15,7 +15,7 @@
         "p2": "¿Eres un professionnal del mundo del libro y buscas una traductora que domine la terminología del cómic y del mundo editorial para traducir tus documentos profesionales, websitios, o catologos?",
         "p3": "¡No dudes en contactarme para que intercambiemos y hablemos juntos de tus proyectos!",
         "boton": "Contactarme",
-        "tituloEnlace": "Ya confían en nosotros"
+        "tituloEnlace": "Ya confían en mí"
     },
     "portfolio": {
         "btn1": "Todo",
@@ -44,12 +44,13 @@
         "p9": "Para editores: traducción en francés de folletos, web sitios y catálogos"
     },
     "contacto": {
-        "strong1": "E-mail:",
-        "strong2": "Tel (FR):",
-        "strong3": "Tel (ES):",
-        "strong4": "Dirección:",
+        "strong4": "Dirección :",
         "span1": "Olesa de Montserrat, Barcelona",
-        "titulo1": "ENLACES",
+        "strong1": "E-mail :",
+        "strong2": "Tel (FR) :",
+        "strong3": "Tel (ES) :",
+        "strong5": "LinkedIn :",
+        "titulo1": "CREDITOS",
         "p1": "Retrato (ilustración)",
         "p2": "Retrato (fotografía)",
         "p3": "Programación web ",

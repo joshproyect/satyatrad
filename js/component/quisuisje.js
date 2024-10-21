@@ -34,9 +34,11 @@ export function cargarQuisuisjeContent (traducc) {
             </div>
             <div class="servicios">
                 <h2>${traducc.quisuisje.titulo4}</h2>
-                <p>${traducc.quisuisje.p7}</p>
-                <p>${traducc.quisuisje.p8}</p>
-                <p>${traducc.quisuisje.p9}</p>
+                <ul>
+                    <li>${traducc.quisuisje.p7}</li>
+                    <li>${traducc.quisuisje.p8}</li>
+                    <li>${traducc.quisuisje.p9}</li>
+                </ul>
             </div>
         </article>
     `;
