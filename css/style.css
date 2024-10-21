@@ -114,6 +114,19 @@
     transition: 0.3s;
 }
 
+/* Estilos para la transformación en "X" */
+.hamburguer.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburguer.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburguer.active .bar:nth-child(3) {
+    transform: translateY(-16px) rotate(-45deg);
+}
+
 /************************************************************/
 
 .language-selector {

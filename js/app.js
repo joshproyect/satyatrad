@@ -179,4 +179,48 @@ function setUpArrowEvents() {       // Función para configurar los eventos de l
         });
     });
    }
+
 }
+   //}); //estos venian del DomContentLoaded
+
+/* Apertura y cierre del menú hamburguesa */
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburguesa = document.querySelector('.hamburguer');
+    const enlaces = document.querySelector('#menu-list');
+
+    // Función para alternar la clase 'show' en el menú
+    function toggleMenu() {
+      enlaces.classList.toggle('show');
+      hamburguesa.classList.toggle('active');
+  }
+
+    // Función para cerrar el menú
+    window.closeNav = function() {
+      enlaces.classList.remove('show');
+      hamburguesa.classList.remove('active');
+  }
+
+  // Event listener para el menú hamburguesa
+  hamburguesa.addEventListener('click', toggleMenu);
+
+});
+
+
+
+// Scroll menu
+/*
+let ubicacionPrincipal = window.scrollY
+let $nav = document.querySelector('#nav')
+
+window.addEventListener('scroll', function() {
+  let ubicacionActual = window.scrollY
+
+  if( ubicacionPrincipal >= ubicacionActual ) {
+    $nav.style.top = "0px"
+  } else {
+    $nav.style.top = "-64px"
+  }
+
+  ubicacionPrincipal = ubicacionActual
+})
+*/
