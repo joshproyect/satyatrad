@@ -135,28 +135,41 @@
     z-index: 10; /* Asegura que esté por encima de otros elementos */
     display: flex; /* Usamos flexbox para organizar el selector */
     align-items: center; /* Centra verticalmente los elementos dentro del selector */
-    background-color: var(--button-color);
+    background-color: transparent;
     border-radius: 5px; /* Bordes redondeados */
 }
 
-.current-language {
-    display: flex; /* Usamos flexbox para organizar el idioma actual */
-    align-items: center; /* Centra verticalmente el idioma actual */
-    cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el idioma */
-    padding: 5px; /* Espaciado interno alrededor del idioma actual */
-    transition: background 0.3s ease; /* Transición suave para el cambio de fondo */
-    color: white; /* Color del texto del idioma actual */
+.language-selector select {
+    cursor: pointer;
+    background-color: var(--button-color);
+    color: #ffffff;
+    border-radius: 5px; /* Bordes redondeados */
+    border-color: var(--button-color);
+    height: 23px;
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de fondo */
 }
 
-/********ESTO NO FUNCIONA********/
-.current-language:hover {
-    background: transparent; /* Cambia el fondo a transparente al pasar el ratón */
+/* Estilos para cuando el select está enfocado (clicado) */
+.language-selector select:focus {
+    background-color: transparent;
+    color: var(--text-color);
+    border-color: transparent;
 }
 
-.current-language.hover-active {
-    background: transparent; /* Mantiene el fondo transparente mientras el menú está activo */
+/* Estilos para las opciones del selector de idioma */
+.language-selector select option {
+    background-color: var(--button-color); /* Color de fondo de las opciones */
+    color: var(--text-color); /* Color del texto de las opciones */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves para el cambio de fondo y color */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a puntero */
 }
-/********************************/
+
+/* Estilos para cuando se pasa el ratón sobre las opciones */
+.language-selector select option:hover {
+    background-color: var(--button-hover-color); /* Cambia el color de fondo al pasar el ratón */
+    color: var(--text-color); /* Cambia el color del texto al pasar el ratón */
+}
 
 .language-icon {
     margin-right: 10px; /* Espacio a la derecha del ícono del idioma */
@@ -165,42 +178,7 @@
     color: var(--text-color); /* Color del ícono del idioma */
 }
 
-.language-options {
-    display: none; /* Oculta las opciones de idioma por defecto */
-    position: absolute; /* Posicionamiento absoluto para colocar las opciones */
-    top: 100%; /* Coloca las opciones debajo del selector */
-    right: 0; /* Alinea las opciones a la derecha */
-    background: var(--header-color); /* Color de fondo de las opciones */
-    padding: 10px; /* Espaciado interno de las opciones */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
-}
-
-.language-options a {
-    display: block; /* Hace que cada opción ocupe toda la línea */
-    color: var(--text-color); /* Color del texto de las opciones */
-    text-decoration: none; /* Elimina el subrayado de las opciones */
-    padding: 5px 10px; /* Espaciado interno de las opciones */
-    transition: background 0.3s ease; /* Transición suave para el cambio de fondo */
-}
-
-.language-options a:hover {
-    background: var(--button-hover-color); /* Cambia el fondo al pasar el ratón */
-}
-
-.language-selector:hover .language-options {
-    display: block; /* Muestra las opciones al pasar el ratón sobre el selector */
-}
-
-#language {
-  background-color: #8d1a26;
-  color: #ffffff;
-  border-radius: 5px; /* Bordes redondeados */
-  border-color: #8d1a26;
-}
-
 /* Estilos para el titulo */
-
 .titulo {
     background-color: var(--main-color);
 }
@@ -464,6 +442,8 @@ main {
     display: grid; /* Usamos grid para organizar las imágenes */
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas automáticas con un ancho mínimo de 200px */
     gap: 20px; /* Espacio entre las imágenes */
+    max-width: 80%;
+    margin: 0 auto
 }
 
 .item img {
