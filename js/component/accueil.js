@@ -19,11 +19,9 @@ export function cargarAccueilContent (traducc) {
             <div class="empresas-confian">
                 <h2>${traducc.accueil.tituloEnlace}</h2>
                 <div class="scroll-container">
-                    <!--
                     <div class="scroll-arrow left-arrow" id="leftArrow">
                         <i class="fa-solid fa-chevron-left"></i>
                     </div>
-                    -->
                         <div class="logos-empresas" id="logosContainer">
                             <a href="https://www.dupuis.com/" target="_blank">
                                 <img src="./assets/img/logos/Dupuis fondo blanco.png" alt="Logo 1">
@@ -50,11 +48,9 @@ export function cargarAccueilContent (traducc) {
                                 <img src="./assets/img/logos/NHN fondo blanco.png" alt="Logo 8">
                             </a>
                         </div>
-                    <!--
                     <div class="scroll-arrow right-arrow" id="rightArrow">
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                    -->
                 </div>
             </div>
         </div>
