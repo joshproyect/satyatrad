@@ -8,7 +8,7 @@ import { cargarAccueilContent } from "./component/accueil.js";
 import { setUpArrowEvents } from "./component/carrusel.js";
 //import { carruselAutoInicio } from "./component/carrusel.js";
 import { cargarPortfolioContent } from "./component/portfolio.js";
-import { cargarEventClickButtonsPortfolio } from "./component/portfolio.js"
+import { cargarEventClickButtonsPortfolio } from "./component/portfolio.js";
 import { cargarQuisuisjeContent } from "./component/quisuisje.js";
 import { cargarContactoContent } from "./component/contacto.js";
 
@@ -21,12 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Se añade el evento sobre el menú hamburguesa
+
     // Función para alternar la clase 'show' en el menú hamburguesa
     document.querySelector('.hamburguer').addEventListener('click', function() {
         document.querySelector('#menu-list').classList.toggle('show');
         document.querySelector('.hamburguer').classList.toggle('active');
     });
-    
+
     // Se añade evento sobre el cambio de idioma
     document.getElementById('language').addEventListener('change', function() {  
         restaurarMenuHamburguesa();
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 console.error('Error en la carga de traducciones:', error);
             });
+
     });
 
     // Manejar el evento de cambio de hash en la URL
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Seccion-Pagina
         let sectionId = window.location.hash.substring(1);
         if (typeof traducc === 'undefined') {
-            cargarTraducciones(document.getElementById('language').value)
+            cargarTraducciones(selectedOption.textContent)
                 .then(traducciones => {
                     traducc = traducciones;
                     switch (sectionId) {
@@ -129,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.hash = "accueil";
     restaurarMenuHamburguesa();
     cargarTraducciones(document.getElementById('language').value)
+
         .then(traducciones => {
             traducc = traducciones;
             // Titulo oculto en pantallas superiores a 768px
