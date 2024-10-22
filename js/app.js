@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para alternar la clase 'show' en el menú hamburguesa
     document.querySelector('.hamburguer').addEventListener('click', function() {
         document.querySelector('#menu-list').classList.toggle('show');
+        document.querySelector('.hamburguer').classList.toggle('active');
     });
     
     // Se añade evento sobre el cambio de idioma
