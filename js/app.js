@@ -165,30 +165,3 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error en la carga de traducciones:', error);
         });
 });
-
-
-/* 
-
-//Apertura y cierre del menú hamburguesa
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburguesa = document.querySelector('.hamburguer');
-    const enlaces = document.querySelector('#menu-list');
-
-    // Función para alternar la clase 'show' en el menú
-    function toggleMenu() {
-      enlaces.classList.toggle('show');
-      hamburguesa.classList.toggle('active');
-  }
-
-    // Función para cerrar el menú
-    window.closeNav = function() {
-      enlaces.classList.remove('show');
-      hamburguesa.classList.remove('active');
-  }
-
-  // Event listener para el menú hamburguesa
-  hamburguesa.addEventListener('click', toggleMenu);
-
-});
-
- */
