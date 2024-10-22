@@ -16,7 +16,7 @@ export let traducc;
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    document.querySelector('.logo-overlay').addEventListener('clck', function() {
+    document.querySelector('.logo-overlay').addEventListener('click', function() {
         restaurarMenuHamburguesa();
     });
 
