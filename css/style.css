@@ -1101,6 +1101,11 @@ footer {
 /* Media queries para pantallas de 480px */
 @media (max-width: 480px) {
 
+    .options {
+        font-size: 6px;
+        margin-top: -6px;
+    }
+
     /* Estilos para el artículo "inicio" */
     #inicio .parafo-articulo h2 {
         font-size: 16px; /* Reducir el tamaño de fuente del subtítulo */

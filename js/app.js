@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const customSelect = document.querySelector('.custom-select');
     const selectedOption = customSelect.querySelector('.selected-option');
     const options = customSelect.querySelector('.options');
-    const optionItems = options.querySelectorAll('li');
+    const optionItems = Array.from(options.querySelectorAll('li')); // Convertir a array
 
     selectedOption.addEventListener('click', function() {
         customSelect.classList.toggle('open');
