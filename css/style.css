@@ -139,43 +139,64 @@
     border-radius: 5px; /* Bordes redondeados */
 }
 
-.language-selector select {
-    cursor: pointer;
-    background-color: var(--button-color);
-    color: #ffffff;
-    border-radius: 5px; /* Bordes redondeados */
-    border-color: var(--button-color);
-    height: 23px;
-    transition: background-color 0.3s ease; /* Transición suave para el cambio de fondo */
-}
-
-/* Estilos para cuando el select está enfocado (clicado) */
-.language-selector select:focus {
-    background-color: transparent;
-    color: var(--text-color);
-    border-color: transparent;
-}
-
-/* Estilos para las opciones del selector de idioma */
-.language-selector select option {
-    background-color: var(--button-color); /* Color de fondo de las opciones */
-    color: var(--text-color); /* Color del texto de las opciones */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves para el cambio de fondo y color */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor a puntero */
-}
-
-/* Estilos para cuando se pasa el ratón sobre las opciones */
-.language-selector select option:hover {
-    background-color: var(--button-hover-color); /* Cambia el color de fondo al pasar el ratón */
-    color: var(--text-color); /* Cambia el color del texto al pasar el ratón */
-}
-
 .language-icon {
     margin-right: 10px; /* Espacio a la derecha del ícono del idioma */
     margin-left: 10px; /* Espacio a la derecha del ícono del idioma */
     font-size: 20px; /* Tamaño del ícono del idioma */
     color: var(--text-color); /* Color del ícono del idioma */
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+.selected-option {
+    background-color: var(--button-color);
+    color: #ffffff;
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de fondo */
+}
+
+.selected-option:hover {
+    background-color: var(--button-hover-color);
+}
+
+.selected-option.open {
+    background-color: transparent;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--button-color);
+    border-radius: 5px; /* Bordes redondeados */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 50px;
+    margin-top: 1px;
+}
+
+.options li {
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de fondo */
+    color: var(--text-color);
+}
+
+.options li:hover {
+    background-color: var(--button-hover-color);
+    color: var(--header-color);
+    font-weight: bold;
+}
+
+.custom-select.open .options {
+    display: block;
 }
 
 /* Estilos para el titulo */
@@ -333,25 +354,6 @@ main {
     scrollbar-width: none; /* Oculta las barras de desplazamiento en navegadores que lo soporten */
     margin: 0 95px;
 }
-
-/*
-.logos-empresas {
-    scroll-behavior: smooth; // Desplazamiento suave 
-    animation: scrollLogos 20s linear infinite; // Animación de desplazamiento
-}
-*/
-
-/* Animación de desplazamiento de los logos */
-/*
-@keyframes scrollLogos {
-    0% {
-        transform: translateX(0); // Comienza en la posición inicial 
-    }
-    100% {
-        transform: translateX(-100%); // Desplaza los logos completamente fuera de la vista 
-    }
-}
-*/
 
 /* Estilos para los logos individuales */
 .logos-empresas img {
@@ -894,6 +896,10 @@ footer {
     .logo-overlay {
         width: 120px; /* Reducir el tamaño del logo */
         height: 120px;
+    }
+
+    .options {
+        font-size: 10px;
     }
 
     .menu ul li a {
