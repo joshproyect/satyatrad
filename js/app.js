@@ -4,8 +4,8 @@ import { cargarMenuContent } from "./component/menu.js";
 import { cargarEventClickLinks } from "./component/menu.js"
 import { cargarTituloContent } from "./component/titulo.js";
 import { cargarAccueilContent } from "./component/accueil.js";
-//import { setUpArrowEvents } from "./component/carrusel.js";
-import { carruselAutoInicio } from "./component/carrusel.js";
+import { setUpArrowEvents } from "./component/carrusel.js";
+//import { carruselAutoInicio } from "./component/carrusel.js";
 import { cargarPortfolioContent } from "./component/portfolio.js";
 import { cargarEventClickButtonsPortfolio } from "./component/portfolio.js"
 import { cargarQuisuisjeContent } from "./component/quisuisje.js";
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para alternar la clase 'show' en el menú hamburguesa
     document.querySelector('.hamburguer').addEventListener('click', function() {
         document.querySelector('#menu-list').classList.toggle('show');
+        document.querySelector('.hamburguer').classList.toggle('active');
     });
     
     // Se añade evento sobre el cambio de idioma
@@ -37,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 switch (sectionId) {
                     case "accueil":
                         document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
-                        //setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
-                        carruselAutoInicio();
+                        setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
                         break;
                     case "portfolio":
                         document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
@@ -72,8 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     switch (sectionId) {
                         case "accueil":
                             document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
-                            //setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
-                            carruselAutoInicio();
+                            setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
                             break;
                         case "portfolio":
                             document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
@@ -98,8 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
             switch (sectionId) {
                 case "accueil":
                     document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
-                    //setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
-                    carruselAutoInicio();
+                    setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
                     break;
                 case "portfolio":
                     document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
@@ -136,8 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
             switch (sectionId) {
                 case "accueil":
                     document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
-                    //setUpArrowEvents();
-                    carruselAutoInicio();
+                    setUpArrowEvents();
                     break;
                 case "portfolio":
                     document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);

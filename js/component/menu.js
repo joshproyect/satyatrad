@@ -15,6 +15,7 @@ export function cargarEventClickLinks () {
     document.querySelectorAll('#menu-list > li > a').forEach(a => {
         a.addEventListener('click', function() {
             document.querySelector('#menu-list').classList.remove('show');
+            document.querySelector('.hamburguer').classList.remove('active');
         });
     });
 };
