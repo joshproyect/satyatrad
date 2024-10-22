@@ -170,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* Desplazamiento horizontal del contenedor de logos: */
+/*
 function setUpArrowEvents() {       // Función para configurar los eventos de las flechas
     const logosContainer = document.getElementById('logosContainer');
     const leftArrow = document.getElementById('leftArrow');
@@ -193,7 +194,7 @@ function setUpArrowEvents() {       // Función para configurar los eventos de l
         });
     }
 }
-
+*/
 /* Apertura y cierre del menú hamburguesa */
 
 document.addEventListener('DOMContentLoaded', function() {
