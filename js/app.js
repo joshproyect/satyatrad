@@ -1,7 +1,8 @@
 import { cargarTraducciones } from "./component/traducciones.js";
 import { cargarTitulo768Content } from "./component/titulo768.js";
 import { cargarMenuContent } from "./component/menu.js";
-import { cargarEventClickLinks } from "./component/menu.js"
+import { cargarEventClickLinks } from "./component/menu.js";
+import { restaurarMenuHamburguesa } from "./component/menu.js";
 import { cargarTituloContent } from "./component/titulo.js";
 import { cargarAccueilContent } from "./component/accueil.js";
 import { setUpArrowEvents } from "./component/carrusel.js";
@@ -15,6 +16,11 @@ export let traducc;
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    document.querySelector('.logo-overlay').addEventListener('clck', function() {
+        restaurarMenuHamburguesa();
+    });
+
+    // Se añade el evento sobre el menú hamburguesa
     // Función para alternar la clase 'show' en el menú hamburguesa
     document.querySelector('.hamburguer').addEventListener('click', function() {
         document.querySelector('#menu-list').classList.toggle('show');
@@ -22,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Se añade evento sobre el cambio de idioma
-    document.getElementById('language').addEventListener('change', function() {    
+    document.getElementById('language').addEventListener('change', function() {  
+        restaurarMenuHamburguesa();
         cargarTraducciones(document.getElementById('language').value)
             .then(traducciones => {
                 traducc = traducciones;
@@ -63,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Manejar el evento de cambio de hash en la URL
     window.addEventListener('hashchange', function() {
+        restaurarMenuHamburguesa();
         // Seccion-Pagina
         let sectionId = window.location.hash.substring(1);
         if (typeof traducc === 'undefined') {
@@ -119,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Sección de inicio   
     window.location.hash = "accueil";
+    restaurarMenuHamburguesa();
     cargarTraducciones(document.getElementById('language').value)
         .then(traducciones => {
             traducc = traducciones;
