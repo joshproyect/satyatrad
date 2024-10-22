@@ -15,7 +15,13 @@ export function cargarEventClickLinks () {
     document.querySelectorAll('#menu-list > li > a').forEach(a => {
         a.addEventListener('click', function() {
             document.querySelector('#menu-list').classList.remove('show');
-            document.querySelector('.hamburguer').classList.remove('active');
+            restaurarMenuHamburguesa();
         });
     });
+};
+
+export function restaurarMenuHamburguesa() {
+    if (document.querySelector('.hamburguer').classList.contains('active') === true) {
+        document.querySelector('.hamburguer').classList.remove('active');
+    }
 };

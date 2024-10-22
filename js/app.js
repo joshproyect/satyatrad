@@ -2,6 +2,7 @@ import { cargarTraducciones } from "./component/traducciones.js";
 import { cargarTitulo768Content } from "./component/titulo768.js";
 import { cargarMenuContent } from "./component/menu.js";
 import { cargarEventClickLinks } from "./component/menu.js";
+import { restaurarMenuHamburguesa } from "./component/menu.js";
 import { cargarTituloContent } from "./component/titulo.js";
 import { cargarAccueilContent } from "./component/accueil.js";
 import { setUpArrowEvents } from "./component/carrusel.js";
@@ -14,6 +15,13 @@ import { cargarContactoContent } from "./component/contacto.js";
 export let traducc;
 
 document.addEventListener('DOMContentLoaded', function() {
+    
+    document.querySelector('.logo-overlay').addEventListener('clck', function() {
+        restaurarMenuHamburguesa();
+    });
+
+    // Se añade el evento sobre el menú hamburguesa
+
     // Función para alternar la clase 'show' en el menú hamburguesa
     document.querySelector('.hamburguer').addEventListener('click', function() {
         document.querySelector('#menu-list').classList.toggle('show');
@@ -21,80 +29,50 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Se añade evento sobre el cambio de idioma
-    const customSelect = document.querySelector('.custom-select');
-    const selectedOption = customSelect.querySelector('.selected-option');
-    const options = customSelect.querySelector('.options');
-    const optionItems = options.querySelectorAll('li');
+    document.getElementById('language').addEventListener('change', function() {  
+        restaurarMenuHamburguesa();
+        cargarTraducciones(document.getElementById('language').value)
+            .then(traducciones => {
+                traducc = traducciones;
+                // Titulo oculto en pantallas superiores a 768px
+                document.getElementById('titulo768').innerHTML = cargarTitulo768Content(traducc);
+                // Menu
+                document.getElementById('menu').innerHTML = cargarMenuContent(traducc);
+                cargarEventClickLinks();
+                // Titulo
+                document.getElementById('titulo').innerHTML = cargarTituloContent(traducc);
+                // Seccion-Pagina
+                let sectionId = window.location.hash.substring(1);
+                switch (sectionId) {
+                    case "accueil":
+                        document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
+                        setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
+                        break;
+                    case "portfolio":
+                        document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
+                        cargarEventClickButtonsPortfolio(traducc);
+                        break;
+                    case "quisuisje":
+                        document.getElementById('main-content').innerHTML = cargarQuisuisjeContent(traducc);
+                        break;
+                    case "contacto":
+                        document.getElementById('main-content').innerHTML = cargarContactoContent(traducc);
+                        break;
+                    default:
+                        document.getElementById('main-content').innerHTML = 'Error al cargar sección';
+                }
+                // Cierra el menú al cambiar de página
+                document.querySelector('#menu-list').classList.remove('show');
+            })
+            .catch(error => {
+                console.error('Error en la carga de traducciones:', error);
+            });
 
-    selectedOption.addEventListener('click', function() {
-        customSelect.classList.toggle('open');
-        this.classList.toggle('open'); // Añade o remueve la clase 'open' al botón seleccionado
-    });
-
-    document.addEventListener('click', function(event) {
-        if (!customSelect.contains(event.target)) {
-            customSelect.classList.remove('open');
-            selectedOption.classList.remove('open'); // Remueve la clase 'open' del botón seleccionado
-        } else if (optionItems.includes(event.target)) {
-            selectedOption.textContent = event.target.textContent; // Actualiza el contenido del botón seleccionado
-            customSelect.classList.remove('open'); // Cierra el menú de opciones
-            selectedOption.classList.remove('open'); // Remueve la clase 'open' del botón seleccionado
-        }
-    });
-
-
-    optionItems.forEach(function(item) {
-        item.addEventListener('click', function() {
-            selectedOption.textContent = item.textContent;
-            customSelect.classList.remove('open');
-            selectedOption.classList.remove('open'); // Remueve la clase 'open' del botón seleccionado
-            cargarTraducciones(item.getAttribute('data-value'))
-                .then(traducciones => {
-                    traducc = traducciones;
-                    // Titulo oculto en pantallas superiores a 768px
-                    document.getElementById('titulo768').innerHTML = cargarTitulo768Content(traducc);
-                    // Menu
-                    document.getElementById('menu').innerHTML = cargarMenuContent(traducc);
-                    cargarEventClickLinks();
-                    // Titulo
-                    document.getElementById('titulo').innerHTML = cargarTituloContent(traducc);
-                    // Seccion-Pagina
-                    let sectionId = window.location.hash.substring(1);
-                    switch (sectionId) {
-                        case "accueil":
-                            document.getElementById('main-content').innerHTML = cargarAccueilContent(traducc);
-                            setUpArrowEvents();  // Llama a la función para asignar eventos de las flechas
-                            break;
-                        case "portfolio":
-                            document.getElementById('main-content').innerHTML = cargarPortfolioContent(traducc);
-                            cargarEventClickButtonsPortfolio(traducc);
-                            break;
-                        case "quisuisje":
-                            document.getElementById('main-content').innerHTML = cargarQuisuisjeContent(traducc);
-                            break;
-                        case "contacto":
-                            document.getElementById('main-content').innerHTML = cargarContactoContent(traducc);
-                            break;
-                        default:
-                            document.getElementById('main-content').innerHTML = 'Error al cargar sección';
-                    }
-                    // Cierra el menú al cambiar de página
-                    document.querySelector('#menu-list').classList.remove('show');
-                })
-                .catch(error => {
-                    console.error('Error en la carga de traducciones:', error);
-                });
-        });
-    });
-
-    document.addEventListener('click', function(event) {
-        if (!customSelect.contains(event.target)) {
-            customSelect.classList.remove('open');
-        }
     });
 
     // Manejar el evento de cambio de hash en la URL
     window.addEventListener('hashchange', function() {
+        restaurarMenuHamburguesa();
         // Seccion-Pagina
         let sectionId = window.location.hash.substring(1);
         if (typeof traducc === 'undefined') {
@@ -151,7 +129,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Sección de inicio   
     window.location.hash = "accueil";
-    cargarTraducciones(selectedOption.textContent)
+    restaurarMenuHamburguesa();
+    cargarTraducciones(document.getElementById('language').value)
+
         .then(traducciones => {
             traducc = traducciones;
             // Titulo oculto en pantallas superiores a 768px
