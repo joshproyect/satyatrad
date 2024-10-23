@@ -145,17 +145,9 @@
     color: #ffffff;
     border-radius: 5px; /* Bordes redondeados */
     border-color: var(--button-color);
-    height: 23px;
+    height: 30px;
     transition: background-color 0.3s ease; /* Transición suave para el cambio de fondo */
 }
-
-/* Estilos para cuando el select está enfocado (clicado) */
-.language-selector select:focus {
-    background-color: transparent;
-    color: var(--text-color);
-    border-color: transparent;
-}
-
 /* Estilos para las opciones del selector de idioma */
 .language-selector select option {
     background-color: var(--button-color); /* Color de fondo de las opciones */
@@ -461,7 +453,7 @@ main {
 /* Estilos para el artículo "quiensoy" */
 #quiensoy {
     margin: 0 auto; /* Centrar el contenido */
-    max-width: 1200px; /* Ancho máximo del contenido */
+    max-width: 1000px; /* Ancho máximo del contenido */
     display: flex; /* Usamos flexbox para organizar el contenido */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
     gap: 20px; /* Espacio entre los elementos */
@@ -515,7 +507,7 @@ main {
 #quiensoy .quiensoy-p {
     flex: 1; /* Hace que los párrafos ocupen el espacio restante */
     font-family: var(--font-family-main); /* Fuente del texto */
-    font-size: 18px; /* Tamaño de fuente */
+    font-size: 15px; /* Tamaño de fuente */
     line-height: 1.6; /* Altura de línea */
     color: black; /* Color del texto */
     margin: 0; /* Elimina el margen para evitar que se salgan del contenedor */
@@ -523,7 +515,7 @@ main {
 }
 
 #quiensoy .quiensoy-p p {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 /* Estilos para la imagen del artículo "quiensoy" */
@@ -549,7 +541,7 @@ main {
     gap: 40px; /* Espacio entre los elementos */
     padding: 20px; /* Espaciado interno */
     margin: 0 auto; /* Centrar el contenido */
-    max-width: 1200px; /* Ancho máximo del contenido */
+    max-width: 1000px; /* Ancho máximo del contenido */
     border: 2px solid #e6a756; /* Borde sólido de color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el efecto hover */
@@ -1121,11 +1113,11 @@ footer {
     }
 
     #educacion .formation ul {
-        font-size: 13px; 
+        font-size: 12px; 
     }
     
     #educacion .servicios ul {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     /* Estilos para el header */
@@ -1191,6 +1183,17 @@ footer {
 
     .credit {
         font-size: 0.8rem; /* Reducir aún más el tamaño de fuente del crédito */
+    }
+}
+
+/* Media queries para pantallas de 380px */
+@media (max-width: 380px) {
+    #educacion .formation ul {
+        font-size: 10px; 
+    }
+    
+    #educacion .servicios ul {
+        font-size: 10px;
     }
 }
 
