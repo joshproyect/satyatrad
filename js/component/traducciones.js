@@ -3,7 +3,7 @@ import { traducc } from "../app.js";
 export async function cargarTraducciones(idioma) {
     try {
         // Especifica la ruta del archivo JSON
-        const filePath = ./locales/${idioma}.json;
+        const filePath = `./locales/${idioma}.json`;
 
         // Realiza la solicitud fetch para obtener el contenido del archivo
         const response = await fetch(filePath);
