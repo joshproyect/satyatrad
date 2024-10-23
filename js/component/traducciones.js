@@ -10,7 +10,7 @@ export async function cargarTraducciones(idioma) {
 
         // Verifica si la respuesta es exitosa
         if (!response.ok) {
-            throw new Error(Error al cargar el archivo: ${response.statusText});
+            throw new Error(`Error al cargar el archivo: ${response.statusText}`);
         }
 
         // Convierte la respuesta a formato JSON
