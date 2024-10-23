@@ -413,10 +413,21 @@ main {
     }    
 }
 
+/* ANIMACIONES */
+
+/* Para pantallas menores de 767px */
 @media screen and (max-width: 767px) {
+    
+    /* Modificación de las variables */
     :root{
         --width-logos: 100px;
         --height-logos: 100px;
+    }
+
+    /* Marco/Ventana por dónde se desplazará la lista */
+    .slider{
+        overflow: scroll;
+        scrollbar-width: auto;
     }
 }
 
